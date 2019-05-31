@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  RightsApp_ios
+
+  Created by Jorge Gonzalez Conejero on 29/05/2019.
+  Copyright © 2019 uab. All rights reserved.
+*/
+"xuQ-ZP-tMN.text" = "Titularidad de la app";
+"app_ownership_body" = "Esta app está operada por la Universitat Autònoma de Barcelona – Instituto de Derecho y Tecnología (en adelante, UAB-IDT) en representación del consorcio de RightsApp. UAB-IDT tiene su sede en:\nUniversitat Autònoma de Barcelona – Instituto de Derecho y Tecnología (UAB-IDT)\nidt@uab.cat\nCampus de la UAB. Edifici B Cerdanyola del Vallès (Bellaterra), Spain";
