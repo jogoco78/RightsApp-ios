@@ -5,6 +5,7 @@
   Created by Jorge Gonzalez Conejero on 29/05/2019.
   Copyright © 2019 uab. All rights reserved.
 */
+//Terms and conditions strings
 "appOwnership" = "App Ownership\n";
 "appOwnershipBody" = "This app is operated by Universitat Autonoma de Barcelona - Institute of Law and Technology (hereinafter, UAB-IDT) on behalf of the RightsApp consortium. UAB-IDT is located at:\nUniversitat Autònoma de Barcelona - Institute of Law and Technology (UAB-IDT)\nidt@uab.cat\nCampus de la UAB. Edifici B\nCerdanyola del Valles (Bellaterra), Spain\n";
 "termsConditions" = "Terms and Conditions\n";
@@ -22,3 +23,4 @@
 "privacyPolicyChanges"= "Privacy policy changes\n";
 "privacyPolicyChangesBody" = "Although most changes are likely to be minor, UAB-IDT may change its Privacy Policy from time to time, and in UAB-IDT's sole discretion.\nUAB-IDT encourages visitors to frequently check this screen for any changes to its Privacy Policy. Your continued use of this site after any change in this Privacy Policy will constitute your acceptance of such change.\n";
 
+"alertTermsConditions" = "You must accept the terms and conditions of the app";
