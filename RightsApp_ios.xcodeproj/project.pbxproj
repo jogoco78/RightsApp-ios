@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7222A7D62D006B5BDC /* SearchEntity.storyboard */; };
+		EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7B22A7D642006B5BDC /* Questionnaire.storyboard */; };
+		EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C8422A7D651006B5BDC /* EmergencyCall.storyboard */; };
 		EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */; };
 		EB4D1ABC22A6B3D000054C3B /* RightsAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */; };
 		EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB8A66FA229ED4DE003855BD /* Localizable.strings */; };
@@ -38,6 +41,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB205C7122A7D62D006B5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchEntity.storyboard; sourceTree = "<group>"; };
+		EB205C7422A7D634006B5BDC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SearchEntity.strings; sourceTree = "<group>"; };
+		EB205C7622A7D634006B5BDC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SearchEntity.strings; sourceTree = "<group>"; };
+		EB205C7822A7D635006B5BDC /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/SearchEntity.strings"; sourceTree = "<group>"; };
+		EB205C7A22A7D642006B5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Questionnaire.storyboard; sourceTree = "<group>"; };
+		EB205C7D22A7D649006B5BDC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Questionnaire.strings; sourceTree = "<group>"; };
+		EB205C7F22A7D64A006B5BDC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Questionnaire.strings; sourceTree = "<group>"; };
+		EB205C8122A7D64B006B5BDC /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Questionnaire.strings"; sourceTree = "<group>"; };
+		EB205C8322A7D651006B5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EmergencyCall.storyboard; sourceTree = "<group>"; };
+		EB205C8622A7D657006B5BDC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/EmergencyCall.strings; sourceTree = "<group>"; };
+		EB205C8822A7D658006B5BDC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/EmergencyCall.strings; sourceTree = "<group>"; };
+		EB205C8A22A7D659006B5BDC /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/EmergencyCall.strings"; sourceTree = "<group>"; };
 		EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppViewController.swift; sourceTree = "<group>"; };
 		EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsAppViewController.swift; sourceTree = "<group>"; };
 		EB8A66F0229EC8BA003855BD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -91,12 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB205C8B22A7D733006B5BDC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */,
+				EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */,
+				EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		EB993A3C229D3B7A0082DE76 = {
 			isa = PBXGroup;
 			children = (
-				EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */,
-				EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */,
-				EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */,
+				EB205C8B22A7D733006B5BDC /* Controllers */,
 				EB8A66FA229ED4DE003855BD /* Localizable.strings */,
 				EBFA91DE229D816100802BC7 /* Storyboards */,
 				EB993A47229D3B7A0082DE76 /* RightsApp_ios */,
@@ -149,6 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				EB993A4C229D3B7A0082DE76 /* Main.storyboard */,
+				EB205C8422A7D651006B5BDC /* EmergencyCall.storyboard */,
+				EB205C7B22A7D642006B5BDC /* Questionnaire.storyboard */,
+				EB205C7222A7D62D006B5BDC /* SearchEntity.storyboard */,
 				EB993A51229D3B7A0082DE76 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -261,7 +287,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */,
 				EB993A53229D3B7A0082DE76 /* LaunchScreen.storyboard in Resources */,
+				EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */,
+				EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */,
 				EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */,
 				EB993A50229D3B7A0082DE76 /* Assets.xcassets in Resources */,
 				EB993A4E229D3B7A0082DE76 /* Main.storyboard in Resources */,
@@ -329,6 +358,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EB205C7222A7D62D006B5BDC /* SearchEntity.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB205C7122A7D62D006B5BDC /* Base */,
+				EB205C7422A7D634006B5BDC /* es */,
+				EB205C7622A7D634006B5BDC /* it */,
+				EB205C7822A7D635006B5BDC /* pt-PT */,
+			);
+			name = SearchEntity.storyboard;
+			sourceTree = "<group>";
+		};
+		EB205C7B22A7D642006B5BDC /* Questionnaire.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB205C7A22A7D642006B5BDC /* Base */,
+				EB205C7D22A7D649006B5BDC /* es */,
+				EB205C7F22A7D64A006B5BDC /* it */,
+				EB205C8122A7D64B006B5BDC /* pt-PT */,
+			);
+			name = Questionnaire.storyboard;
+			sourceTree = "<group>";
+		};
+		EB205C8422A7D651006B5BDC /* EmergencyCall.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB205C8322A7D651006B5BDC /* Base */,
+				EB205C8622A7D657006B5BDC /* es */,
+				EB205C8822A7D658006B5BDC /* it */,
+				EB205C8A22A7D659006B5BDC /* pt-PT */,
+			);
+			name = EmergencyCall.storyboard;
+			sourceTree = "<group>";
+		};
 		EB8A66FA229ED4DE003855BD /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

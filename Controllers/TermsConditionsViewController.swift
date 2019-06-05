@@ -10,8 +10,9 @@ import UIKit
 
 class TermsConditionsViewController: UIViewController {
     
-    @IBOutlet weak var tv_termsConditions: UITextView!
+    @IBOutlet weak var tvTermsConditions: UITextView!
     @IBOutlet weak var acceptTermsSwitch: UISwitch!
+    @IBOutlet weak var tvAcceptTermsConditions: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,11 @@ class TermsConditionsViewController: UIViewController {
         attributedText.append(s)
         
         //Sets the attributed text to the TextView
-        tv_termsConditions.attributedText = attributedText
+        tvTermsConditions.attributedText = attributedText
+        
+        //Sets the attributed text to accept terms and conditions
+        s = NSMutableAttributedString(string: NSLocalizedString("labelTermsConditions",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)])
+        tvAcceptTermsConditions.attributedText = s
         
         //Sets the switch to the stored value
         if UserDefaults.standard.object(forKey: "agreed") != nil {
@@ -117,17 +122,4 @@ class TermsConditionsViewController: UIViewController {
             }
         }
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 }
