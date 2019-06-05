@@ -1,18 +1,16 @@
 //
-//  HowToUseTheAppViewController.swift
+//  HowToUseTheAppTextViewController.swift
 //  RightsApp_ios
 //
-//  Created by Jorge Gonzalez Conejero on 04/06/2019.
+//  Created by Jorge Gonzalez Conejero on 05/06/2019.
 //  Copyright © 2019 uab. All rights reserved.
 //
 
 import UIKit
 
-class HowToUseTheAppViewController: UIViewController {
+class HowToUseTheAppTextViewController: UIViewController {
 
-    @IBOutlet weak var tvHowToUseTheApp: UITextView!
-    @IBOutlet weak var switchNotShowAgain: UISwitch!
-    @IBOutlet weak var btContinuUseApp: UIButton!
+    @IBOutlet weak var tvHowUseAppText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,32 +36,7 @@ class HowToUseTheAppViewController: UIViewController {
         attributedText.append(s)
         
         //Sets the attributted text to the textview
-        tvHowToUseTheApp.attributedText = attributedText
-        
-        //Sets the message of the switch
-         s = NSMutableAttributedString(string: NSLocalizedString("doNotShowAgain",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
-        
-        //Sets default value of Switch to false
-        switchNotShowAgain.setOn(false, animated: true)
-        
-        //Sets title to the button
-        btContinuUseApp.setTitle(NSLocalizedString("continue",comment: ""),for: .normal)
-        
+        tvHowUseAppText.attributedText = attributedText
     }
-    
-    @IBAction func buttonNotShowAgain(_ sender: UIButton) {
-        UserDefaults.standard.set(switchNotShowAgain.isOn, forKey: "useApp")
-        performSegue(withIdentifier: "RightsAppUseApp", sender: nil)
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

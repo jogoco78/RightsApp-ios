@@ -20,6 +20,8 @@
 		EB993A53229D3B7A0082DE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB993A51229D3B7A0082DE76 /* LaunchScreen.storyboard */; };
 		EB993A5E229D3B7B0082DE76 /* RightsApp_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A5D229D3B7B0082DE76 /* RightsApp_iosTests.swift */; };
 		EB993A69229D3B7B0082DE76 /* RightsApp_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */; };
+		EBE8797422A805300040EB58 /* HowToUseTheAppTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */; };
+		EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */; };
 		EBF06E8422A1736500F4C4F3 /* TermsConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		EB993A64229D3B7B0082DE76 /* RightsApp_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightsApp_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsApp_iosUITests.swift; sourceTree = "<group>"; };
 		EB993A6A229D3B7B0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppTextViewController.swift; sourceTree = "<group>"; };
+		EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsTextViewController.swift; sourceTree = "<group>"; };
 		EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +116,8 @@
 				EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */,
 				EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */,
 				EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */,
+				EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */,
+				EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -318,11 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */,
 				EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */,
 				EB993A4B229D3B7A0082DE76 /* ViewController.swift in Sources */,
 				EB993A49229D3B7A0082DE76 /* AppDelegate.swift in Sources */,
 				EBF06E8422A1736500F4C4F3 /* TermsConditionsViewController.swift in Sources */,
 				EB4D1ABC22A6B3D000054C3B /* RightsAppViewController.swift in Sources */,
+				EBE8797422A805300040EB58 /* HowToUseTheAppTextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
