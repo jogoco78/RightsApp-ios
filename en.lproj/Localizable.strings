@@ -39,3 +39,15 @@
 "howTheAppWorks" = "How the app works\n";
 "howTheAppWorksBody" = "The app includes three different scenarios in which the user that has been victim of a crime within the European Union can found himself/herself. The first scenario is the need to make an emergency call to 112.With just a push of a button the user can make an emergency call to 112.\nThe second scenario is the need to be provided with information regarding rights of European Union citizens’ who have been victims of a crime. In order to obtain particularized information, the user has to fill in a small questionnaire (with a minimum of X and a maximum of Y questions). Once the user has answered this questionnaire, the rights that assist the user in her/his specific situation will appear grouped by subject (this grouping is due to the size of mobile devices’ screens, in order to facilitate the visualization). Once the title of any subject has been pressed, a more detailed definition of the rights that assist the user with respect to that subject will be displayed.\nIn the latter scenario the app provides the citizen who has been the victim of a crime with information regarding entities and centres that provide crime victim support. First, the user chooses three parameters to facilitate the search among these institutions and centres. The first parameter is the type of entity you are looking for, the second indicates in which country, and finally in which city. At the moment, only entities and centres that provide assistance to victims of crime in the Autonomous Community of Catalonia are available. Once these parameters are established, an ordered list will appear from less to more distant with respect to the user's location. Once one of the entities or assistance centres has been selected, the app will offer the possibility of calling that particular entity or centre, navigating to it (using GoogleMaps) or going back to carry out another search.";
 "doNotShow" = "Do not show this message again";
+
+//Languages
+"spanish" = "Spanish";
+"english" = "English";
+"portuguese" = "Portuguese";
+"italian" = "Italian";
+"languageText" = "Select your language";
+
+//RightsApp screen
+"emergencyCallText" = "If you have been victim of a crime and you need assistance, make an emergency call to 112";
+"questionnaireText" = "Get tailored information about your rights as crime victim through our questionnaire";
+"searchEntityText" = "Get information and navigate to different assistance entities";

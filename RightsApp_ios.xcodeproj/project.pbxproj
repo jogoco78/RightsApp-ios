@@ -10,6 +10,7 @@
 		EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7222A7D62D006B5BDC /* SearchEntity.storyboard */; };
 		EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7B22A7D642006B5BDC /* Questionnaire.storyboard */; };
 		EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C8422A7D651006B5BDC /* EmergencyCall.storyboard */; };
+		EB2EAA3722AE527100629C07 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2EAA3622AE527100629C07 /* LanguageViewController.swift */; };
 		EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */; };
 		EB4D1ABC22A6B3D000054C3B /* RightsAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */; };
 		EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB8A66FA229ED4DE003855BD /* Localizable.strings */; };
@@ -21,6 +22,7 @@
 		EB993A5E229D3B7B0082DE76 /* RightsApp_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A5D229D3B7B0082DE76 /* RightsApp_iosTests.swift */; };
 		EB993A69229D3B7B0082DE76 /* RightsApp_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */; };
 		EB9C25B522AA4DEB00A623EF /* InitMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C25B422AA4DEB00A623EF /* InitMainViewController.swift */; };
+		EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */; };
 		EBE8797422A805300040EB58 /* HowToUseTheAppTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */; };
 		EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */; };
 		EBF06E8422A1736500F4C4F3 /* TermsConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */; };
@@ -56,6 +58,7 @@
 		EB205C8622A7D657006B5BDC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/EmergencyCall.strings; sourceTree = "<group>"; };
 		EB205C8822A7D658006B5BDC /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/EmergencyCall.strings; sourceTree = "<group>"; };
 		EB205C8A22A7D659006B5BDC /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/EmergencyCall.strings"; sourceTree = "<group>"; };
+		EB2EAA3622AE527100629C07 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppViewController.swift; sourceTree = "<group>"; };
 		EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsAppViewController.swift; sourceTree = "<group>"; };
 		EB8A66F0229EC8BA003855BD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsApp_iosUITests.swift; sourceTree = "<group>"; };
 		EB993A6A229D3B7B0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB9C25B422AA4DEB00A623EF /* InitMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitMainViewController.swift; sourceTree = "<group>"; };
+		EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v5_utf16.db; sourceTree = "<group>"; };
 		EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppTextViewController.swift; sourceTree = "<group>"; };
 		EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsTextViewController.swift; sourceTree = "<group>"; };
 		EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */,
 				EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */,
 				EB9C25B422AA4DEB00A623EF /* InitMainViewController.swift */,
+				EB2EAA3622AE527100629C07 /* LanguageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 		EB993A3C229D3B7A0082DE76 = {
 			isa = PBXGroup;
 			children = (
+				EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */,
 				EB205C8B22A7D733006B5BDC /* Controllers */,
 				EB8A66FA229ED4DE003855BD /* Localizable.strings */,
 				EBFA91DE229D816100802BC7 /* Storyboards */,
@@ -298,6 +304,7 @@
 			files = (
 				EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */,
 				EB993A53229D3B7A0082DE76 /* LaunchScreen.storyboard in Resources */,
+				EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */,
 				EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */,
 				EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */,
 				EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */,
@@ -329,6 +336,7 @@
 			files = (
 				EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */,
 				EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */,
+				EB2EAA3722AE527100629C07 /* LanguageViewController.swift in Sources */,
 				EB993A4B229D3B7A0082DE76 /* ViewController.swift in Sources */,
 				EB993A49229D3B7A0082DE76 /* AppDelegate.swift in Sources */,
 				EBF06E8422A1736500F4C4F3 /* TermsConditionsViewController.swift in Sources */,
