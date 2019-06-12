@@ -35,7 +35,7 @@ class InitMainViewController: UIViewController {
             performSegue(withIdentifier: "initToTermsConditionsSegue", sender: nil)
             print("Terms and conditions should be shown")
         }
-        copyDatabaseIfNeeded("rightsapp_v5_utf16")
+        //copyDatabaseIfNeeded("rightsapp_v5_utf16")
     }
     
     func copyDatabaseIfNeeded(_ database: String) {

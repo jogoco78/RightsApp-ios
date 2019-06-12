@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--QuestionnaireViewController-->
         <scene sceneID="IO7-cr-5P5">
             <objects>
-                <viewController id="rCt-Xw-nIb" sceneMemberID="viewController">
+                <viewController id="rCt-Xw-nIb" userLabel="QuestionnaireViewController" customClass="QuestionnaireViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1p5-ad-aDb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIw-wP-RuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="149"/>
+            <point key="canvasLocation" x="137.68115942028987" y="148.66071428571428"/>
         </scene>
     </scenes>
 </document>
