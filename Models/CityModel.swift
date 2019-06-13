@@ -9,10 +9,16 @@
 import UIKit
 
 class CityModel {
-    var id: Int = 0
+    var id: Int
+    var cityName: String
+    var idCountry: Int
+    var language: String
     
-    
-    
-    
+    init(_ id: Int,_ cityName: String,_ idCountry: Int,_ language: String){
+        self.id = id
+        self.cityName = cityName
+        self.idCountry = idCountry
+        self.language = language
+    }
     
 }

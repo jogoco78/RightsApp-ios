@@ -11,18 +11,34 @@ import UIKit
 class QuestionnaireViewController: UIViewController {
 
     
+    @IBOutlet var myView: UIView!
+    @IBOutlet weak var tvQuestion: UITextView!
+    @IBOutlet weak var btQuestionnaireContinue: UIButton!
+    
+    var idCurrentQuestion = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        getQuestion()
+        
+        //Sets the text of the current question
+        tvQuestion.text = getQuestionText()
+        
+        btQuestionnaireContinue.setTitle(NSLocalizedString("continue", comment: ""),for: .normal)
     }
     
-    func getQuestion() {
-        var a: CityModel = CityModel()
-        print(a.id)
-        a.id = 6
-        print(a.id)
+    func getQuestionText() -> String {
+        var results = ""
+        //var a: CityModel = CityModel()
+        //print(a.id)
+        //a.id = 6
+        //print(a.id)
+        if DBManager.shared.openDatabase(){
+            results = DBManager.shared.getQuestionText(id_question: idCurrentQuestion, language: "en")
+            print(results)
+        }
+        return results
         
         
        // let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -47,6 +63,14 @@ class QuestionnaireViewController: UIViewController {
        // }
     }
   
+   
+    @IBAction func btQuestionnaireContinue(_ sender: UIButton) {
+       //configureRefreshControl()
+        idCurrentQuestion += 1
+        print(idCurrentQuestion)
+        tvQuestion.setNeedsDisplay()
+    
+    }
     
     /*
     // MARK: - Navigation
