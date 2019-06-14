@@ -10,18 +10,12 @@ import UIKit
 
 class AnswerModel {
     var id: Int
-    var text_es: String
-    var text_en: String
-    var text_pt: String
-    var text_it: String
+    var text: String
     var language: String
     
-    init(_ id: Int,_ text_es: String,_ text_en: String,_ text_pt: String,_ text_it: String,_ language: String){
+    init(_ id: Int,_ text: String,_ language: String){
         self.id = id
-        self.text_es = text_es
-        self.text_en = text_en
-        self.text_pt = text_pt
-        self.text_it = text_it
+        self.text = text
         self.language = language
     }
     

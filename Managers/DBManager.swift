@@ -72,10 +72,12 @@ class DBManager: NSObject {
     // MARK: - Questions and answers
      */
     
+    /* Returns the question text given by parameter */
     func getQuestionText(id_question: Int, language: String) -> String{
         return getQuestionsText(id_questions: [id_question], language: language)[0]
     }
     
+    /* Return an array of text for the ids given by parameter */
     func getQuestionsText(id_questions: [Int], language: String) -> [String]{
         var results = [String]() //empty array string
         
@@ -113,5 +115,41 @@ class DBManager: NSObject {
         }
         
         return results
+    }
+    
+    /* Returns the answers related to a given question */
+    func getAnswersForQuestion(idQuestion: Int, language: String) -> [AnswerModel]{
+        var results = [AnswerModel]()
+        
+        let query = "select " + Constants.shared.field_answers_id + ", text_" + language + " from " + Constants.shared.tableName_answers + " inner join " + Constants.shared.tableName_questions_answers + " on " + Constants.shared.field_questions_answers_id_answer + " = " + Constants.shared.field_answers_id + " where " + Constants.shared.field_questions_answers_id_question + " = " + String(idQuestion)
+        //select id,text_es from answers inner join questions_answers on questions_answers.id_answer = answers.id where questions_answers.id_question = 4
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            while cursor.next(){
+                results.append(AnswerModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumnIndex: 1)!, language))
+            }
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
+    func getNextQuestionID(idQuestion: Int, idAnswer: Int) -> Int{
+        var result = 0
+        
+        let query = "select " + Constants.shared.field_questions_answers_id_next_question + " from " + Constants.shared.tableName_questions_answers + " where " + Constants.shared.field_questions_answers_id_question + " = " + String(idQuestion) + " and " + Constants.shared.field_questions_answers_id_answer + " = " + String(idAnswer)
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            while cursor.next(){
+                result = Int(cursor.int(forColumnIndex: 0))
+            }
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return result
     }
 }

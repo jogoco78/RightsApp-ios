@@ -51,3 +51,6 @@
 "emergencyCallText" = "If you have been victim of a crime and you need assistance, make an emergency call to 112";
 "questionnaireText" = "Get tailored information about your rights as crime victim through our questionnaire";
 "searchEntityText" = "Get information and navigate to different assistance entities";
+
+//Questionnaire
+"questionnaire" = "Questionnaire";

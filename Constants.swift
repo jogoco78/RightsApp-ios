@@ -14,8 +14,14 @@ class Constants: NSObject {
     
     //Table names
     let tableName_questions = "questions"
+    let tableName_questions_answers = "questions_answers"
+    let tableName_answers = "answers"
     
     
     //Fields
     let field_questions_id = "id"
+    let field_answers_id = "id"
+    let field_questions_answers_id_question = "id_question"
+    let field_questions_answers_id_answer = "id_answer"
+    let field_questions_answers_id_next_question = "id_next_question"
 }

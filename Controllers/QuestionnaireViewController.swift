@@ -12,64 +12,191 @@ class QuestionnaireViewController: UIViewController {
 
     
     @IBOutlet var myView: UIView!
-    @IBOutlet weak var tvQuestion: UITextView!
     @IBOutlet weak var btQuestionnaireContinue: UIButton!
     
+    
+    let screenSize = UIScreen.main.bounds
+    var tvQuestion = UITextView()
+    var buttonsArrayImage = [UIButton]()
+    var textViewAnswersArray = [UITextView]()
+    var answersArray = [AnswerModel]()
+    let language = "en"
+    var numberOfAnswers = 0
     var idCurrentQuestion = 1
+    
+    //Positions and margins
+    let initTitleY = 30
+    let initQuestionX = 20
+    let initQuestionY = 50
+    let questionMarginX = 40
+    let questionHeight = 45
+    let initButtonsX = 40
+    let initButtonsY = 50
+    let buttonsWidth = 20
+    let buttonsHeight = 20
+    let buttonsMarginY = 35
+    let answersHeight = 45
+    
+    //Fonts
+    let titleFont = 24
+    let questionFont = 15
+    let answersFont = 14
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        //Sets the text of the current question
-        tvQuestion.text = getQuestionText()
+        let tvTitle = makeTextView(text: NSLocalizedString("questionnaire",comment: ""), xPos: 0, yPos: initTitleY, width: 160, height: 40, font: titleFont)
+        tvTitle.center.x = self.view.center.x
+        self.view.addSubview(tvTitle)
+        
+        updateQuestion()
         
         btQuestionnaireContinue.setTitle(NSLocalizedString("continue", comment: ""),for: .normal)
+    }
+    
+    func updateQuestion(){
+        let screenWidth = screenSize.width
+        answersArray = getAnswers()
+        numberOfAnswers = answersArray.count
+        
+        //Delete previous buttons from the view
+        if !buttonsArrayImage.isEmpty{
+            for button in buttonsArrayImage{
+                button.removeFromSuperview()
+            }
+            buttonsArrayImage = [UIButton]()
+        }
+        
+        //Delete previous answers textviews from the view
+        if !textViewAnswersArray.isEmpty {
+            for textview in textViewAnswersArray{
+                textview.removeFromSuperview()
+            }
+            textViewAnswersArray = [UITextView]()
+        }
+        
+        //Sets the text and position of the question
+        tvQuestion = makeTextView(text: getQuestionText(), xPos: initQuestionX, yPos: initQuestionY + initTitleY, width: (Int(screenWidth) - questionMarginX), height: questionHeight, font: questionFont)
+    
+        self.view.addSubview(tvQuestion)
+        
+        //Sets the buttonImage
+        var yMargin = initButtonsY + initQuestionY + initTitleY
+        for i in 0..<numberOfAnswers{
+            buttonsArrayImage.append(makeButtonWithImage(xPos: initButtonsX, yPos: yMargin, width: buttonsWidth, height: buttonsHeight))
+            yMargin = yMargin + buttonsMarginY
+            self.view.addSubview(buttonsArrayImage[i])
+        }
+        
+        //Sets the answers text
+        yMargin = initButtonsY + initQuestionY + initTitleY - 5
+        let textViewWidth = (Int(screenWidth) - initButtonsX - buttonsWidth - 20)
+        for i in 0..<numberOfAnswers{
+            textViewAnswersArray.append(makeTextView(text: answersArray[i].text, xPos: initButtonsX + buttonsWidth, yPos: yMargin, width: textViewWidth, height: answersHeight, font: answersFont))
+            yMargin = yMargin + buttonsMarginY
+            self.view.addSubview(textViewAnswersArray[i])
+        }
     }
     
     func getQuestionText() -> String {
         var results = ""
         //var a: CityModel = CityModel()
-        //print(a.id)
-        //a.id = 6
-        //print(a.id)
+        
         if DBManager.shared.openDatabase(){
-            results = DBManager.shared.getQuestionText(id_question: idCurrentQuestion, language: "en")
+            results = DBManager.shared.getQuestionText(id_question: idCurrentQuestion, language: language)
             print(results)
         }
         return results
+    }
+    
+    func getAnswers() -> [AnswerModel]{
+        var results = [AnswerModel]()
         
-        
-       // let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-       // let databaseURL = fileURL.appendingPathComponent("rightsapp_v5_utf16.db")
-       // let database = FMDatabase(path: databaseURL.absoluteString)
-        
-       // guard database.open() else {
-       //     print("Unable to open database")
-       //     return
-       // }
-        
-       // do {
-       //     let cities:FMResultSet = try database.executeQuery("SELECT * from cities", values: nil)
-            
-       //     while cities.next() {
-       //         if let result = cities.string(forColumn: "city_es") {
-       //             print(result)
-       //         }
-       //     }
-       // } catch {
-       //     print("OOPS, some sort of failure")
-       // }
+        if DBManager.shared.openDatabase(){
+            results = DBManager.shared.getAnswersForQuestion(idQuestion: idCurrentQuestion, language: language)
+        }
+        return results
     }
   
    
     @IBAction func btQuestionnaireContinue(_ sender: UIButton) {
-       //configureRefreshControl()
-        idCurrentQuestion += 1
-        print(idCurrentQuestion)
-        tvQuestion.setNeedsDisplay()
+        let answerID = getAnswerIDFromButton()
+        
+        if answerID == 0 {
+            //Shows an alert: temrs and conditions must be accepted
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("alertTermsConditions", comment: ""), preferredStyle: .alert)
+            alert.view.backgroundColor = UIColor.black
+            alert.view.alpha = 0.6
+            alert.view.layer.cornerRadius = 15
+            
+            self.present(alert, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
+                alert.dismiss(animated: true)
+            }
+        } else {
+            if DBManager.shared.openDatabase(){
+                idCurrentQuestion = DBManager.shared.getNextQuestionID(idQuestion: idCurrentQuestion, idAnswer: answerID)
+            }
+            if idCurrentQuestion == 0 {
+                
+            } else {
+                updateQuestion()
+            }
+        }
+    }
     
+    func getAnswerIDFromButton() -> Int{
+        var idAnswer = 0
+        var index = 0
+        for button in buttonsArrayImage {
+            if button.currentImage == UIImage(named: "ButtonChecked") {
+                idAnswer = answersArray[index].id
+                break
+            }
+            index += 1
+        }
+        
+        return idAnswer
+    }
+    
+    func makeTextView(text: String, xPos: Int, yPos: Int, width: Int, height: Int, font: Int) -> UITextView{
+        let myTextView = UITextView(frame: CGRect(x: xPos, y: yPos, width: width, height: height))
+        if font == 0 {
+            myTextView.text = text
+        } else {
+            let s = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(font))])
+            myTextView.attributedText = s
+        }
+        
+        return myTextView
+    }
+    
+    func makeButtonWithText(text: String, xPos: Int, yPos: Int, width: Int, height: Int) -> UIButton{
+        let myButton = UIButton(type: UIButton.ButtonType.system)
+        myButton.setTitle(text, for: .normal)
+        myButton.frame = CGRect(x: xPos, y: yPos, width: width, height: height)
+        return myButton
+    }
+    
+    func makeButtonWithImage(xPos: Int, yPos: Int, width: Int, height: Int) -> UIButton{
+        let myButton = UIButton(type: UIButton.ButtonType.system)
+        myButton.setImage(UIImage(named: "ButtonUnchecked"), for: .normal)
+        myButton.addTarget(self, action: #selector(whenButtonIsClicked), for: .touchUpInside)
+        
+        myButton.frame = CGRect(x: xPos, y: yPos, width: width, height: height)
+        return myButton
+    }
+    
+    @objc func whenButtonIsClicked(_ sender: UIButton){
+        if !buttonsArrayImage.isEmpty {
+            for button in buttonsArrayImage{
+                button.setImage(UIImage(named: "ButtonUnchecked"), for: .normal)
+            }
+        }
+        sender.setImage(UIImage(named: "ButtonChecked"), for: .normal)
     }
     
     /*
