@@ -16,6 +16,9 @@ class Constants: NSObject {
     let tableName_questions = "questions"
     let tableName_questions_answers = "questions_answers"
     let tableName_answers = "answers"
+    let tableName_particles = "particles"
+    let tableName_particles_tags = "particles_tags"
+    let tableName_subjects = "subjects"
     
     
     //Fields
@@ -24,4 +27,12 @@ class Constants: NSObject {
     let field_questions_answers_id_question = "id_question"
     let field_questions_answers_id_answer = "id_answer"
     let field_questions_answers_id_next_question = "id_next_question"
+    let field_questions_answers_id_tag_raised = "id_tag_raised"
+    let field_particles_id = "id"
+    let field_particles_text = "text"
+    let field_particles_idSubject = "id_subject"
+    let field_particles_tags_idTag = "id_tag"
+    let field_particles_tags_idParticle = "id_particle"
+    let field_subjects_id = "id"
+    let field_subjects_text = "text"
 }

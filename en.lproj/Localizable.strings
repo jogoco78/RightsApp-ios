@@ -54,3 +54,5 @@
 
 //Questionnaire
 "questionnaire" = "Questionnaire";
+"alertSelectOneOption" = "You must select one option in the questionnaire";
+

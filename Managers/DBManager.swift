@@ -129,6 +129,8 @@ class DBManager: NSObject {
             while cursor.next(){
                 results.append(AnswerModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumnIndex: 1)!, language))
             }
+            
+            cursor.close()
         }catch {
             print("Could not execute the query")
         }
@@ -146,10 +148,122 @@ class DBManager: NSObject {
             while cursor.next(){
                 result = Int(cursor.int(forColumnIndex: 0))
             }
+            
+            cursor.close()
         }catch {
             print("Could not execute the query")
         }
         
         return result
     }
+    
+    func getTagRaised(idQuestion: Int, idAnswer: Int) -> Int {
+        var result = 0
+        
+        let query = "select " + Constants.shared.field_questions_answers_id_tag_raised + " from " + Constants.shared.tableName_questions_answers + " where " + Constants.shared.field_questions_answers_id_question + " = " + String(idQuestion) + " and " + Constants.shared.field_questions_answers_id_answer + " = " + String(idAnswer)
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            while cursor.next(){
+                result = Int(cursor.int(forColumnIndex: 0))
+            }
+            
+            cursor.close()
+        } catch {
+            print("Could not execute the query")
+        }
+        
+        return result
+    }
+    
+    func getSubjectsByTag(idTags: [Int], language: String) -> [String] {
+        let particles = getParticlesByTag(idTags: idTags, language: language)
+        var idSubjects = [Int]()
+        
+        for particle in particles {
+            idSubjects.append(particle.idSubject)
+        }
+        
+        return getSubjectbyID(idSubjects: idSubjects, language: language)
+    }
+    
+    func getSubjectbyID(idSubjects: [Int], language: String) -> [String] {
+        var results = [String]()
+        
+        var query = "select * from " + Constants.shared.tableName_subjects + " where " + Constants.shared.field_subjects_id + " in (" + String(idSubjects[0])
+        for index in 1..<idSubjects.count {
+            query.append("," + String(idSubjects[index]))
+        }
+        query.append(")")
+        print(query)
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            while cursor.next(){
+                //results.append(cursor.string(forColumn: Constants.shared.field_subjects_text + language)!)
+                results.append(cursor.string(forColumn: Constants.shared.field_subjects_text + "_es")!)
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
+    func getParticlesByTag(idTags: [Int], language: String) -> [ParticleModel] {
+        var results = [Int]()
+        
+        var query = "select " + Constants.shared.field_particles_tags_idParticle + " from " + Constants.shared.tableName_particles_tags + " where " + Constants.shared.field_particles_tags_idTag + " in (" + String(idTags[0])
+        for index in 1..<idTags.count {
+            query.append("," + String(idTags[index]))
+        }
+        query.append(")")
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            while cursor.next(){
+                results.append(Int(cursor.int(forColumnIndex: 0)))
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return getParticles(idParticles: results, language: language)
+    }
+    
+    func getParticles(idParticles: [Int], language: String) -> [ParticleModel] {
+        var results = [ParticleModel]()
+        
+        //let languageField = Constants.shared.field_particles_text + "_" + language
+        let languageField = Constants.shared.field_particles_text + "_es"
+        
+        var query = "select * from " + Constants.shared.tableName_particles + " where " + Constants.shared.field_particles_id + " in (" + String(idParticles[0])
+        for index in 1..<idParticles.count {
+            query.append("," + String(idParticles[index]))
+        }
+        query.append(")")
+        
+        print(query)
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            print("Column count " + String(cursor.columnCount))
+            while cursor.next(){
+                //print("ID: " + String(cursor.int(forColumnIndex: 5)))
+                //print("Text: " + cursor.string(forColumn: languageField)!)
+              //  let particle = ParticleModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField), cursor.int(forColumnIndex: 5), language)
+                results.append(ParticleModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, Int(cursor.int(forColumnIndex: 5)), language))
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
 }

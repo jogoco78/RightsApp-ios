@@ -42,10 +42,18 @@ class QuestionnaireViewController: UIViewController {
     let questionFont = 15
     let answersFont = 14
     
+    //Tags and parameters
+    var tags = ""
+    var parameters = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if UserDefaults.standard.object(forKey: "tags") != nil {
+            UserDefaults.standard.set("", forKey: "tags")
+        }
         
         let tvTitle = makeTextView(text: NSLocalizedString("questionnaire",comment: ""), xPos: 0, yPos: initTitleY, width: 160, height: 40, font: titleFont)
         tvTitle.center.x = self.view.center.x
@@ -119,14 +127,23 @@ class QuestionnaireViewController: UIViewController {
         }
         return results
     }
+    
+    func getTagRaised(idQuestion: Int, idAnswer: Int) -> Int {
+        var result = 0
+        
+        if DBManager.shared.openDatabase(){
+            result = DBManager.shared.getTagRaised(idQuestion: idQuestion, idAnswer: idAnswer)
+        }
+        return result
+    }
   
    
     @IBAction func btQuestionnaireContinue(_ sender: UIButton) {
-        let answerID = getAnswerIDFromButton()
+        let idAnswer = getAnswerIDFromButton()
         
-        if answerID == 0 {
-            //Shows an alert: temrs and conditions must be accepted
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("alertTermsConditions", comment: ""), preferredStyle: .alert)
+        if idAnswer == 0 {
+            //Shows an alert: the user should accept at least one option in the questionnaire
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("alertSelectOneOption", comment: ""), preferredStyle: .alert)
             alert.view.backgroundColor = UIColor.black
             alert.view.alpha = 0.6
             alert.view.layer.cornerRadius = 15
@@ -137,11 +154,37 @@ class QuestionnaireViewController: UIViewController {
                 alert.dismiss(animated: true)
             }
         } else {
+            //Initialize tags and parameters 
+            if idCurrentQuestion == 1 {
+                UserDefaults.standard.set("", forKey: "tags")
+                UserDefaults.standard.set("", forKey: "parameters")
+            }
+            
+            //Checks if any tag is raised with the current question and answer
+            let tagRaised = getTagRaised(idQuestion: idCurrentQuestion, idAnswer: idAnswer)
+            if tagRaised != 0 {
+                tags.append(String(tagRaised) + ",")
+            }
+            
+            //Appends the parameters
+            parameters.append(String(idCurrentQuestion) + "," + String(idAnswer) + ",")
+            
+            //Gets the next question ID
             if DBManager.shared.openDatabase(){
-                idCurrentQuestion = DBManager.shared.getNextQuestionID(idQuestion: idCurrentQuestion, idAnswer: answerID)
+                idCurrentQuestion = DBManager.shared.getNextQuestionID(idQuestion: idCurrentQuestion, idAnswer: idAnswer)
             }
             if idCurrentQuestion == 0 {
+                //Stores the tags raised
+                UserDefaults.standard.set(tags, forKey: "tags")
                 
+                //Stores the parameters
+                UserDefaults.standard.set(parameters, forKey: "parameters")
+                
+                //Show particles
+                print(tags)
+                print(parameters)
+                
+                performSegue(withIdentifier: "questionnaireToParticles", sender: nil)
             } else {
                 updateQuestion()
             }
