@@ -14,6 +14,8 @@ class Constants: NSObject {
     
     //Stored information keys
     let particles_id_subject = "idSubject"
+    let tags = "tags"
+    let parameters = "parameters"
     
     //Table names
     let tableName_questions = "questions"

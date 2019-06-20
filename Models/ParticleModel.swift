@@ -9,10 +9,14 @@
 import UIKit
 
 class ParticleModel {
-    var id: Int
-    var text: String
-    var idSubject: Int
-    var language: String
+    var id: Int!
+    var text: String!
+    var idSubject: Int!
+    var language: String!
+    
+    init(){
+        
+    }
     
     init(_ id: Int,_ text: String,_ idSubject: Int,_ language: String){
         self.id = id

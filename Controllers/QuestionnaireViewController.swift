@@ -156,8 +156,8 @@ class QuestionnaireViewController: UIViewController {
         } else {
             //Initialize tags and parameters 
             if idCurrentQuestion == 1 {
-                UserDefaults.standard.set("", forKey: "tags")
-                UserDefaults.standard.set("", forKey: "parameters")
+                UserDefaults.standard.set("", forKey: Constants.shared.tags)
+                UserDefaults.standard.set("", forKey: Constants.shared.parameters)
             }
             
             //Checks if any tag is raised with the current question and answer
@@ -175,10 +175,10 @@ class QuestionnaireViewController: UIViewController {
             }
             if idCurrentQuestion == 0 {
                 //Stores the tags raised
-                UserDefaults.standard.set(tags, forKey: "tags")
+                UserDefaults.standard.set(tags.dropLast(), forKey: Constants.shared.tags)
                 
                 //Stores the parameters
-                UserDefaults.standard.set(parameters, forKey: "parameters")
+                UserDefaults.standard.set(parameters.dropLast(), forKey: Constants.shared.parameters)
                 
                 //Show particles
                 print(tags)

@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1441" y="146"/>
         </scene>
-        <!--Particle Detail Table View Controller-->
+        <!--Particle Details View Controller-->
         <scene sceneID="xDD-ji-odl">
             <objects>
-                <viewController id="VZv-VV-UR4" customClass="ParticleDetailTableViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VZv-VV-UR4" customClass="ParticleDetailsViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZj-V4-HZP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,54 +104,30 @@
                                 <rect key="frame" x="348" y="837" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="btFinishListener:" destination="VZv-VV-UR4" eventType="touchUpInside" id="kOc-4F-BJJ"/>
+                                    <action selector="btFinish:" destination="VZv-VV-UR4" eventType="touchUpInside" id="wu0-Vd-jvD"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qrU-VF-S8U">
-                                <rect key="frame" x="0.0" y="88" width="414" height="741"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Particle text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-3N-lwD">
+                                <rect key="frame" x="5" y="93" width="404" height="714"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HhV-4b-2dn" customClass="ParticleDetailTableViewCell" customModule="RightsApp_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhV-4b-2dn" id="qSy-sj-jXt">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Particle Details" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q50-de-4jQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Q50-de-4jQ" firstAttribute="top" secondItem="qSy-sj-jXt" secondAttribute="top" id="fSl-ls-4b6"/>
-                                                <constraint firstItem="Q50-de-4jQ" firstAttribute="leading" secondItem="qSy-sj-jXt" secondAttribute="leading" id="i5S-MC-D7I"/>
-                                                <constraint firstAttribute="trailing" secondItem="Q50-de-4jQ" secondAttribute="trailing" id="pyo-x7-GYE"/>
-                                                <constraint firstAttribute="bottom" secondItem="Q50-de-4jQ" secondAttribute="bottom" id="vqj-Ed-HSH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="tv_particleDetails" destination="Q50-de-4jQ" id="N2i-Ta-Drg"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Bta-ok-DHS" firstAttribute="bottom" secondItem="ODF-1j-uSI" secondAttribute="bottom" constant="5" id="0fJ-UQ-IS6"/>
-                            <constraint firstItem="qrU-VF-S8U" firstAttribute="leading" secondItem="ODF-1j-uSI" secondAttribute="leading" id="3M8-hO-sWQ"/>
-                            <constraint firstItem="qrU-VF-S8U" firstAttribute="top" secondItem="ODF-1j-uSI" secondAttribute="top" id="Tjw-Pe-XeI"/>
-                            <constraint firstItem="qrU-VF-S8U" firstAttribute="trailing" secondItem="ODF-1j-uSI" secondAttribute="trailing" id="bBP-Zh-nl5"/>
-                            <constraint firstItem="Bta-ok-DHS" firstAttribute="top" secondItem="qrU-VF-S8U" secondAttribute="bottom" constant="8" id="dTs-Nx-EoS"/>
-                            <constraint firstItem="ODF-1j-uSI" firstAttribute="trailing" secondItem="Bta-ok-DHS" secondAttribute="trailing" constant="20" id="gNL-hy-iWk"/>
+                            <constraint firstItem="N9d-3N-lwD" firstAttribute="top" secondItem="ODF-1j-uSI" secondAttribute="top" constant="5" id="C2N-jD-T9K"/>
+                            <constraint firstItem="ODF-1j-uSI" firstAttribute="trailing" secondItem="Bta-ok-DHS" secondAttribute="trailing" constant="20" id="Pqg-c2-PHc"/>
+                            <constraint firstItem="N9d-3N-lwD" firstAttribute="leading" secondItem="ODF-1j-uSI" secondAttribute="leading" constant="5" id="YQ5-Jx-vyL"/>
+                            <constraint firstAttribute="bottom" secondItem="Bta-ok-DHS" secondAttribute="bottom" constant="29" id="bca-rB-Meg"/>
+                            <constraint firstItem="Bta-ok-DHS" firstAttribute="top" secondItem="N9d-3N-lwD" secondAttribute="bottom" constant="30" id="esg-BY-2M8"/>
+                            <constraint firstItem="ODF-1j-uSI" firstAttribute="trailing" secondItem="N9d-3N-lwD" secondAttribute="trailing" constant="5" id="uoK-gh-8MG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ODF-1j-uSI"/>
                     </view>
                     <connections>
-                        <outlet property="bt_finish" destination="Bta-ok-DHS" id="We6-zR-Z93"/>
+                        <outlet property="button_Finish" destination="Bta-ok-DHS" id="Kpp-r6-g5M"/>
+                        <outlet property="textView_particle" destination="N9d-3N-lwD" id="oap-3C-p2y"/>
                         <segue destination="U1l-9T-GW1" kind="show" identifier="toMain" id="mvJ-JR-Z8I"/>
                     </connections>
                 </viewController>

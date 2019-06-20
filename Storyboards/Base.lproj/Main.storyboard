@@ -14,6 +14,7 @@
         <scene sceneID="XYn-rk-cuY">
             <objects>
                 <tabBarController id="ZJo-66-fg1" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" id="B9H-UZ-MRQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -42,6 +43,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="344-4p-LZW"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="KwT-Kb-KU3" kind="show" identifier="initToHowToUseAppSegue" id="26c-fz-eTv"/>
                         <segue destination="ZJo-66-fg1" kind="show" identifier="initToRightsAppSegue" id="jMx-Oc-ery"/>
@@ -450,7 +452,7 @@
         <image name="Questionnaire" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gqm-x5-Eoc"/>
-        <segue reference="Vmy-VQ-a70"/>
+        <segue reference="26c-fz-eTv"/>
+        <segue reference="jMx-Oc-ery"/>
     </inferredMetricsTieBreakers>
 </document>

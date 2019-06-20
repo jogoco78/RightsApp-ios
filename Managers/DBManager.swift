@@ -206,7 +206,6 @@ class DBManager: NSObject {
             query.append("," + String(idSubjects[index]))
         }
         query.append(")")
-        print(query)
         
         do {
             let cursor = try database.executeQuery(query, values: nil)
@@ -258,7 +257,6 @@ class DBManager: NSObject {
         }
         query.append(")")
         
-        print(query)
         do {
             let cursor = try database.executeQuery(query, values: nil)
             print("Column count " + String(cursor.columnCount))
