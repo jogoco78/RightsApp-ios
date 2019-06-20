@@ -12,6 +12,9 @@ class Constants: NSObject {
     static let shared: Constants = Constants()
     let databaseName = "rightsapp_v5_utf16.db"
     
+    //Stored information keys
+    let particles_id_subject = "idSubject"
+    
     //Table names
     let tableName_questions = "questions"
     let tableName_questions_answers = "questions_answers"

@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="-432" y="136"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Particles subjects-->
         <scene sceneID="yeU-II-GyX">
             <objects>
                 <tableViewController id="FCc-n9-WgC" customClass="ParticlesTableViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,16 +52,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParticleSubjectItem" id="M00-qe-Bfb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParticleSubjectItem" id="M00-qe-Bfb" customClass="ParticlesSubjectTableViewCell" customModule="RightsApp_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M00-qe-Bfb" id="UiX-LJ-OFR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle subject item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIY-rR-bsz">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle subject item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIY-rR-bsz">
                                             <rect key="frame" x="20" y="11" width="374" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -73,6 +73,9 @@
                                         <constraint firstItem="mIY-rR-bsz" firstAttribute="leading" secondItem="UiX-LJ-OFR" secondAttribute="leadingMargin" id="exK-Ok-jY6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="particleSubjectLabel" destination="mIY-rR-bsz" id="Oed-pt-cj0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -80,42 +83,89 @@
                             <outlet property="delegate" destination="FCc-n9-WgC" id="urn-tm-4tx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="FpZ-LV-FP2"/>
+                    <navigationItem key="navigationItem" title="Particles subjects" id="FpZ-LV-FP2"/>
                     <connections>
-                        <segue destination="XV6-45-2XF" kind="show" id="XaR-2d-3xt"/>
+                        <segue destination="VZv-VV-UR4" kind="show" identifier="particlesSubjectToDetail" id="pnk-LN-9PI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDV-D6-Jkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1441" y="146"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="bkj-S3-7cX">
+        <!--Particle Detail Table View Controller-->
+        <scene sceneID="xDD-ji-odl">
             <objects>
-                <tableViewController id="XV6-45-2XF" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yya-9e-jWL">
+                <viewController id="VZv-VV-UR4" customClass="ParticleDetailTableViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XZj-V4-HZP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bta-ok-DHS">
+                                <rect key="frame" x="348" y="837" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btFinishListener:" destination="VZv-VV-UR4" eventType="touchUpInside" id="kOc-4F-BJJ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qrU-VF-S8U">
+                                <rect key="frame" x="0.0" y="88" width="414" height="741"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HhV-4b-2dn" customClass="ParticleDetailTableViewCell" customModule="RightsApp_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhV-4b-2dn" id="qSy-sj-jXt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Particle Details" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q50-de-4jQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Q50-de-4jQ" firstAttribute="top" secondItem="qSy-sj-jXt" secondAttribute="top" id="fSl-ls-4b6"/>
+                                                <constraint firstItem="Q50-de-4jQ" firstAttribute="leading" secondItem="qSy-sj-jXt" secondAttribute="leading" id="i5S-MC-D7I"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q50-de-4jQ" secondAttribute="trailing" id="pyo-x7-GYE"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q50-de-4jQ" secondAttribute="bottom" id="vqj-Ed-HSH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tv_particleDetails" destination="Q50-de-4jQ" id="N2i-Ta-Drg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PU0-4U-eZZ">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PU0-4U-eZZ" id="2V0-9M-Ppu">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="XV6-45-2XF" id="vWG-cU-xO1"/>
-                            <outlet property="delegate" destination="XV6-45-2XF" id="ToW-il-FDB"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LRd-vy-GBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="Bta-ok-DHS" firstAttribute="bottom" secondItem="ODF-1j-uSI" secondAttribute="bottom" constant="5" id="0fJ-UQ-IS6"/>
+                            <constraint firstItem="qrU-VF-S8U" firstAttribute="leading" secondItem="ODF-1j-uSI" secondAttribute="leading" id="3M8-hO-sWQ"/>
+                            <constraint firstItem="qrU-VF-S8U" firstAttribute="top" secondItem="ODF-1j-uSI" secondAttribute="top" id="Tjw-Pe-XeI"/>
+                            <constraint firstItem="qrU-VF-S8U" firstAttribute="trailing" secondItem="ODF-1j-uSI" secondAttribute="trailing" id="bBP-Zh-nl5"/>
+                            <constraint firstItem="Bta-ok-DHS" firstAttribute="top" secondItem="qrU-VF-S8U" secondAttribute="bottom" constant="8" id="dTs-Nx-EoS"/>
+                            <constraint firstItem="ODF-1j-uSI" firstAttribute="trailing" secondItem="Bta-ok-DHS" secondAttribute="trailing" constant="20" id="gNL-hy-iWk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ODF-1j-uSI"/>
+                    </view>
+                    <connections>
+                        <outlet property="bt_finish" destination="Bta-ok-DHS" id="We6-zR-Z93"/>
+                        <segue destination="U1l-9T-GW1" kind="show" identifier="toMain" id="mvJ-JR-Z8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nDY-af-3t1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2345" y="146"/>
+            <point key="canvasLocation" x="2281.1594202898555" y="145.98214285714286"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="tLQ-T4-1Mc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="U1l-9T-GW1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Eb-lq-7Vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2934" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cap-oo-fh2">

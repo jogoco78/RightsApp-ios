@@ -1,25 +1,22 @@
 //
-//  ParticlesTableViewController.swift
+//  ParticleDetailTableViewController.swift
 //  RightsApp_ios
 //
-//  Created by Jorge Gonzalez Conejero on 19/06/2019.
+//  Created by Jorge Gonzalez Conejero on 20/06/2019.
 //  Copyright © 2019 uab. All rights reserved.
 //
 
 import UIKit
 
-class ParticlesSubjectTableViewCell: UITableViewCell {
+class ParticleDetailTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var particleSubjectLabel: UILabel!
+    @IBOutlet weak var tv_particleDetails: UITextView!
     
 }
 
-class ParticlesTableViewController: UITableViewController {
+class ParticleDetailTableViewController: UITableViewController {
 
-    var tags = UserDefaults.standard.string(forKey: "tags")
-    var language = "en"
-    var subjectsText = [String]()
-    var subjectsID = [Int]()
+    @IBOutlet weak var bt_finish: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,21 +27,12 @@ class ParticlesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        let tagsComponents = (tags?.components(separatedBy: ","))
-        var tagsInt = [Int]()
-        for tag in tagsComponents! {
-            print(tag)
-            if !tag.isEmpty {
-               tagsInt.append(Int(tag)!)
-            }
-        }
-        
-        if DBManager.shared.openDatabase(){
-            subjectsText = DBManager.shared.getSubjectsTextByTag(idTags: tagsInt, language: language)
-            subjectsID = DBManager.shared.getSubjectsIDByTag(idTags: tagsInt, language: language)
-        }
+        bt_finish.setTitle(NSLocalizedString("finishParticles",comment: ""),for: .normal)
     }
-    
+
+    @IBAction func btFinishListener(_ sender: UIButton) {
+        performSegue(withIdentifier: "toMain", sender: nil)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,25 +42,18 @@ class ParticlesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return subjectsText.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ParticleSubjectItem", for: indexPath) as! ParticlesSubjectTableViewCell
-        
-        cell.particleSubjectLabel.text = subjectsText[indexPath.row]
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
         // Configure the cell...
-        
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UserDefaults.standard.set(subjectsID[indexPath.row], forKey: Constants.shared.particles_id_subject)
-        performSegue(withIdentifier: "particlesSubjectToDetail", sender: nil)
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

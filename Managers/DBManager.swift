@@ -176,7 +176,18 @@ class DBManager: NSObject {
         return result
     }
     
-    func getSubjectsByTag(idTags: [Int], language: String) -> [String] {
+    func getSubjectsIDByTag(idTags: [Int], language: String) -> [Int] {
+        let particles = getParticlesByTag(idTags: idTags, language: language)
+        var idSubjects = [Int]()
+        
+        for particle in particles {
+            idSubjects.append(particle.idSubject)
+        }
+        
+        return idSubjects
+    }
+    
+    func getSubjectsTextByTag(idTags: [Int], language: String) -> [String] {
         let particles = getParticlesByTag(idTags: idTags, language: language)
         var idSubjects = [Int]()
         
