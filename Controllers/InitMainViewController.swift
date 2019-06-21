@@ -15,7 +15,6 @@ class InitMainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         //Check if the Terms and Conditions are already accepted and the How to use the app should be shown
@@ -35,33 +34,5 @@ class InitMainViewController: UIViewController {
             performSegue(withIdentifier: "initToTermsConditionsSegue", sender: nil)
             print("Terms and conditions should be shown")
         }
-        //copyDatabaseIfNeeded("rightsapp_v5_utf16")
     }
-    
-    func copyDatabaseIfNeeded(_ database: String) {
-        
-        let fileManager = FileManager.default
-        let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-        
-        guard documentsUrl.count != 0 else {
-            return
-        }
-        
-        let finalDatabaseURL = documentsUrl.first!.appendingPathComponent("\(database).db")
-        
-        if !( (try? finalDatabaseURL.checkResourceIsReachable()) ?? false) {
-            print("DB does not exist in documents folder")
-            let databaseInMainBundleURL = Bundle.main.resourceURL?.appendingPathComponent("\(database).db")
-            
-            do {
-                try fileManager.copyItem(atPath: (databaseInMainBundleURL?.path)!, toPath: finalDatabaseURL.path)
-            } catch let error as NSError {
-                print("Couldn't copy file to final location! Error:\(error.description)")
-            }
-            
-        } else {
-            print("Database file found at path: \(finalDatabaseURL.path)")
-        }
-    }
-
 }

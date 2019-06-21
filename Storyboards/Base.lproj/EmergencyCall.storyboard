@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fhi-Sb-uur">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,17 +13,72 @@
         <!--EmergencyCallViewController-->
         <scene sceneID="UCk-Pj-Et0">
             <objects>
-                <viewController id="Fhi-Sb-uur" userLabel="EmergencyCallViewController" sceneMemberID="viewController">
+                <viewController id="Fhi-Sb-uur" userLabel="EmergencyCallViewController" customClass="EmergencyCallViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cRg-F4-oLs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Emergency call description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CWk-u1-sr5">
+                                <rect key="frame" x="24" y="199" width="335" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQN-fI-7Jf">
+                                <rect key="frame" x="150" y="86" width="74" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="EmergencyCall"/>
+                                <connections>
+                                    <action selector="btEmergencyCallTouch:" destination="Fhi-Sb-uur" eventType="touchUpInside" id="o68-lg-oP8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9i7-91-3fa">
+                                <rect key="frame" x="309" y="617" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btFinish:" destination="Fhi-Sb-uur" eventType="touchUpInside" id="g4f-1U-5kf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zg-7V-K5z">
+                                <rect key="frame" x="20" y="617" width="59" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btCall:" destination="Fhi-Sb-uur" eventType="touchUpInside" id="DH9-ol-yZy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MHE-cM-hqb" firstAttribute="bottom" secondItem="3zg-7V-K5z" secondAttribute="bottom" constant="20" id="31u-fU-7s4"/>
+                            <constraint firstItem="MHE-cM-hqb" firstAttribute="trailing" secondItem="9i7-91-3fa" secondAttribute="trailing" constant="20" id="apL-I8-R8O"/>
+                            <constraint firstItem="MHE-cM-hqb" firstAttribute="bottom" secondItem="9i7-91-3fa" secondAttribute="bottom" constant="20" id="g87-jm-IRF"/>
+                            <constraint firstItem="3zg-7V-K5z" firstAttribute="leading" secondItem="MHE-cM-hqb" secondAttribute="leading" constant="20" id="nug-sA-rXw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MHE-cM-hqb"/>
                     </view>
+                    <connections>
+                        <outlet property="btCall" destination="3zg-7V-K5z" id="UC9-Bs-J9Z"/>
+                        <outlet property="btEmergencyCall" destination="GQN-fI-7Jf" id="qXV-rf-ddo"/>
+                        <outlet property="btFinish" destination="9i7-91-3fa" id="Dhn-jb-MjC"/>
+                        <outlet property="tvEmergencyCall" destination="CWk-u1-sr5" id="Mcz-26-AaJ"/>
+                        <segue destination="gwi-tL-3xO" kind="show" identifier="toMain" id="wGK-Iz-oFX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOO-zq-pAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="144"/>
+            <point key="canvasLocation" x="-279.19999999999999" y="143.47826086956522"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="o2x-Y0-4u4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="gwi-tL-3xO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4z-tp-5cX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="109"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="EmergencyCall" width="75" height="75"/>
+    </resources>
 </document>

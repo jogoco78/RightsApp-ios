@@ -9,6 +9,8 @@
 //Buttons
 "accept" = "Accept";
 "continue" = "Continue";
+"finish" = "Finish";
+"call" = "Call";
 
 //Terms and conditions strings
 "appOwnership" = "App Ownership\n";

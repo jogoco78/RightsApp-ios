@@ -16,6 +16,7 @@
 		EB35C30B22B238DC004599D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35C30A22B238DC004599D9 /* Constants.swift */; };
 		EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */; };
 		EB4D1ABC22A6B3D000054C3B /* RightsAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */; };
+		EB5986BF22BCB1C700F22D85 /* LocalizationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5986BE22BCB1C700F22D85 /* LocalizationSystem.swift */; };
 		EB5CE66122B1907E00570231 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5CE66022B1907E00570231 /* CityModel.swift */; };
 		EB5CE66322B1961900570231 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5CE66222B1961900570231 /* AnswerModel.swift */; };
 		EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB8A66FA229ED4DE003855BD /* Localizable.strings */; };
@@ -27,6 +28,7 @@
 		EB993A5E229D3B7B0082DE76 /* RightsApp_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A5D229D3B7B0082DE76 /* RightsApp_iosTests.swift */; };
 		EB993A69229D3B7B0082DE76 /* RightsApp_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */; };
 		EB9C25B522AA4DEB00A623EF /* InitMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C25B422AA4DEB00A623EF /* InitMainViewController.swift */; };
+		EB9C6F7B22BBD7A600D09334 /* EmergencyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */; };
 		EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */; };
 		EBA4D54522AFDCD000B1B566 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54422AFDCD000B1B566 /* QuestionnaireViewController.swift */; };
 		EBA4D55322AFEAB500B1B566 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54822AFEAB400B1B566 /* FMResultSet.m */; };
@@ -77,6 +79,7 @@
 		EB35C30A22B238DC004599D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppViewController.swift; sourceTree = "<group>"; };
 		EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsAppViewController.swift; sourceTree = "<group>"; };
+		EB5986BE22BCB1C700F22D85 /* LocalizationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationSystem.swift; sourceTree = "<group>"; };
 		EB5CE66022B1907E00570231 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		EB5CE66222B1961900570231 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
 		EB8A66F0229EC8BA003855BD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsApp_iosUITests.swift; sourceTree = "<group>"; };
 		EB993A6A229D3B7B0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB9C25B422AA4DEB00A623EF /* InitMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitMainViewController.swift; sourceTree = "<group>"; };
+		EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCallViewController.swift; sourceTree = "<group>"; };
 		EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v5_utf16.db; sourceTree = "<group>"; };
 		EBA4D54422AFDCD000B1B566 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		EBA4D54722AFEAB400B1B566 /* RightsApp_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RightsApp_ios-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				EBA4D54422AFDCD000B1B566 /* QuestionnaireViewController.swift */,
 				EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */,
 				EB26D20A22BBC2A700C2C46C /* ParticleDetailsViewController.swift */,
+				EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 		EB993A3C229D3B7A0082DE76 = {
 			isa = PBXGroup;
 			children = (
+				EB5986BE22BCB1C700F22D85 /* LocalizationSystem.swift */,
 				EB35C30A22B238DC004599D9 /* Constants.swift */,
 				EB5CE65F22B1904F00570231 /* Models */,
 				EBB61D1F22B1440900F749D7 /* Managers */,
@@ -420,6 +426,8 @@
 				EB5CE66322B1961900570231 /* AnswerModel.swift in Sources */,
 				EBA4D55622AFEAB500B1B566 /* FMDatabase.m in Sources */,
 				EB993A4B229D3B7A0082DE76 /* ViewController.swift in Sources */,
+				EB9C6F7B22BBD7A600D09334 /* EmergencyCallViewController.swift in Sources */,
+				EB5986BF22BCB1C700F22D85 /* LocalizationSystem.swift in Sources */,
 				EBA4D55522AFEAB500B1B566 /* FMDatabaseQueue.m in Sources */,
 				EB993A49229D3B7A0082DE76 /* AppDelegate.swift in Sources */,
 				EBA4D55722AFEAB500B1B566 /* FMDatabasePool.m in Sources */,
