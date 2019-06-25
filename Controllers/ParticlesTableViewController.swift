@@ -17,7 +17,7 @@ class ParticlesSubjectTableViewCell: UITableViewCell {
 class ParticlesTableViewController: UITableViewController {
 
     var tags = UserDefaults.standard.string(forKey: "tags")
-    var language = "en"
+    var language = LocalizationSystem.sharedInstance.getLanguage()
     var subjectsText = [String]()
     var subjectsID = [Int]()
     

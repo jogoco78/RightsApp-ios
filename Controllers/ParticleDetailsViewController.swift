@@ -15,7 +15,7 @@ class ParticleDetailsViewController: UIViewController {
     
     var idSubject = UserDefaults.standard.integer(forKey: Constants.shared.particles_id_subject)
     var tags = UserDefaults.standard.string(forKey: Constants.shared.tags)
-    let language = "es"
+    let language = LocalizationSystem.sharedInstance.getLanguage()
     var particles = [ParticleModel]()
     
     override func viewDidLoad() {

@@ -19,7 +19,6 @@ class Constants: NSObject {
     let particles_id_subject = "idSubject"
     let tags = "tags"
     let parameters = "parameters"
-    let language = "language"
     
     //Table names
     let tableName_questions = "questions"

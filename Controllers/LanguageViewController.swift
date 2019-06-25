@@ -15,6 +15,7 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var bt_continue: UIButton!
     
     let languages = [NSLocalizedString("spanish",comment: ""), NSLocalizedString("english",comment: ""), NSLocalizedString("portuguese",comment: ""), NSLocalizedString("italian",comment: "")]
+    let languageCodes = ["es","en","pt","it"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +46,30 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     @IBAction func selectLanguage(_ sender: UIButton) {
-        pv_selectLanguage.selectedRow(inComponent: 0)
-        //TODO: Change application language
+        let selectedLanguage = pv_selectLanguage.selectedRow(inComponent: 0)
         
+        LocalizationSystem.sharedInstance.setLanguage(languageCode: languageCodes[selectedLanguage])
+        viewDidLoad()
+        
+        //Shows an alert: the user should accept at least one option in the questionnaire
+        //let alert = UIAlertController(title: nil, message: NSMutableAttributedString(string: NSLocalizedString("appOwnership",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24)]), preferredStyle: .alert)
+        
+        let alert = UIAlertController(title: nil, message: NSLocalizedString("alertLanguageChange", comment: ""), preferredStyle: .alert)
+        alert.view.backgroundColor = UIColor.black
+        alert.view.alpha = 0.6
+        alert.view.layer.cornerRadius = 15
+        
+        let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 125)
+        alert.view.addConstraint(height)
+        
+        self.present(alert, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
+            alert.dismiss(animated: true)
+        }
+        /*let vc = self.storyboard?.instantiateViewController(withIdentifier: "Language") as! ViewController
+        let appDlg = UIApplication.shared.delegate as? AppDelegate
+        appDlg?.window?.rootViewController = vc*/
     }
     
     /*

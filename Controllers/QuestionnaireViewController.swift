@@ -20,7 +20,7 @@ class QuestionnaireViewController: UIViewController {
     var buttonsArrayImage = [UIButton]()
     var textViewAnswersArray = [UITextView]()
     var answersArray = [AnswerModel]()
-    let language = "en"
+    let language = LocalizationSystem.sharedInstance.getLanguage()
     var numberOfAnswers = 0
     var idCurrentQuestion = 1
     

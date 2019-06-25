@@ -27,6 +27,7 @@
 		EB993A53229D3B7A0082DE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB993A51229D3B7A0082DE76 /* LaunchScreen.storyboard */; };
 		EB993A5E229D3B7B0082DE76 /* RightsApp_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A5D229D3B7B0082DE76 /* RightsApp_iosTests.swift */; };
 		EB993A69229D3B7B0082DE76 /* RightsApp_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */; };
+		EB99E0C522C22EAC005643BF /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */; };
 		EB9C25B522AA4DEB00A623EF /* InitMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C25B422AA4DEB00A623EF /* InitMainViewController.swift */; };
 		EB9C6F7B22BBD7A600D09334 /* EmergencyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */; };
 		EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */; };
@@ -105,6 +106,7 @@
 		EB993A64229D3B7B0082DE76 /* RightsApp_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightsApp_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsApp_iosUITests.swift; sourceTree = "<group>"; };
 		EB993A6A229D3B7B0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		EB9C25B422AA4DEB00A623EF /* InitMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitMainViewController.swift; sourceTree = "<group>"; };
 		EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCallViewController.swift; sourceTree = "<group>"; };
 		EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v5_utf16.db; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */,
 				EB26D20A22BBC2A700C2C46C /* ParticleDetailsViewController.swift */,
 				EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */,
+				EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				EB35C30B22B238DC004599D9 /* Constants.swift in Sources */,
 				EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */,
 				EB2EAA3722AE527100629C07 /* LanguageViewController.swift in Sources */,
+				EB99E0C522C22EAC005643BF /* AboutUsViewController.swift in Sources */,
 				EB5CE66322B1961900570231 /* AnswerModel.swift in Sources */,
 				EBA4D55622AFEAB500B1B566 /* FMDatabase.m in Sources */,
 				EB993A4B229D3B7A0082DE76 /* ViewController.swift in Sources */,

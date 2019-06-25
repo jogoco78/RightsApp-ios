@@ -130,10 +130,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IcV-ha-U0r" userLabel="tvHowUseAppText">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="How to use the app" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IcV-ha-U0r" userLabel="tvHowUseAppText">
                                 <rect key="frame" x="20" y="40" width="335" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -165,10 +164,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9E-Gf-0mO" userLabel="tvTermsConditionsText">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Terms and conditions" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9E-Gf-0mO" userLabel="tvTermsConditionsText">
                                 <rect key="frame" x="20" y="40" width="335" height="558"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -207,7 +205,7 @@
                                     <action selector="selectLanguage:" destination="ws0-tC-DIV" eventType="touchUpInside" id="hIm-6g-1pa"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pdJ-Ns-Fnx">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Select the language" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pdJ-Ns-Fnx">
                                 <rect key="frame" x="20" y="90" width="335" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -247,14 +245,32 @@
         <!--AboutUsViewController-->
         <scene sceneID="ePu-FD-xJs">
             <objects>
-                <viewController id="Rrs-2a-1IE" userLabel="AboutUsViewController" sceneMemberID="viewController">
+                <viewController id="Rrs-2a-1IE" userLabel="AboutUsViewController" customClass="AboutUsViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7p-ee-mZt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="About us" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EC6-db-K3z" userLabel="tvAboutUs">
+                                <rect key="frame" x="20" y="40" width="335" height="558"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EC6-db-K3z" firstAttribute="leading" secondItem="hfc-py-zVq" secondAttribute="leading" constant="20" id="EOX-hl-6wp"/>
+                            <constraint firstItem="hfc-py-zVq" firstAttribute="bottom" secondItem="EC6-db-K3z" secondAttribute="bottom" constant="20" id="YET-Xe-vbD"/>
+                            <constraint firstItem="hfc-py-zVq" firstAttribute="trailing" secondItem="EC6-db-K3z" secondAttribute="trailing" constant="20" id="gC3-n3-s04"/>
+                            <constraint firstItem="EC6-db-K3z" firstAttribute="top" secondItem="hfc-py-zVq" secondAttribute="top" constant="20" id="gjh-Sg-Dli"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hfc-py-zVq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="About Us" image="About us" id="dEk-sr-btH"/>
+                    <connections>
+                        <outlet property="tvAboutUs" destination="EC6-db-K3z" id="8dy-fU-i9m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TK8-3G-Q5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -329,29 +345,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-Fb-gHG" userLabel="bt_emergencyCall">
-                                <rect key="frame" x="40" y="80" width="129" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-Fb-gHG" userLabel="bt_emergencyCall">
+                                <rect key="frame" x="40" y="80" width="75" height="75"/>
                                 <state key="normal" title="Button" image="EmergencyCall"/>
                                 <connections>
                                     <action selector="bt_emergencyCall:" destination="NLB-8c-Psh" eventType="touchUpInside" id="QCO-jR-q54"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMH-2j-9vc" userLabel="bt_questionnaire">
-                                <rect key="frame" x="40" y="215" width="129" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMH-2j-9vc" userLabel="bt_questionnaire">
+                                <rect key="frame" x="40" y="215" width="75" height="75"/>
                                 <state key="normal" title="Button" image="Questionnaire"/>
                                 <connections>
                                     <action selector="bt_questionnaire:" destination="NLB-8c-Psh" eventType="touchUpInside" id="kpl-6T-Er5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPV-sn-owb" userLabel="bt_searchEntities">
-                                <rect key="frame" x="40" y="350" width="129" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPV-sn-owb" userLabel="bt_searchEntities">
+                                <rect key="frame" x="40" y="350" width="75" height="75"/>
                                 <state key="normal" title="Button" image="Maps"/>
                                 <connections>
                                     <action selector="bt_searchEntity:" destination="NLB-8c-Psh" eventType="touchUpInside" id="p3k-4f-ap1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-15-4aI" userLabel="bt_questionnaireText">
-                                <rect key="frame" x="148" y="238" width="217" height="29"/>
+                                <rect key="frame" x="140" y="238" width="225" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -361,7 +377,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xhU-FR-Dcr" userLabel="bt_emergencyCallText">
-                                <rect key="frame" x="148" y="103" width="217" height="29"/>
+                                <rect key="frame" x="140" y="103" width="225" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -371,7 +387,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="C9S-l8-zdj" userLabel="bt_searchEntityText">
-                                <rect key="frame" x="148" y="373" width="217" height="29"/>
+                                <rect key="frame" x="140" y="373" width="225" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -391,13 +407,13 @@
                             <constraint firstItem="CPV-sn-owb" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="40" id="Kbm-DE-hf6"/>
                             <constraint firstItem="rh3-15-4aI" firstAttribute="centerY" secondItem="BMH-2j-9vc" secondAttribute="centerY" id="O7s-mb-O37"/>
                             <constraint firstItem="OV1-Fb-gHG" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="40" id="QnB-90-ubv"/>
-                            <constraint firstItem="C9S-l8-zdj" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="148" id="RHQ-1e-L7e"/>
+                            <constraint firstItem="C9S-l8-zdj" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="140" id="RHQ-1e-L7e"/>
                             <constraint firstItem="C9S-l8-zdj" firstAttribute="centerY" secondItem="CPV-sn-owb" secondAttribute="centerY" id="U0N-pV-7eq"/>
                             <constraint firstItem="nOB-pH-exk" firstAttribute="trailing" secondItem="rh3-15-4aI" secondAttribute="trailing" constant="10" id="dhb-ik-RHx"/>
                             <constraint firstItem="nOB-pH-exk" firstAttribute="trailing" secondItem="C9S-l8-zdj" secondAttribute="trailing" constant="10" id="eSZ-Ik-lfY"/>
                             <constraint firstItem="OV1-Fb-gHG" firstAttribute="top" secondItem="nOB-pH-exk" secondAttribute="top" constant="60" id="i4o-z3-6NU"/>
-                            <constraint firstItem="rh3-15-4aI" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="148" id="mFJ-PS-Ra7"/>
-                            <constraint firstItem="xhU-FR-Dcr" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="148" id="x0k-tF-dL5"/>
+                            <constraint firstItem="rh3-15-4aI" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="140" id="mFJ-PS-Ra7"/>
+                            <constraint firstItem="xhU-FR-Dcr" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="140" id="x0k-tF-dL5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nOB-pH-exk"/>
                     </view>
