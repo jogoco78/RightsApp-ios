@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0549EA22C2C76500688976 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0549E922C2C76500688976 /* CustomTabBarController.swift */; };
 		EB10DC7722BA505000CD89DB /* ParticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB10DC7622BA505000CD89DB /* ParticleModel.swift */; };
 		EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7222A7D62D006B5BDC /* SearchEntity.storyboard */; };
 		EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7B22A7D642006B5BDC /* Questionnaire.storyboard */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB0549E922C2C76500688976 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		EB10DC7622BA505000CD89DB /* ParticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleModel.swift; sourceTree = "<group>"; };
 		EB205C7122A7D62D006B5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchEntity.storyboard; sourceTree = "<group>"; };
 		EB205C7422A7D634006B5BDC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SearchEntity.strings; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				EB26D20A22BBC2A700C2C46C /* ParticleDetailsViewController.swift */,
 				EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */,
 				EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */,
+				EB0549E922C2C76500688976 /* CustomTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				EBA4D55622AFEAB500B1B566 /* FMDatabase.m in Sources */,
 				EB993A4B229D3B7A0082DE76 /* ViewController.swift in Sources */,
 				EB9C6F7B22BBD7A600D09334 /* EmergencyCallViewController.swift in Sources */,
+				EB0549EA22C2C76500688976 /* CustomTabBarController.swift in Sources */,
 				EB5986BF22BCB1C700F22D85 /* LocalizationSystem.swift in Sources */,
 				EBA4D55522AFEAB500B1B566 /* FMDatabaseQueue.m in Sources */,
 				EB993A49229D3B7A0082DE76 /* AppDelegate.swift in Sources */,

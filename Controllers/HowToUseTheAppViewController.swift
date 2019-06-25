@@ -13,6 +13,7 @@ class HowToUseTheAppViewController: UIViewController {
     @IBOutlet weak var tvHowToUseTheApp: UITextView!
     @IBOutlet weak var switchNotShowAgain: UISwitch!
     @IBOutlet weak var btContinuUseApp: UIButton!
+    @IBOutlet weak var tvSwitchText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +42,16 @@ class HowToUseTheAppViewController: UIViewController {
         tvHowToUseTheApp.attributedText = attributedText
         
         //Sets the message of the switch
-         s = NSMutableAttributedString(string: NSLocalizedString("doNotShowAgain",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+         s = NSMutableAttributedString(string: NSLocalizedString("doNotShow",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        
+        //Sets message
+        tvSwitchText.attributedText = s
         
         //Sets default value of Switch to false
         switchNotShowAgain.setOn(false, animated: true)
         
         //Sets title to the button
         btContinuUseApp.setTitle(NSLocalizedString("continue",comment: ""),for: .normal)
-        
     }
     
     @IBAction func buttonNotShowAgain(_ sender: UIButton) {

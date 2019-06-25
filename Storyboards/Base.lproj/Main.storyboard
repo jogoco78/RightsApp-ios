@@ -147,7 +147,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NK8-FR-fSb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="How to use the app" image="Information" id="F9v-JD-tmH" userLabel="How to use the app"/>
+                    <tabBarItem key="tabBarItem" title="" image="Information" id="F9v-JD-tmH" userLabel="How to use the app"/>
                     <connections>
                         <outlet property="tvHowUseAppText" destination="IcV-ha-U0r" id="Y4j-LK-I6O"/>
                     </connections>
@@ -181,7 +181,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DRb-CD-RSq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Terms &amp; Conditions" image="Document" id="to2-LD-lJ3" userLabel="Terms &amp; conditions"/>
+                    <tabBarItem key="tabBarItem" title="" image="Document" id="to2-LD-lJ3" userLabel="Terms &amp; conditions"/>
                     <connections>
                         <outlet property="tvTermsConditionsText" destination="y9E-Gf-0mO" id="k6m-9k-bax"/>
                     </connections>
@@ -231,7 +231,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUf-EL-Aof"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Language" image="Flag" id="U2W-8z-YS3"/>
+                    <tabBarItem key="tabBarItem" title="" image="Flag" id="U2W-8z-YS3"/>
                     <connections>
                         <outlet property="bt_continue" destination="3GY-N3-DXG" id="TM6-uL-pYq"/>
                         <outlet property="pv_selectLanguage" destination="RLN-yh-e2E" id="SIl-ra-sqq"/>
@@ -267,7 +267,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hfc-py-zVq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About Us" image="About us" id="dEk-sr-btH"/>
+                    <tabBarItem key="tabBarItem" title="" image="About us" id="dEk-sr-btH"/>
                     <connections>
                         <outlet property="tvAboutUs" destination="EC6-db-K3z" id="8dy-fU-i9m"/>
                     </connections>
@@ -330,6 +330,7 @@
                         <outlet property="btContinuUseApp" destination="Zos-T1-m6E" id="mYb-wK-EAa"/>
                         <outlet property="switchNotShowAgain" destination="eO9-i2-5x5" id="Ekh-lS-51y"/>
                         <outlet property="tvHowToUseTheApp" destination="G3G-rH-mAY" id="qvY-yG-goD"/>
+                        <outlet property="tvSwitchText" destination="kGD-2u-YzA" id="BWf-ty-q9r"/>
                         <segue destination="ZJo-66-fg1" kind="show" identifier="RightsAppUseApp" id="Vmy-VQ-a70"/>
                     </connections>
                 </viewController>
@@ -417,7 +418,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nOB-pH-exk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="oh9-Lf-AOq"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" id="oh9-Lf-AOq"/>
                     <navigationItem key="navigationItem" id="YBe-re-4db"/>
                     <connections>
                         <outlet property="bt_emergencyCallText" destination="xhU-FR-Dcr" id="Lf8-TW-nb9"/>
@@ -469,6 +470,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="26c-fz-eTv"/>
-        <segue reference="jMx-Oc-ery"/>
+        <segue reference="Vmy-VQ-a70"/>
     </inferredMetricsTieBreakers>
 </document>

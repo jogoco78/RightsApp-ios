@@ -16,6 +16,7 @@ class TermsConditionsTextViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         //line spacing
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 3
@@ -70,6 +71,14 @@ class TermsConditionsTextViewController: UIViewController {
         
         //Sets the attributed text to the TextView
         tvTermsConditionsText.attributedText = attributedText
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarItem.title = NSLocalizedString("terms",comment: "")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarItem.title = ""
     }
     
 }

@@ -17,6 +17,8 @@ class HowToUseTheAppTextViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        self.tabBarItem.title = NSLocalizedString("use",comment: "")
+        
         //line spacing
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 3
@@ -37,6 +39,14 @@ class HowToUseTheAppTextViewController: UIViewController {
         
         //Sets the attributted text to the textview
         tvHowUseAppText.attributedText = attributedText
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarItem.title = NSLocalizedString("use",comment: "")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarItem.title = NSLocalizedString("",comment: "")
     }
 
 }

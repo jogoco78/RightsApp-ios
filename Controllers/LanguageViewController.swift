@@ -21,6 +21,7 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         //line spacing
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 3
@@ -31,6 +32,14 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         let s = NSMutableAttributedString(string: NSLocalizedString("languageText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.paragraphStyle: paragraphStyle])
         tv_selectLanguage.attributedText = s
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarItem.title = NSLocalizedString("language",comment: "")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarItem.title = ""
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

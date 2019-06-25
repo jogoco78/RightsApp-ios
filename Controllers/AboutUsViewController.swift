@@ -16,6 +16,9 @@ class AboutUsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.tabBarItem.title = NSLocalizedString("us",comment: "")
+        
         //line spacing
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 3
@@ -29,5 +32,13 @@ class AboutUsViewController: UIViewController {
         attributedText.append(s)
         
         tvAboutUs.attributedText = attributedText
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarItem.title = NSLocalizedString("us",comment: "")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarItem.title = ""
     }
 }

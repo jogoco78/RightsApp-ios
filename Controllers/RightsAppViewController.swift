@@ -22,6 +22,16 @@ class RightsAppViewController: UIViewController {
         bt_emergencyCallText.setTitle(NSLocalizedString("emergencyCallText",comment: ""),for: .normal)
         bt_questionnaireText.setTitle(NSLocalizedString("questionnaireText",comment: ""),for: .normal)
         bt_searchEntityText.setTitle(NSLocalizedString("searchEntityText",comment: ""),for: .normal)
+        
+        self.tabBarItem.title = NSLocalizedString("home",comment: "")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarItem.title = NSLocalizedString("home",comment: "")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarItem.title = ""
     }
     
     @IBAction func bt_emergencyCall(_ sender: UIButton) {

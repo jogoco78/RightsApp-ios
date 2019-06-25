@@ -30,6 +30,8 @@ class ParticlesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        self.navigationItem.title = NSLocalizedString("rights",comment: "Comment")
+        
         let tagsComponents = (tags?.components(separatedBy: ","))
         var tagsInt = [Int]()
         for tag in tagsComponents! {

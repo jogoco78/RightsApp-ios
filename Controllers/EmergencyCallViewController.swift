@@ -21,7 +21,7 @@ class EmergencyCallViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         tvEmergencyCall.text = NSLocalizedString("emergencyCallText",comment: "")
-        btFinish.setTitle(NSLocalizedString("finish",comment: ""), for: .normal)
+        btFinish.setTitle(NSLocalizedString("home",comment: ""), for: .normal)
         btCall.setTitle(NSLocalizedString("call",comment: ""), for: .normal)
     }
     
