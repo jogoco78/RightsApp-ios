@@ -275,4 +275,28 @@ class DBManager: NSObject {
         return results
     }
     
+    // MARK: - Categories, cities and countries
+    
+    func getCategoriesList(language: String) -> [CategoryModel] {
+        var results = [CategoryModel]()
+        
+        let languageField = Constants.shared.field_categories_text + "_" + language
+        
+        let query = "select * from " + Constants.shared.tableName_categories
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            print("Column count " + String(cursor.columnCount))
+            while cursor.next(){
+                results.append(CategoryModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, language))
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
 }

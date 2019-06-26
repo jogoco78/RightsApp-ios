@@ -18,6 +18,11 @@
 "us" = "Nosotros";
 "rights" = "Derechos";
 
+//SearchEntities
+"allEntities" = "Todas las categorias disponibles";
+"allCountries" = "Todos los paises disponibles";
+"allCities" = "Todas las ciudades disponibles";
+
 //Terms and conditions strings
 "appOwnership" = "Titularidad de la app\n";
 "appOwnershipBody" = "Esta app está operada por la Universitat Autònoma de Barcelona – Instituto de Derecho y Tecnología (en adelante, UAB-IDT) en representación del consorcio de RightsApp. UAB-IDT tiene su sede en:\nUniversitat Autònoma de Barcelona – Instituto de Derecho y Tecnología (UAB-IDT)\nidt@uab.cat\nCampus de la UAB. Edifici B\nCerdanyola del Vallès (Bellaterra), Spain\n";

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB0549EA22C2C76500688976 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0549E922C2C76500688976 /* CustomTabBarController.swift */; };
 		EB10DC7722BA505000CD89DB /* ParticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB10DC7622BA505000CD89DB /* ParticleModel.swift */; };
 		EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7222A7D62D006B5BDC /* SearchEntity.storyboard */; };
 		EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C7B22A7D642006B5BDC /* Questionnaire.storyboard */; };
 		EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB205C8422A7D651006B5BDC /* EmergencyCall.storyboard */; };
 		EB26D20B22BBC2A700C2C46C /* ParticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26D20A22BBC2A700C2C46C /* ParticleDetailsViewController.swift */; };
 		EB2EAA3722AE527100629C07 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2EAA3622AE527100629C07 /* LanguageViewController.swift */; };
+		EB31262E22C371A8002B8DFB /* SearchEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB31262D22C371A8002B8DFB /* SearchEntityViewController.swift */; };
 		EB35C30B22B238DC004599D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35C30A22B238DC004599D9 /* Constants.swift */; };
 		EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */; };
 		EB4D1ABC22A6B3D000054C3B /* RightsAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */; };
@@ -43,6 +43,7 @@
 		EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */; };
 		EBF06E8422A1736500F4C4F3 /* TermsConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */; };
 		EBF55CFE22BA78BC00CAE991 /* ParticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */; };
+		EBFB22DB22C4157C0065E91F /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB22DA22C4157C0065E91F /* CategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB0549E922C2C76500688976 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		EB10DC7622BA505000CD89DB /* ParticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleModel.swift; sourceTree = "<group>"; };
 		EB205C7122A7D62D006B5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchEntity.storyboard; sourceTree = "<group>"; };
 		EB205C7422A7D634006B5BDC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SearchEntity.strings; sourceTree = "<group>"; };
@@ -79,6 +79,7 @@
 		EB205C8A22A7D659006B5BDC /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/EmergencyCall.strings"; sourceTree = "<group>"; };
 		EB26D20A22BBC2A700C2C46C /* ParticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleDetailsViewController.swift; sourceTree = "<group>"; };
 		EB2EAA3622AE527100629C07 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		EB31262D22C371A8002B8DFB /* SearchEntityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntityViewController.swift; sourceTree = "<group>"; };
 		EB35C30A22B238DC004599D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB4D1AB922A6B36F00054C3B /* HowToUseTheAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppViewController.swift; sourceTree = "<group>"; };
 		EB4D1ABB22A6B3D000054C3B /* RightsAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsAppViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsTextViewController.swift; sourceTree = "<group>"; };
 		EBF06E8322A1736500F4C4F3 /* TermsConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsViewController.swift; sourceTree = "<group>"; };
 		EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesTableViewController.swift; sourceTree = "<group>"; };
+		EBFB22DA22C4157C0065E91F /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +174,7 @@
 				EB26D20A22BBC2A700C2C46C /* ParticleDetailsViewController.swift */,
 				EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */,
 				EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */,
-				EB0549E922C2C76500688976 /* CustomTabBarController.swift */,
+				EB31262D22C371A8002B8DFB /* SearchEntityViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +185,7 @@
 				EB5CE66022B1907E00570231 /* CityModel.swift */,
 				EB5CE66222B1961900570231 /* AnswerModel.swift */,
 				EB10DC7622BA505000CD89DB /* ParticleModel.swift */,
+				EBFB22DA22C4157C0065E91F /* CategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			files = (
 				EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */,
 				EB26D20B22BBC2A700C2C46C /* ParticleDetailsViewController.swift in Sources */,
+				EB31262E22C371A8002B8DFB /* SearchEntityViewController.swift in Sources */,
 				EB35C30B22B238DC004599D9 /* Constants.swift in Sources */,
 				EB4D1ABA22A6B36F00054C3B /* HowToUseTheAppViewController.swift in Sources */,
 				EB2EAA3722AE527100629C07 /* LanguageViewController.swift in Sources */,
@@ -434,12 +438,12 @@
 				EBA4D55622AFEAB500B1B566 /* FMDatabase.m in Sources */,
 				EB993A4B229D3B7A0082DE76 /* ViewController.swift in Sources */,
 				EB9C6F7B22BBD7A600D09334 /* EmergencyCallViewController.swift in Sources */,
-				EB0549EA22C2C76500688976 /* CustomTabBarController.swift in Sources */,
 				EB5986BF22BCB1C700F22D85 /* LocalizationSystem.swift in Sources */,
 				EBA4D55522AFEAB500B1B566 /* FMDatabaseQueue.m in Sources */,
 				EB993A49229D3B7A0082DE76 /* AppDelegate.swift in Sources */,
 				EBA4D55722AFEAB500B1B566 /* FMDatabasePool.m in Sources */,
 				EBF06E8422A1736500F4C4F3 /* TermsConditionsViewController.swift in Sources */,
+				EBFB22DB22C4157C0065E91F /* CategoryModel.swift in Sources */,
 				EBA4D54522AFDCD000B1B566 /* QuestionnaireViewController.swift in Sources */,
 				EB4D1ABC22A6B3D000054C3B /* RightsAppViewController.swift in Sources */,
 				EBB61D2122B1442200F749D7 /* DBManager.swift in Sources */,
