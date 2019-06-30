@@ -19,6 +19,9 @@ class Constants: NSObject {
     let particles_id_subject = "idSubject"
     let tags = "tags"
     let parameters = "parameters"
+    let searchIDEntity = "entityTypeID"
+    let searchIDCountry = "countryID"
+    let searchIDCity = "cityID"
     
     //Table names
     let tableName_questions = "questions"
@@ -28,6 +31,9 @@ class Constants: NSObject {
     let tableName_particles_tags = "particles_tags"
     let tableName_subjects = "subjects"
     let tableName_categories = "categories"
+    let tableName_cities = "cities"
+    let tableName_countries = "countries"
+    let tableName_entities = "entities"
     
     
     //Fields
@@ -46,4 +52,12 @@ class Constants: NSObject {
     let field_subjects_text = "text"
     let field_categories_id = "id"
     let field_categories_text = "category"
+    let field_cities_id = "id"
+    let field_cities_cityName = "city"
+    let field_cities_idCountry = "id_country"
+    let field_countries_id = "id"
+    let field_countries_countryName = "country"
+    let field_entities_description = "description"
+    let field_entities_id_city = "id_city"
+    let field_entities_id_country = "id_country"
 }

@@ -22,6 +22,10 @@
 "allEntities" = "All available entities";
 "allCountries" = "All available countries";
 "allCities" = "All available cities";
+"selectEntity" = "Select the type of the entity";
+"selectCountry" = "Select the country";
+"selectCity" = "Select the city";
+"alertSelected" = "You must select one option for each criteria";
 
 //Terms and conditions strings
 "appOwnership" = "App Ownership\n";

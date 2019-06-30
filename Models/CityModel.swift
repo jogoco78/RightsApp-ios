@@ -9,10 +9,15 @@
 import UIKit
 
 class CityModel {
-    var id: Int
-    var cityName: String
-    var idCountry: Int
-    var language: String
+    var id: Int!
+    var cityName: String!
+    var idCountry: Int!
+    var language: String!
+    
+    // MARL: - Initializers
+    init(){
+        
+    }
     
     init(_ id: Int,_ cityName: String,_ idCountry: Int,_ language: String){
         self.id = id

@@ -286,9 +286,138 @@ class DBManager: NSObject {
         
         do {
             let cursor = try database.executeQuery(query, values: nil)
-            print("Column count " + String(cursor.columnCount))
+            
             while cursor.next(){
                 results.append(CategoryModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, language))
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
+    func getCitiesList(idCities: [Int]!, language: String) -> [CityModel]{
+        var results = [CityModel]()
+        
+        let languageField = Constants.shared.field_cities_cityName + "_" + language
+        
+        var query = "select * from " + Constants.shared.tableName_cities
+        
+        if idCities != nil && !idCities.isEmpty {
+            query = query + " where " + Constants.shared.field_cities_id + " in (" + String(idCities[0])
+            for index in 1..<idCities.count {
+                query = query + "," + String(idCities[index])
+            }
+            query = query + ")"
+        }
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            
+            while cursor.next(){
+                results.append(CityModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, Int(cursor.int(forColumnIndex: 5)), language))
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
+    func getCountriesList(idCountries: [Int]!, language: String) -> [CountryModel]{
+        var results = [CountryModel]()
+        
+        let languageField = Constants.shared.field_countries_countryName + "_" + language
+        
+        var query = "select * from " + Constants.shared.tableName_countries
+        
+        if idCountries != nil && !idCountries.isEmpty {
+            query = query + " where " + Constants.shared.field_countries_id + " in (" + String(idCountries[0])
+            for index in 1..<idCountries.count {
+                query = query + "," + String(idCountries[index])
+            }
+            query = query + ")"
+        }
+        
+        print(query)
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            
+            while cursor.next(){
+                results.append(CountryModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, language))
+                print("Column count: " + String(cursor.columnCount) )
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
+    func getEntitiesList(idEntity: Int!, idCountry: Int!, idCity: Int!, language: String) -> [EntityModel]{
+        var results = [EntityModel]()
+        var previousClause = false
+        
+        let descriptionField = Constants.shared.field_entities_description + "_" + language
+        
+        var query = "select * from " + Constants.shared.tableName_entities + " inner join " + Constants.shared.tableName_cities + " on " + Constants.shared.tableName_cities + "." + Constants.shared.field_cities_id + " = " + Constants.shared.field_entities_id_city + " inner join " + Constants.shared.tableName_countries + " on " + Constants.shared.tableName_countries + "." + Constants.shared.field_countries_id + " = " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_country
+        
+        //inner join cities on cities.id = entities.id_city inner join countries on countries.id = entities.id_country
+        
+        if idEntity != nil && idEntity != 0{
+            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_city + " = " + String(idCity)
+            previousClause = true
+        }
+        
+        if idCountry != nil && idCountry != 0 {
+            if previousClause {
+                query = query + " AND "
+            } else {
+                query = query + " WHERE "
+                previousClause = true
+            }
+            
+            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_country + " = " + String(idCountry)
+        }
+        
+        if idCity != nil && idCity != 0 {
+            if previousClause {
+                query = query + " AND "
+            } else {
+                query = query + " WHERE "
+            }
+            
+            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_city + " = " + String(idCity)
+        }
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            
+            while cursor.next(){
+                let entity = EntityModel()
+                entity.id = Int(cursor.int(forColumnIndex: 0))
+                entity.entityName = cursor.string(forColumnIndex: 1)
+                entity.entityDescription = cursor.string(forColumn: descriptionField)
+                entity.address = cursor.string(forColumnIndex: 6)
+                entity.longitude = cursor.double(forColumnIndex: 7)
+                entity.latitude = cursor.double(forColumnIndex: 8)
+                entity.idCity = Int(cursor.int(forColumnIndex: 9))
+                entity.idCountry = Int(cursor.int(forColumnIndex: 10))
+                entity.idCategory = Int(cursor.int(forColumnIndex: 11))
+                entity.phoneNumber = cursor.string(forColumnIndex: 12)
+                entity.phoneNumber2 = cursor.string(forColumnIndex: 13)
+                entity.link = cursor.string(forColumnIndex: 14)
+                entity.email = cursor.string(forColumnIndex: 15)
+                
+                results.append(entity)
             }
             
             cursor.close()

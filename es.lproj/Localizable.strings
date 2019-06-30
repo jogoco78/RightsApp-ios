@@ -22,6 +22,10 @@
 "allEntities" = "Todas las categorias disponibles";
 "allCountries" = "Todos los paises disponibles";
 "allCities" = "Todas las ciudades disponibles";
+"selectEntity" = "Selecciona el tipo de entidad";
+"selectCountry" = "Selecciona el país";
+"selectCity" = "Selecciona la ciudad";
+"alertSelected" = "Debes seleccionar una opción en cada criterio";
 
 //Terms and conditions strings
 "appOwnership" = "Titularidad de la app\n";
