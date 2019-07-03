@@ -101,17 +101,17 @@
 		EB8A66FB229ED4E5003855BD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB8A66FC229ED4E6003855BD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB8A66FD229ED4E7003855BD /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		EB993A45229D3B7A0082DE76 /* RightsApp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightsApp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB993A45229D3B7A0082DE76 /* RightsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB993A48229D3B7A0082DE76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB993A4A229D3B7A0082DE76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB993A4D229D3B7A0082DE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB993A4F229D3B7A0082DE76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB993A52229D3B7A0082DE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB993A54229D3B7A0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB993A59229D3B7B0082DE76 /* RightsApp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightsApp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB993A59229D3B7B0082DE76 /* RightsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB993A5D229D3B7B0082DE76 /* RightsApp_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsApp_iosTests.swift; sourceTree = "<group>"; };
 		EB993A5F229D3B7B0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB993A64229D3B7B0082DE76 /* RightsApp_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightsApp_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB993A64229D3B7B0082DE76 /* RightsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RightsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightsApp_iosUITests.swift; sourceTree = "<group>"; };
 		EB993A6A229D3B7B0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
@@ -221,9 +221,9 @@
 		EB993A46229D3B7A0082DE76 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB993A45229D3B7A0082DE76 /* RightsApp_ios.app */,
-				EB993A59229D3B7B0082DE76 /* RightsApp_iosTests.xctest */,
-				EB993A64229D3B7B0082DE76 /* RightsApp_iosUITests.xctest */,
+				EB993A45229D3B7A0082DE76 /* RightsApp.app */,
+				EB993A59229D3B7B0082DE76 /* RightsAppTests.xctest */,
+				EB993A64229D3B7B0082DE76 /* RightsAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,9 +299,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EB993A44229D3B7A0082DE76 /* RightsApp_ios */ = {
+		EB993A44229D3B7A0082DE76 /* RightsApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB993A6D229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp_ios" */;
+			buildConfigurationList = EB993A6D229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp" */;
 			buildPhases = (
 				EB993A41229D3B7A0082DE76 /* Sources */,
 				EB993A42229D3B7A0082DE76 /* Frameworks */,
@@ -311,14 +311,14 @@
 			);
 			dependencies = (
 			);
-			name = RightsApp_ios;
+			name = RightsApp;
 			productName = RightsApp_ios;
-			productReference = EB993A45229D3B7A0082DE76 /* RightsApp_ios.app */;
+			productReference = EB993A45229D3B7A0082DE76 /* RightsApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EB993A58229D3B7B0082DE76 /* RightsApp_iosTests */ = {
+		EB993A58229D3B7B0082DE76 /* RightsAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB993A70229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp_iosTests" */;
+			buildConfigurationList = EB993A70229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsAppTests" */;
 			buildPhases = (
 				EB993A55229D3B7B0082DE76 /* Sources */,
 				EB993A56229D3B7B0082DE76 /* Frameworks */,
@@ -329,14 +329,14 @@
 			dependencies = (
 				EB993A5B229D3B7B0082DE76 /* PBXTargetDependency */,
 			);
-			name = RightsApp_iosTests;
+			name = RightsAppTests;
 			productName = RightsApp_iosTests;
-			productReference = EB993A59229D3B7B0082DE76 /* RightsApp_iosTests.xctest */;
+			productReference = EB993A59229D3B7B0082DE76 /* RightsAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EB993A63229D3B7B0082DE76 /* RightsApp_iosUITests */ = {
+		EB993A63229D3B7B0082DE76 /* RightsAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB993A73229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp_iosUITests" */;
+			buildConfigurationList = EB993A73229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsAppUITests" */;
 			buildPhases = (
 				EB993A60229D3B7B0082DE76 /* Sources */,
 				EB993A61229D3B7B0082DE76 /* Frameworks */,
@@ -347,9 +347,9 @@
 			dependencies = (
 				EB993A66229D3B7B0082DE76 /* PBXTargetDependency */,
 			);
-			name = RightsApp_iosUITests;
+			name = RightsAppUITests;
 			productName = RightsApp_iosUITests;
-			productReference = EB993A64229D3B7B0082DE76 /* RightsApp_iosUITests.xctest */;
+			productReference = EB993A64229D3B7B0082DE76 /* RightsAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -376,7 +376,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EB993A40229D3B7A0082DE76 /* Build configuration list for PBXProject "RightsApp_ios" */;
+			buildConfigurationList = EB993A40229D3B7A0082DE76 /* Build configuration list for PBXProject "RightsApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -392,9 +392,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EB993A44229D3B7A0082DE76 /* RightsApp_ios */,
-				EB993A58229D3B7B0082DE76 /* RightsApp_iosTests */,
-				EB993A63229D3B7B0082DE76 /* RightsApp_iosUITests */,
+				EB993A44229D3B7A0082DE76 /* RightsApp */,
+				EB993A58229D3B7B0082DE76 /* RightsAppTests */,
+				EB993A63229D3B7B0082DE76 /* RightsAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -490,12 +490,12 @@
 /* Begin PBXTargetDependency section */
 		EB993A5B229D3B7B0082DE76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EB993A44229D3B7A0082DE76 /* RightsApp_ios */;
+			target = EB993A44229D3B7A0082DE76 /* RightsApp */;
 			targetProxy = EB993A5A229D3B7B0082DE76 /* PBXContainerItemProxy */;
 		};
 		EB993A66229D3B7B0082DE76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EB993A44229D3B7A0082DE76 /* RightsApp_ios */;
+			target = EB993A44229D3B7A0082DE76 /* RightsApp */;
 			targetProxy = EB993A65229D3B7B0082DE76 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -751,7 +751,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RightsApp_ios.app/RightsApp_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RightsApp.app/RightsApp";
 			};
 			name = Debug;
 		};
@@ -771,7 +771,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RightsApp_ios.app/RightsApp_ios";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RightsApp.app/RightsApp";
 			};
 			name = Release;
 		};
@@ -816,7 +816,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EB993A40229D3B7A0082DE76 /* Build configuration list for PBXProject "RightsApp_ios" */ = {
+		EB993A40229D3B7A0082DE76 /* Build configuration list for PBXProject "RightsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB993A6B229D3B7B0082DE76 /* Debug */,
@@ -825,7 +825,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB993A6D229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp_ios" */ = {
+		EB993A6D229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB993A6E229D3B7B0082DE76 /* Debug */,
@@ -834,7 +834,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB993A70229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp_iosTests" */ = {
+		EB993A70229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB993A71229D3B7B0082DE76 /* Debug */,
@@ -843,7 +843,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB993A73229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsApp_iosUITests" */ = {
+		EB993A73229D3B7B0082DE76 /* Build configuration list for PBXNativeTarget "RightsAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB993A74229D3B7B0082DE76 /* Debug */,
