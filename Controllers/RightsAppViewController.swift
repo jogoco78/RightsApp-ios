@@ -9,19 +9,78 @@
 import UIKit
 
 class RightsAppViewController: UIViewController {
-
     
-    @IBOutlet weak var bt_emergencyCallText: UIButton!
-    @IBOutlet weak var bt_questionnaireText: UIButton!
-    @IBOutlet weak var bt_searchEntityText: UIButton!
+    var btnImageEmergency = UIButton()
+    var btnTextEmergency = UIButton()
+    var btnImageQuestionnaire = UIButton()
+    var btnTextQuestionnaire = UIButton()
+    var btnImageSearchEntity = UIButton()
+    var btnTextSearchEntity = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(btnImageEmergency)
+        view.addSubview(btnTextEmergency)
+        view.addSubview(btnImageQuestionnaire)
+        view.addSubview(btnTextQuestionnaire)
+        view.addSubview(btnImageSearchEntity)
+        view.addSubview(btnTextSearchEntity)
+        
+        //Emergency call properties
+        btnImageEmergency.translatesAutoresizingMaskIntoConstraints = false
+        btnImageEmergency.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        btnImageEmergency.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        btnImageEmergency.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        btnImageEmergency.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        btnImageEmergency.setImage(UIImage(named: "EmergencyCall"), for: .normal)
+        btnImageEmergency.addTarget(self, action: #selector(emergencyCallListener), for: .touchUpInside)
+        
+        btnTextEmergency.translatesAutoresizingMaskIntoConstraints = false
+        btnTextEmergency.centerYAnchor.constraint(equalTo: btnImageEmergency.centerYAnchor).isActive = true
+        btnTextEmergency.leftAnchor.constraint(equalTo: btnImageEmergency.rightAnchor, constant: 20).isActive = true
+        btnTextEmergency.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        btnTextEmergency.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        btnTextEmergency.titleLabel?.numberOfLines = 0
+        btnTextEmergency.setTitleColor(UIColor.black, for: .normal)
+        btnTextEmergency.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("emergencyCallText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]), for: .normal)
+        btnTextEmergency.addTarget(self, action: #selector(emergencyCallListener), for: .touchUpInside)
+        
+        //Questionnaire properties
+        btnImageQuestionnaire.translatesAutoresizingMaskIntoConstraints = false
+        btnImageQuestionnaire.topAnchor.constraint(equalTo: btnImageEmergency.bottomAnchor, constant: 50).isActive = true
+        btnImageQuestionnaire.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        btnImageQuestionnaire.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        btnImageQuestionnaire.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        btnImageQuestionnaire.setImage(UIImage(named: "Questionnaire"), for: .normal)
+        btnImageQuestionnaire.addTarget(self, action: #selector(questionnaireListener), for: .touchUpInside)
 
-        // Do any additional setup after loading the view.
-        bt_emergencyCallText.setTitle(NSLocalizedString("emergencyCallText",comment: ""),for: .normal)
-        bt_questionnaireText.setTitle(NSLocalizedString("questionnaireText",comment: ""),for: .normal)
-        bt_searchEntityText.setTitle(NSLocalizedString("searchEntityText",comment: ""),for: .normal)
+        btnTextQuestionnaire.translatesAutoresizingMaskIntoConstraints = false
+        btnTextQuestionnaire.centerYAnchor.constraint(equalTo: btnImageQuestionnaire.centerYAnchor).isActive = true
+        btnTextQuestionnaire.leftAnchor.constraint(equalTo: btnImageQuestionnaire.rightAnchor, constant: 20).isActive = true
+        btnTextQuestionnaire.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        btnTextQuestionnaire.titleLabel?.numberOfLines = 0
+        //btnTextQuestionnaire.setTitle(NSLocalizedString("questionnaireText",comment: ""), for: .normal)
+        btnTextQuestionnaire.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("questionnaireText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]), for: .normal)
+        btnTextQuestionnaire.addTarget(self, action: #selector(questionnaireListener), for: .touchUpInside)
+        
+        //Search Entity properties
+        btnImageSearchEntity.translatesAutoresizingMaskIntoConstraints = false
+        btnImageSearchEntity.topAnchor.constraint(equalTo: btnImageQuestionnaire.bottomAnchor, constant: 50).isActive = true
+        btnImageSearchEntity.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        btnImageSearchEntity.widthAnchor.constraint(equalToConstant: 75).isActive = true
+        btnImageSearchEntity.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        btnImageSearchEntity.setImage(UIImage(named: "Maps"), for: .normal)
+        btnImageSearchEntity.addTarget(self, action: #selector(searchEntityListener), for: .touchUpInside)
+        
+        btnTextSearchEntity.translatesAutoresizingMaskIntoConstraints = false
+        btnTextSearchEntity.centerYAnchor.constraint(equalTo: btnImageSearchEntity.centerYAnchor).isActive = true
+        btnTextSearchEntity.leftAnchor.constraint(equalTo: btnImageSearchEntity.rightAnchor, constant: 20).isActive = true
+        btnTextSearchEntity.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        btnTextSearchEntity.titleLabel?.numberOfLines = 0
+        btnTextSearchEntity.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("searchEntityText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]), for: .normal)
+        //btnTextSearchEntity.setTitle(NSLocalizedString("searchEntityText",comment: ""), for: .normal)
+        btnTextSearchEntity.addTarget(self, action: #selector(searchEntityListener), for: .touchUpInside)
         
         self.tabBarItem.title = NSLocalizedString("home",comment: "")
     }
@@ -34,42 +93,19 @@ class RightsAppViewController: UIViewController {
         self.tabBarItem.title = ""
     }
     
-    @IBAction func bt_emergencyCall(_ sender: UIButton) {
-        performSegue(withIdentifier: "rightsAppToEmergencyCallSegue", sender: nil)
-    }
-    @IBAction func bt_emergencyCallText(_ sender: UIButton) {
+    //Emergency call listener for image and text buttons
+    @objc func emergencyCallListener(_ sender: UIButton){
         performSegue(withIdentifier: "rightsAppToEmergencyCallSegue", sender: nil)
     }
     
-    @IBAction func bt_questionnaire(_ sender: UIButton) {
-        performSegue(withIdentifier: "rightsAppToQuestionnaireSegue", sender: nil)
-    }
-    @IBAction func bt_questionnaireText(_ sender: Any) {
+    //Questionnaire listener for image and text buttons
+    @objc func questionnaireListener(_ sender: UIButton){
         performSegue(withIdentifier: "rightsAppToQuestionnaireSegue", sender: nil)
     }
     
-    @IBAction func bt_searchEntity(_ sender: UIButton) {
+    //Search Entity listener for image and text buttons
+    @objc func searchEntityListener(_ sender: UIButton){
         performSegue(withIdentifier: "rightsAppToSearchEntitySegue", sender: nil)
     }
     
-    @IBAction func bt_searchEntityText(_ sender: UIButton) {
-        performSegue(withIdentifier: "rightsAppToSearchEntitySegue", sender: nil)
-    }
-    
-    
-    
-    /*
-     @IBAction func bt_questionnaireText(_ sender: UIButton) {
-     }
-     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
-
 }

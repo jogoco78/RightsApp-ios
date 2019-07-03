@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S9i-pc-eLq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZJo-66-fg1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,95 +31,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhK-m2-WzW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1580" y="-486"/>
-        </scene>
-        <!--Init Main View Controller-->
-        <scene sceneID="sHj-gk-VcD">
-            <objects>
-                <viewController id="S9i-pc-eLq" customClass="InitMainViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Kpg-Ye-qAQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="344-4p-LZW"/>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <segue destination="KwT-Kb-KU3" kind="show" identifier="initToHowToUseAppSegue" id="26c-fz-eTv"/>
-                        <segue destination="ZJo-66-fg1" kind="show" identifier="initToRightsAppSegue" id="jMx-Oc-ery"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="initToTermsConditionsSegue" id="to2-rN-Zhf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-DW-xy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2010" y="-1409"/>
-        </scene>
-        <!--TermsConditionsVC-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController title="TermsConditionsVC" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="TermsConditionsViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="eBE-xh-9y7">
-                                <rect key="frame" x="20" y="40" width="335" height="573"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiY-A3-L8b">
-                                <rect key="frame" x="20" y="629" width="51" height="31"/>
-                                <connections>
-                                    <action selector="switchChangeTerms:" destination="BYZ-38-t0r" eventType="valueChanged" id="P8C-aU-Oxx"/>
-                                </connections>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCW-3R-OYG">
-                                <rect key="frame" x="301" y="627.5" width="54" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonAcceptTerms:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ooz-Wy-1MV"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="TextView Accept Terms Conditions" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Ah-OO-yjG" userLabel="tvAcceptTermsConditions">
-                                <rect key="frame" x="79" y="623" width="209" height="43"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="iCW-3R-OYG" firstAttribute="leading" secondItem="6Ah-OO-yjG" secondAttribute="trailing" constant="13" id="2Tw-gj-9P8"/>
-                            <constraint firstItem="wdE-wH-xif" firstAttribute="bottom" secondItem="hiY-A3-L8b" secondAttribute="bottom" constant="7" id="KPR-8P-2vu"/>
-                            <constraint firstItem="6Ah-OO-yjG" firstAttribute="centerY" secondItem="hiY-A3-L8b" secondAttribute="centerY" id="KWH-4J-1LQ"/>
-                            <constraint firstItem="eBE-xh-9y7" firstAttribute="leading" secondItem="wdE-wH-xif" secondAttribute="leading" constant="20" id="L2r-ne-6e9"/>
-                            <constraint firstItem="wdE-wH-xif" firstAttribute="trailing" secondItem="eBE-xh-9y7" secondAttribute="trailing" constant="20" id="Ntc-p2-3Ai"/>
-                            <constraint firstItem="hiY-A3-L8b" firstAttribute="leading" secondItem="wdE-wH-xif" secondAttribute="leading" constant="20" id="abF-dW-dlu"/>
-                            <constraint firstItem="iCW-3R-OYG" firstAttribute="centerY" secondItem="hiY-A3-L8b" secondAttribute="centerY" id="cPg-e5-lbi"/>
-                            <constraint firstItem="eBE-xh-9y7" firstAttribute="top" secondItem="wdE-wH-xif" secondAttribute="top" constant="20" id="iNV-hM-eu8"/>
-                            <constraint firstItem="wdE-wH-xif" firstAttribute="bottom" secondItem="6Ah-OO-yjG" secondAttribute="bottom" constant="1" id="niN-A3-ggO"/>
-                            <constraint firstItem="wdE-wH-xif" firstAttribute="trailing" secondItem="iCW-3R-OYG" secondAttribute="trailing" constant="20" id="rlI-yY-9B8"/>
-                            <constraint firstItem="6Ah-OO-yjG" firstAttribute="top" secondItem="eBE-xh-9y7" secondAttribute="bottom" constant="10" id="unt-0J-a1p"/>
-                            <constraint firstItem="6Ah-OO-yjG" firstAttribute="leading" secondItem="hiY-A3-L8b" secondAttribute="trailing" constant="10" id="xto-hj-FUy"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="wdE-wH-xif"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="YXZ-uj-nSQ"/>
-                    <navigationItem key="navigationItem" id="dZ7-9n-Ccc"/>
-                    <connections>
-                        <outlet property="acceptTermsSwitch" destination="hiY-A3-L8b" id="a6X-Jd-42g"/>
-                        <outlet property="btAcceptTermsConditions" destination="iCW-3R-OYG" id="8aT-g3-JmZ"/>
-                        <outlet property="tvAcceptTermsConditions" destination="6Ah-OO-yjG" id="qKv-Vb-Hyb"/>
-                        <outlet property="tvTermsConditions" destination="eBE-xh-9y7" id="afA-0S-qsN"/>
-                        <segue destination="KwT-Kb-KU3" kind="show" identifier="HowToUseTheAppSegue" id="gqm-x5-Eoc"/>
-                        <segue destination="ZJo-66-fg1" kind="show" identifier="RightsAppSegue" id="XUM-l9-Gzv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-832.79999999999995" y="-486.20689655172418"/>
         </scene>
         <!--HowToUseTheAppTextViewController-->
         <scene sceneID="NCC-TB-Af0">
@@ -153,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6j-zv-IDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="381.60000000000002" y="236.13193403298354"/>
+            <point key="canvasLocation" x="2646" y="-275"/>
         </scene>
         <!--TermsConditionsTextViewController-->
         <scene sceneID="v3j-lA-Ci2">
@@ -187,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trP-1M-9LZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578.4000000000001" y="235.23238380809596"/>
+            <point key="canvasLocation" x="1007" y="369"/>
         </scene>
         <!--AboutUsViewController-->
         <scene sceneID="ePu-FD-xJs">
@@ -221,69 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TK8-3G-Q5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2746" y="191"/>
-        </scene>
-        <!--HowToUseTheAppVC-->
-        <scene sceneID="uWs-EE-x2E">
-            <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="KwT-Kb-KU3" userLabel="HowToUseTheAppVC" customClass="HowToUseTheAppViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5ua-ua-vZg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="How To Use the App" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G3G-rH-mAY" userLabel="tvHowToUseApp">
-                                <rect key="frame" x="20" y="40" width="335" height="573"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eO9-i2-5x5" userLabel="SwitchUseApp">
-                                <rect key="frame" x="20" y="629" width="51" height="31"/>
-                            </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Do not show this message again" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kGD-2u-YzA" userLabel="tvNotShowMessage">
-                                <rect key="frame" x="81" y="623" width="208" height="43"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zos-T1-m6E">
-                                <rect key="frame" x="301" y="629.5" width="54" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonNotShowAgain:" destination="KwT-Kb-KU3" eventType="touchUpInside" id="aV8-74-frb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Zos-T1-m6E" firstAttribute="leading" secondItem="kGD-2u-YzA" secondAttribute="trailing" constant="12" id="2MQ-dK-Psm"/>
-                            <constraint firstItem="G3G-rH-mAY" firstAttribute="leading" secondItem="8kh-2v-Qh0" secondAttribute="leading" constant="20" id="8If-9x-USc"/>
-                            <constraint firstItem="8kh-2v-Qh0" firstAttribute="trailing" secondItem="Zos-T1-m6E" secondAttribute="trailing" constant="20" id="Bok-VK-dqf"/>
-                            <constraint firstItem="Zos-T1-m6E" firstAttribute="centerY" secondItem="eO9-i2-5x5" secondAttribute="centerY" id="GgV-4T-Kmh"/>
-                            <constraint firstItem="kGD-2u-YzA" firstAttribute="leading" secondItem="eO9-i2-5x5" secondAttribute="trailing" constant="12" id="Jz0-gp-2gY"/>
-                            <constraint firstItem="G3G-rH-mAY" firstAttribute="top" secondItem="8kh-2v-Qh0" secondAttribute="top" constant="20" id="Odx-8n-JQZ"/>
-                            <constraint firstItem="kGD-2u-YzA" firstAttribute="top" secondItem="G3G-rH-mAY" secondAttribute="bottom" constant="10" id="Tql-O3-KVv"/>
-                            <constraint firstItem="8kh-2v-Qh0" firstAttribute="bottom" secondItem="kGD-2u-YzA" secondAttribute="bottom" constant="1" id="UHc-FR-QBD"/>
-                            <constraint firstItem="8kh-2v-Qh0" firstAttribute="bottom" secondItem="eO9-i2-5x5" secondAttribute="bottom" constant="7" id="Vn5-oW-dYK"/>
-                            <constraint firstItem="eO9-i2-5x5" firstAttribute="leading" secondItem="8kh-2v-Qh0" secondAttribute="leading" constant="20" id="XsA-4n-zke"/>
-                            <constraint firstItem="8kh-2v-Qh0" firstAttribute="trailing" secondItem="G3G-rH-mAY" secondAttribute="trailing" constant="20" id="Yjn-YQ-eJJ"/>
-                            <constraint firstItem="8kh-2v-Qh0" firstAttribute="bottom" secondItem="Zos-T1-m6E" secondAttribute="bottom" constant="7.5" id="Ykg-d8-9tI"/>
-                            <constraint firstItem="kGD-2u-YzA" firstAttribute="centerY" secondItem="eO9-i2-5x5" secondAttribute="centerY" id="qkc-sR-rBb"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="8kh-2v-Qh0"/>
-                    </view>
-                    <connections>
-                        <outlet property="btContinuUseApp" destination="Zos-T1-m6E" id="mYb-wK-EAa"/>
-                        <outlet property="switchNotShowAgain" destination="eO9-i2-5x5" id="Ekh-lS-51y"/>
-                        <outlet property="tvHowToUseTheApp" destination="G3G-rH-mAY" id="qvY-yG-goD"/>
-                        <outlet property="tvSwitchText" destination="kGD-2u-YzA" id="BWf-ty-q9r"/>
-                        <segue destination="ZJo-66-fg1" kind="show" identifier="RightsAppUseApp" id="Vmy-VQ-a70"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xJI-Z8-Oan" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="424.80000000000001" y="-1069.1154422788607"/>
+            <point key="canvasLocation" x="2124" y="370"/>
         </scene>
         <!--RightsAppViewController-->
         <scene sceneID="1yc-D8-SNW">
@@ -292,85 +141,12 @@
                     <view key="view" contentMode="scaleToFill" id="G8A-yn-vr3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-Fb-gHG" userLabel="bt_emergencyCall">
-                                <rect key="frame" x="40" y="80" width="75" height="75"/>
-                                <state key="normal" title="Button" image="EmergencyCall"/>
-                                <connections>
-                                    <action selector="bt_emergencyCall:" destination="NLB-8c-Psh" eventType="touchUpInside" id="QCO-jR-q54"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMH-2j-9vc" userLabel="bt_questionnaire">
-                                <rect key="frame" x="40" y="215" width="75" height="75"/>
-                                <state key="normal" title="Button" image="Questionnaire"/>
-                                <connections>
-                                    <action selector="bt_questionnaire:" destination="NLB-8c-Psh" eventType="touchUpInside" id="kpl-6T-Er5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPV-sn-owb" userLabel="bt_searchEntities">
-                                <rect key="frame" x="40" y="350" width="75" height="75"/>
-                                <state key="normal" title="Button" image="Maps"/>
-                                <connections>
-                                    <action selector="bt_searchEntity:" destination="NLB-8c-Psh" eventType="touchUpInside" id="p3k-4f-ap1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rh3-15-4aI" userLabel="bt_questionnaireText">
-                                <rect key="frame" x="140" y="238" width="225" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="bt_questionnaireText:" destination="NLB-8c-Psh" eventType="touchUpInside" id="G90-23-fYA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xhU-FR-Dcr" userLabel="bt_emergencyCallText">
-                                <rect key="frame" x="140" y="103" width="225" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="bt_emergencyCallText:" destination="NLB-8c-Psh" eventType="touchUpInside" id="qKa-e8-ptV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="C9S-l8-zdj" userLabel="bt_searchEntityText">
-                                <rect key="frame" x="140" y="373" width="225" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="bt_searchEntityText:" destination="NLB-8c-Psh" eventType="touchUpInside" id="iC5-NJ-U58"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="BMH-2j-9vc" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="40" id="0ag-6I-WrF"/>
-                            <constraint firstItem="CPV-sn-owb" firstAttribute="top" secondItem="BMH-2j-9vc" secondAttribute="bottom" constant="60" id="7LE-dS-Ogt"/>
-                            <constraint firstItem="xhU-FR-Dcr" firstAttribute="centerY" secondItem="OV1-Fb-gHG" secondAttribute="centerY" id="9EV-yF-gNM"/>
-                            <constraint firstItem="BMH-2j-9vc" firstAttribute="top" secondItem="OV1-Fb-gHG" secondAttribute="bottom" constant="60" id="Dip-zM-XNr"/>
-                            <constraint firstItem="nOB-pH-exk" firstAttribute="trailing" secondItem="xhU-FR-Dcr" secondAttribute="trailing" constant="10" id="Igp-Eq-1F5"/>
-                            <constraint firstItem="CPV-sn-owb" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="40" id="Kbm-DE-hf6"/>
-                            <constraint firstItem="rh3-15-4aI" firstAttribute="centerY" secondItem="BMH-2j-9vc" secondAttribute="centerY" id="O7s-mb-O37"/>
-                            <constraint firstItem="OV1-Fb-gHG" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="40" id="QnB-90-ubv"/>
-                            <constraint firstItem="C9S-l8-zdj" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="140" id="RHQ-1e-L7e"/>
-                            <constraint firstItem="C9S-l8-zdj" firstAttribute="centerY" secondItem="CPV-sn-owb" secondAttribute="centerY" id="U0N-pV-7eq"/>
-                            <constraint firstItem="nOB-pH-exk" firstAttribute="trailing" secondItem="rh3-15-4aI" secondAttribute="trailing" constant="10" id="dhb-ik-RHx"/>
-                            <constraint firstItem="nOB-pH-exk" firstAttribute="trailing" secondItem="C9S-l8-zdj" secondAttribute="trailing" constant="10" id="eSZ-Ik-lfY"/>
-                            <constraint firstItem="OV1-Fb-gHG" firstAttribute="top" secondItem="nOB-pH-exk" secondAttribute="top" constant="60" id="i4o-z3-6NU"/>
-                            <constraint firstItem="rh3-15-4aI" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="140" id="mFJ-PS-Ra7"/>
-                            <constraint firstItem="xhU-FR-Dcr" firstAttribute="leading" secondItem="nOB-pH-exk" secondAttribute="leading" constant="140" id="x0k-tF-dL5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nOB-pH-exk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Home" id="oh9-Lf-AOq"/>
                     <navigationItem key="navigationItem" id="YBe-re-4db"/>
                     <connections>
-                        <outlet property="bt_emergencyCallText" destination="xhU-FR-Dcr" id="Lf8-TW-nb9"/>
-                        <outlet property="bt_questionnaireText" destination="rh3-15-4aI" id="AiK-WE-GdY"/>
-                        <outlet property="bt_searchEntityText" destination="C9S-l8-zdj" id="xdb-FW-BK1"/>
                         <segue destination="6bl-Pf-3Nx" kind="show" identifier="rightsAppToEmergencyCallSegue" id="Edm-Cg-vB4"/>
                         <segue destination="A1T-Dd-bu0" kind="show" identifier="rightsAppToQuestionnaireSegue" id="KCf-jL-Mml"/>
                         <segue destination="vSe-4Y-T6m" kind="show" identifier="rightsAppToSearchEntitySegue" id="3o0-BX-DrK"/>
@@ -378,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyC-8s-f7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2784.8000000000002" y="-1401.049475262369"/>
+            <point key="canvasLocation" x="2646" y="-1178"/>
         </scene>
         <!--EmergencyCall-->
         <scene sceneID="kXH-Ow-BKI">
@@ -386,7 +162,7 @@
                 <viewControllerPlaceholder storyboardName="EmergencyCall" id="6bl-Pf-3Nx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyt-Jk-lRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3575" y="-1450"/>
+            <point key="canvasLocation" x="3870" y="-1223"/>
         </scene>
         <!--Questionnaire-->
         <scene sceneID="6BB-aJ-Q0t">
@@ -394,7 +170,7 @@
                 <viewControllerPlaceholder storyboardName="Questionnaire" id="A1T-Dd-bu0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxx-lP-QJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3575" y="-1409"/>
+            <point key="canvasLocation" x="3870" y="-1184"/>
         </scene>
         <!--SearchEntity-->
         <scene sceneID="CLo-qh-H4i">
@@ -402,20 +178,13 @@
                 <viewControllerPlaceholder storyboardName="SearchEntity" id="vSe-4Y-T6m" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QG0-fk-qIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3565" y="-1361"/>
+            <point key="canvasLocation" x="3861" y="-1134"/>
         </scene>
     </scenes>
     <resources>
         <image name="About us" width="20" height="20"/>
         <image name="Document" width="20" height="20"/>
-        <image name="EmergencyCall" width="75" height="75"/>
         <image name="Home" width="20" height="20"/>
         <image name="Information" width="20" height="20"/>
-        <image name="Maps" width="75" height="75"/>
-        <image name="Questionnaire" width="75" height="75"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="26c-fz-eTv"/>
-        <segue reference="jMx-Oc-ery"/>
-    </inferredMetricsTieBreakers>
 </document>

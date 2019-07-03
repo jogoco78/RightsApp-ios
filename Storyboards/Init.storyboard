@@ -1,7 +1,83 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nDc-OB-MsF">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--InitViewController-->
+        <scene sceneID="Zu2-9X-TrU">
+            <objects>
+                <viewController id="nDc-OB-MsF" userLabel="InitViewController" customClass="InitViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5m8-wH-hdH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="B2X-6y-evO"/>
+                    </view>
+                    <connections>
+                        <segue destination="Ro5-PA-jD8" kind="show" identifier="InitToMainSegue" id="sPd-kb-nq2"/>
+                        <segue destination="Jvq-ho-DUQ" kind="show" identifier="InitToTermsSegue" id="59n-DT-4q8"/>
+                        <segue destination="zTc-s3-qsH" kind="show" identifier="InitToHowToSegue" id="8Vo-Ge-5wZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ppx-dg-KxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-77" y="38"/>
+        </scene>
+        <!--HowTo-->
+        <scene sceneID="X95-vW-L8N">
+            <objects>
+                <viewController id="zTc-s3-qsH" userLabel="HowTo" customClass="HowToViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="54c-hC-pN6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qDh-wH-kNd"/>
+                    </view>
+                    <connections>
+                        <segue destination="Ro5-PA-jD8" kind="show" identifier="HowToToMainSegue" id="Ri5-Rv-XyI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nLp-qZ-OeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="530"/>
+        </scene>
+        <!--Terms-->
+        <scene sceneID="qfx-Fr-KDb">
+            <objects>
+                <viewController id="Jvq-ho-DUQ" userLabel="Terms" customClass="TermsViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qhP-m5-9xv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kQ5-Ut-1nx"/>
+                    </view>
+                    <connections>
+                        <segue destination="zTc-s3-qsH" kind="show" identifier="TermsToHowToSegue" id="g9A-K1-dKp"/>
+                        <segue destination="Ro5-PA-jD8" kind="show" identifier="TermsToMainSegue" id="Fhm-7S-Edt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="896-5F-sVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="-530"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="49A-8R-78M">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Ro5-PA-jD8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FdF-hi-za4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815" y="0.0"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sPd-kb-nq2"/>
+        <segue reference="8Vo-Ge-5wZ"/>
+    </inferredMetricsTieBreakers>
 </document>
