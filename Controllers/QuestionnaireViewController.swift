@@ -112,8 +112,8 @@ class QuestionnaireViewController: UIViewController {
         var results = ""
         //var a: CityModel = CityModel()
         
-        if DBManager.shared.openDatabase(){
-            results = DBManager.shared.getQuestionText(id_question: idCurrentQuestion, language: language)
+        if DatabaseHelper.shared.openDatabase(){
+            results = DatabaseHelper.shared.getQuestionText(id_question: idCurrentQuestion, language: language)
             print(results)
         }
         return results
@@ -122,8 +122,8 @@ class QuestionnaireViewController: UIViewController {
     func getAnswers() -> [AnswerModel]{
         var results = [AnswerModel]()
         
-        if DBManager.shared.openDatabase(){
-            results = DBManager.shared.getAnswersForQuestion(idQuestion: idCurrentQuestion, language: language)
+        if DatabaseHelper.shared.openDatabase(){
+            results = DatabaseHelper.shared.getAnswersForQuestion(idQuestion: idCurrentQuestion, language: language)
         }
         return results
     }
@@ -131,8 +131,8 @@ class QuestionnaireViewController: UIViewController {
     func getTagRaised(idQuestion: Int, idAnswer: Int) -> Int {
         var result = 0
         
-        if DBManager.shared.openDatabase(){
-            result = DBManager.shared.getTagRaised(idQuestion: idQuestion, idAnswer: idAnswer)
+        if DatabaseHelper.shared.openDatabase(){
+            result = DatabaseHelper.shared.getTagRaised(idQuestion: idQuestion, idAnswer: idAnswer)
         }
         return result
     }
@@ -170,8 +170,8 @@ class QuestionnaireViewController: UIViewController {
             parameters.append(String(idCurrentQuestion) + "," + String(idAnswer) + ",")
             
             //Gets the next question ID
-            if DBManager.shared.openDatabase(){
-                idCurrentQuestion = DBManager.shared.getNextQuestionID(idQuestion: idCurrentQuestion, idAnswer: idAnswer)
+            if DatabaseHelper.shared.openDatabase(){
+                idCurrentQuestion = DatabaseHelper.shared.getNextQuestionID(idQuestion: idCurrentQuestion, idAnswer: idAnswer)
             }
             if idCurrentQuestion == 0 {
                 //Stores the tags raised

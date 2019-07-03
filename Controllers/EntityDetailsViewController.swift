@@ -27,8 +27,8 @@ class EntityDetailsViewController: UIViewController, UITableViewDelegate, UITabl
 
         // Do any additional setup after loading the view.
         
-        if DBManager.shared.openDatabase(){
-            var results = DBManager.shared.getEntitiesList(idEntity: nil, idCountry: nil, idCity: nil, language: language)
+        if DatabaseHelper.shared.openDatabase(){
+            var results = DatabaseHelper.shared.getEntitiesList(idEntity: nil, idCountry: nil, idCity: nil, language: language)
             print("Results " + String(results.count))
         }
         //configureTableView()

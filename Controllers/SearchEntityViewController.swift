@@ -45,12 +45,12 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         configureTableView()
         
-        if DBManager.shared.openDatabase(){
-            categories = DBManager.shared.getCategoriesList(language: language)
+        if DatabaseHelper.shared.openDatabase(){
+            categories = DatabaseHelper.shared.getCategoriesList(language: language)
             categories.insert(CategoryModel(0, NSLocalizedString("allEntities",comment: ""), language), at: 0)
-            cities = DBManager.shared.getCitiesList(idCities: nil, language: language)
+            cities = DatabaseHelper.shared.getCitiesList(idCities: nil, language: language)
             cities.insert(CityModel(0, NSLocalizedString("allCities",comment: ""), 0, language), at: 0)
-            countries = DBManager.shared.getCountriesList(idCountries: nil, language: language)
+            countries = DatabaseHelper.shared.getCountriesList(idCountries: nil, language: language)
             countries.insert(CountryModel(0, NSLocalizedString("allCountries",comment: ""), language), at: 0)
             
         }

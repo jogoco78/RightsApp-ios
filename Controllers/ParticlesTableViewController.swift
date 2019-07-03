@@ -41,21 +41,19 @@ class ParticlesTableViewController: UITableViewController {
             }
         }
         
-        if DBManager.shared.openDatabase(){
-            subjectsText = DBManager.shared.getSubjectsTextByTag(idTags: tagsInt, language: language)
-            subjectsID = DBManager.shared.getSubjectsIDByTag(idTags: tagsInt, language: language)
+        if DatabaseHelper.shared.openDatabase(){
+            subjectsText = DatabaseHelper.shared.getSubjectsTextByTag(idTags: tagsInt, language: language)
+            subjectsID = DatabaseHelper.shared.getSubjectsIDByTag(idTags: tagsInt, language: language)
         }
     }
     
-    // MARK: - Table view data source
+    // MARK: - tableView data source and delegate
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return subjectsText.count
     }
 
@@ -64,8 +62,6 @@ class ParticlesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ParticleSubjectItem", for: indexPath) as! ParticlesSubjectTableViewCell
         
         cell.particleSubjectLabel.text = subjectsText[indexPath.row]
-        
-        // Configure the cell...
         
         return cell
     }

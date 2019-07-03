@@ -10,8 +10,8 @@ import UIKit
 
 class ParticleDetailsViewController: UIViewController {
     
-    @IBOutlet weak var textView_particle: UITextView!
-    @IBOutlet weak var button_Finish: UIButton!
+    @IBOutlet weak var tvParticle: UITextView!
+    @IBOutlet weak var btnFinish: UIButton!
     
     var idSubject = UserDefaults.standard.integer(forKey: Constants.shared.particles_id_subject)
     var tags = UserDefaults.standard.string(forKey: Constants.shared.tags)
@@ -23,7 +23,7 @@ class ParticleDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        button_Finish.setTitle(NSLocalizedString("finishParticles",comment: ""), for: .normal)
+        btnFinish.setTitle(NSLocalizedString("finishParticles",comment: ""), for: .normal)
         
         let tagsComponents = (tags?.components(separatedBy: ","))
         var tagsInt = [Int]()
@@ -33,19 +33,23 @@ class ParticleDetailsViewController: UIViewController {
                 tagsInt.append(Int(tag)!)
             }
         }
-        if DBManager.shared.openDatabase(){
-            particles = DBManager.shared.getParticlesByTag(idTags: tagsInt, language: language)
+        if DatabaseHelper.shared.openDatabase(){
+            particles = DatabaseHelper.shared.getParticlesByTag(idTags: tagsInt, language: language)
         }
         
         for particle in particles {
             if particle.idSubject == idSubject {
-                textView_particle.text = particle.text
+                var particleTexts = String()
+                for text in particle.particleTexts{
+                    particleTexts.append("- " + text + "\n\n")
+                }
+                tvParticle.text = particleTexts
                 break;
             }
         }
     }
     
-    @IBAction func btFinish(_ sender: Any) {
+    @IBAction func btnFinishListener(_ sender: Any) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         performSegue(withIdentifier: "toMain", sender: nil)
     }

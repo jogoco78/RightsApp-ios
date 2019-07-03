@@ -23,7 +23,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="NLB-8c-Psh" kind="relationship" relationship="viewControllers" id="ckv-Pz-xbU"/>
-                        <segue destination="ws0-tC-DIV" kind="relationship" relationship="viewControllers" id="IkF-Vf-PgM"/>
                         <segue destination="Vvg-Ts-CbV" kind="relationship" relationship="viewControllers" id="X8f-qb-aY5"/>
                         <segue destination="3Fn-ux-C2A" kind="relationship" relationship="viewControllers" id="Osk-yb-P83"/>
                         <segue destination="Rrs-2a-1IE" kind="relationship" relationship="viewControllers" id="uDk-Hn-oC3"/>
@@ -36,7 +35,7 @@
         <!--Init Main View Controller-->
         <scene sceneID="sHj-gk-VcD">
             <objects>
-                <viewController id="S9i-pc-eLq" customClass="InitMainViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S9i-pc-eLq" customClass="InitMainViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kpg-Ye-qAQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,12 +51,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdd-DW-xy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1739" y="-990"/>
+            <point key="canvasLocation" x="-2010" y="-1409"/>
         </scene>
         <!--TermsConditionsVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="TermsConditionsVC" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="TermsConditionsViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="TermsConditionsVC" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="TermsConditionsViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +124,7 @@
         <!--HowToUseTheAppTextViewController-->
         <scene sceneID="NCC-TB-Af0">
             <objects>
-                <viewController id="3Fn-ux-C2A" userLabel="HowToUseTheAppTextViewController" customClass="HowToUseTheAppTextViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3Fn-ux-C2A" userLabel="HowToUseTheAppTextViewController" customClass="HowToUseTheAppTextViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Qv-Si-aom">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +158,7 @@
         <!--TermsConditionsTextViewController-->
         <scene sceneID="v3j-lA-Ci2">
             <objects>
-                <viewController id="Vvg-Ts-CbV" userLabel="TermsConditionsTextViewController" customClass="TermsConditionsTextViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vvg-Ts-CbV" userLabel="TermsConditionsTextViewController" customClass="TermsConditionsTextViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="drg-6l-vGP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,62 +189,10 @@
             </objects>
             <point key="canvasLocation" x="1578.4000000000001" y="235.23238380809596"/>
         </scene>
-        <!--LanguageViewController-->
-        <scene sceneID="Vfb-T5-WWz">
-            <objects>
-                <viewController storyboardIdentifier="Language" id="ws0-tC-DIV" userLabel="LanguageViewController" customClass="LanguageViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VRq-gQ-qEd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GY-N3-DXG">
-                                <rect key="frame" x="309" y="575" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="selectLanguage:" destination="ws0-tC-DIV" eventType="touchUpInside" id="hIm-6g-1pa"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Select the language" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pdJ-Ns-Fnx">
-                                <rect key="frame" x="20" y="90" width="335" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="GYB-MM-HeM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLN-yh-e2E">
-                                <rect key="frame" x="28" y="223" width="319" height="216"/>
-                            </pickerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pdJ-Ns-Fnx" firstAttribute="leading" secondItem="aUf-EL-Aof" secondAttribute="leading" constant="20" id="2pr-pq-zql"/>
-                            <constraint firstItem="pdJ-Ns-Fnx" firstAttribute="top" secondItem="aUf-EL-Aof" secondAttribute="top" constant="70" id="JH6-Ur-UeL"/>
-                            <constraint firstItem="aUf-EL-Aof" firstAttribute="trailing" secondItem="RLN-yh-e2E" secondAttribute="trailing" constant="28" id="Qc7-4k-iQD"/>
-                            <constraint firstItem="aUf-EL-Aof" firstAttribute="bottom" secondItem="3GY-N3-DXG" secondAttribute="bottom" constant="13" id="fQc-Uy-NII"/>
-                            <constraint firstItem="aUf-EL-Aof" firstAttribute="trailing" secondItem="3GY-N3-DXG" secondAttribute="trailing" constant="20" id="jZi-Pn-oEp"/>
-                            <constraint firstItem="pdJ-Ns-Fnx" firstAttribute="centerX" secondItem="RLN-yh-e2E" secondAttribute="centerX" id="nWd-pc-cfw"/>
-                            <constraint firstItem="RLN-yh-e2E" firstAttribute="top" secondItem="pdJ-Ns-Fnx" secondAttribute="bottom" constant="89" id="ryE-Wh-ar8"/>
-                            <constraint firstItem="aUf-EL-Aof" firstAttribute="trailing" secondItem="pdJ-Ns-Fnx" secondAttribute="trailing" constant="20" id="xHl-xl-Fqd"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="aUf-EL-Aof"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="Flag" id="U2W-8z-YS3"/>
-                    <connections>
-                        <outlet property="bt_continue" destination="3GY-N3-DXG" id="TM6-uL-pYq"/>
-                        <outlet property="pv_selectLanguage" destination="RLN-yh-e2E" id="SIl-ra-sqq"/>
-                        <outlet property="tv_selectLanguage" destination="pdJ-Ns-Fnx" id="ILb-GX-uem"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jKI-Z1-ZfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2784.8000000000002" y="-698.5007496251875"/>
-        </scene>
         <!--AboutUsViewController-->
         <scene sceneID="ePu-FD-xJs">
             <objects>
-                <viewController id="Rrs-2a-1IE" userLabel="AboutUsViewController" customClass="AboutUsViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rrs-2a-1IE" userLabel="AboutUsViewController" customClass="AboutUsViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7p-ee-mZt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,7 +226,7 @@
         <!--HowToUseTheAppVC-->
         <scene sceneID="uWs-EE-x2E">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="KwT-Kb-KU3" userLabel="HowToUseTheAppVC" customClass="HowToUseTheAppViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="KwT-Kb-KU3" userLabel="HowToUseTheAppVC" customClass="HowToUseTheAppViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ua-ua-vZg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,7 +288,7 @@
         <!--RightsAppViewController-->
         <scene sceneID="1yc-D8-SNW">
             <objects>
-                <viewController id="NLB-8c-Psh" userLabel="RightsAppViewController" customClass="RightsAppViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NLB-8c-Psh" userLabel="RightsAppViewController" customClass="RightsAppViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G8A-yn-vr3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +409,6 @@
         <image name="About us" width="20" height="20"/>
         <image name="Document" width="20" height="20"/>
         <image name="EmergencyCall" width="75" height="75"/>
-        <image name="Flag" width="20" height="20"/>
         <image name="Home" width="20" height="20"/>
         <image name="Information" width="20" height="20"/>
         <image name="Maps" width="75" height="75"/>
@@ -470,6 +416,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="26c-fz-eTv"/>
-        <segue reference="Vmy-VQ-a70"/>
+        <segue reference="jMx-Oc-ery"/>
     </inferredMetricsTieBreakers>
 </document>

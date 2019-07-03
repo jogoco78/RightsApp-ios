@@ -12,7 +12,10 @@ class ParticleModel {
     var id: Int!
     var text: String!
     var idSubject: Int!
+    var particleTexts: [String]!
     var language: String!
+    
+    let separatorNewLine = "--"
     
     init(){
         
@@ -23,5 +26,7 @@ class ParticleModel {
         self.text = text
         self.idSubject = idSubject
         self.language = language
+        self.particleTexts = text.components(separatedBy: separatorNewLine)
+        
     }
 }

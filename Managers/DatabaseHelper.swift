@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DBManager: NSObject {
+class DatabaseHelper: NSObject {
     
-    static let shared: DBManager = DBManager()
+    static let shared: DatabaseHelper = DatabaseHelper()
     let databaseFileName = Constants.shared.databaseName
     var pathToDatabase: String!
     var database: FMDatabase!
@@ -51,7 +51,7 @@ class DBManager: NSObject {
         }
     }
     
-    //Opens the data if it is not open yet
+    //Opens the database if it is not open yet
     func openDatabase() -> Bool {
         var result: Bool
         
@@ -68,16 +68,17 @@ class DBManager: NSObject {
         
         return result
     }
+    
     /*
     // MARK: - Questions and answers
      */
     
-    /* Returns the question text given by parameter */
+    // Returns the question text given by parameter
     func getQuestionText(id_question: Int, language: String) -> String{
         return getQuestionsText(id_questions: [id_question], language: language)[0]
     }
     
-    /* Return an array of text for the ids given by parameter */
+    // Return an array of text for the ids given by parameter
     func getQuestionsText(id_questions: [Int], language: String) -> [String]{
         var results = [String]() //empty array string
         
@@ -157,6 +158,10 @@ class DBManager: NSObject {
         return result
     }
     
+    /*
+     // MARK: - Tags
+     */
+    
     func getTagRaised(idQuestion: Int, idAnswer: Int) -> Int {
         var result = 0
         
@@ -175,6 +180,10 @@ class DBManager: NSObject {
         
         return result
     }
+    
+    /*
+     // MARK: - Subjects and particles
+     */
     
     func getSubjectsIDByTag(idTags: [Int], language: String) -> [Int] {
         let particles = getParticlesByTag(idTags: idTags, language: language)
@@ -211,7 +220,7 @@ class DBManager: NSObject {
             let cursor = try database.executeQuery(query, values: nil)
             while cursor.next(){
                 //results.append(cursor.string(forColumn: Constants.shared.field_subjects_text + language)!)
-                results.append(cursor.string(forColumn: Constants.shared.field_subjects_text + "_es")!)
+                results.append(cursor.string(forColumn: Constants.shared.field_subjects_text + "_" + language)!)
             }
             
             cursor.close()
@@ -248,8 +257,8 @@ class DBManager: NSObject {
     func getParticles(idParticles: [Int], language: String) -> [ParticleModel] {
         var results = [ParticleModel]()
         
-        //let languageField = Constants.shared.field_particles_text + "_" + language
-        let languageField = Constants.shared.field_particles_text + "_es"
+        let languageField = Constants.shared.field_particles_text + "_" + language
+        //let languageField = Constants.shared.field_particles_text + "_es"
         
         var query = "select * from " + Constants.shared.tableName_particles + " where " + Constants.shared.field_particles_id + " in (" + String(idParticles[0])
         for index in 1..<idParticles.count {

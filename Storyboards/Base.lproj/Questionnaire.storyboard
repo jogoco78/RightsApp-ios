@@ -13,7 +13,7 @@
         <!--QuestionnaireViewController-->
         <scene sceneID="IO7-cr-5P5">
             <objects>
-                <viewController id="rCt-Xw-nIb" userLabel="QuestionnaireViewController" customClass="QuestionnaireViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rCt-Xw-nIb" userLabel="QuestionnaireViewController" customClass="QuestionnaireViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1p5-ad-aDb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,21 +46,21 @@
         <!--Particles subjects-->
         <scene sceneID="yeU-II-GyX">
             <objects>
-                <tableViewController id="FCc-n9-WgC" customClass="ParticlesTableViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FCc-n9-WgC" customClass="ParticlesTableViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vkb-bg-Oqk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParticleSubjectItem" id="M00-qe-Bfb" customClass="ParticlesSubjectTableViewCell" customModule="RightsApp_ios" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ParticleSubjectItem" id="M00-qe-Bfb" customClass="ParticlesSubjectTableViewCell" customModule="RightsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M00-qe-Bfb" id="UiX-LJ-OFR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle subject item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIY-rR-bsz">
-                                            <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                            <rect key="frame" x="20" y="11" width="348" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
         <!--Particle Details View Controller-->
         <scene sceneID="xDD-ji-odl">
             <objects>
-                <viewController id="VZv-VV-UR4" customClass="ParticleDetailsViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VZv-VV-UR4" customClass="ParticleDetailsViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZj-V4-HZP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
                                 <rect key="frame" x="348" y="837" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="btFinish:" destination="VZv-VV-UR4" eventType="touchUpInside" id="wu0-Vd-jvD"/>
+                                    <action selector="btnFinishListener:" destination="VZv-VV-UR4" eventType="touchUpInside" id="wu0-Vd-jvD"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Particle text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-3N-lwD">
@@ -126,8 +126,8 @@
                         <viewLayoutGuide key="safeArea" id="ODF-1j-uSI"/>
                     </view>
                     <connections>
-                        <outlet property="button_Finish" destination="Bta-ok-DHS" id="Kpp-r6-g5M"/>
-                        <outlet property="textView_particle" destination="N9d-3N-lwD" id="oap-3C-p2y"/>
+                        <outlet property="btnFinish" destination="Bta-ok-DHS" id="Kpp-r6-g5M"/>
+                        <outlet property="tvParticle" destination="N9d-3N-lwD" id="oap-3C-p2y"/>
                         <segue destination="U1l-9T-GW1" kind="show" identifier="toMain" id="mvJ-JR-Z8I"/>
                     </connections>
                 </viewController>
