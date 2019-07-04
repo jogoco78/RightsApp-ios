@@ -16,10 +16,12 @@ class RightsAppViewController: UIViewController {
     var btnTextQuestionnaire = UIButton()
     var btnImageSearchEntity = UIButton()
     var btnTextSearchEntity = UIButton()
+    var tvTitleVC = UITextView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(tvTitleVC)
         view.addSubview(btnImageEmergency)
         view.addSubview(btnTextEmergency)
         view.addSubview(btnImageQuestionnaire)
@@ -27,9 +29,20 @@ class RightsAppViewController: UIViewController {
         view.addSubview(btnImageSearchEntity)
         view.addSubview(btnTextSearchEntity)
         
+        //Title properties
+        tvTitleVC.translatesAutoresizingMaskIntoConstraints = false
+        tvTitleVC.isEditable = false
+        tvTitleVC.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        tvTitleVC.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        tvTitleVC.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        tvTitleVC.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        tvTitleVC.heightAnchor.constraint(equalToConstant: 75).isActive = true
+        let s = NSMutableAttributedString(string: NSLocalizedString("mainScreen",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24)])
+        tvTitleVC.attributedText = s
+        
         //Emergency call properties
         btnImageEmergency.translatesAutoresizingMaskIntoConstraints = false
-        btnImageEmergency.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        btnImageEmergency.topAnchor.constraint(equalTo: tvTitleVC.bottomAnchor , constant: 30).isActive = true
         btnImageEmergency.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
         btnImageEmergency.widthAnchor.constraint(equalToConstant: 75).isActive = true
         btnImageEmergency.heightAnchor.constraint(equalToConstant: 75).isActive = true
@@ -83,6 +96,11 @@ class RightsAppViewController: UIViewController {
         btnTextSearchEntity.addTarget(self, action: #selector(searchEntityListener), for: .touchUpInside)
         
         self.tabBarItem.title = NSLocalizedString("home",comment: "")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {

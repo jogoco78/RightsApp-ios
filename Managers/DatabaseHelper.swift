@@ -323,6 +323,30 @@ class DatabaseHelper: NSObject {
             query = query + ")"
         }
         
+        query = query + " order by " + languageField
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            
+            while cursor.next(){
+                results.append(CityModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, Int(cursor.int(forColumnIndex: 5)), language))
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
+    func getCitiesFromCountry(idCountry: Int, language: String) -> [CityModel] {
+        var results = [CityModel]()
+        
+        let languageField = Constants.shared.field_cities_cityName + "_" + language
+        
+        let query = "select * from " + Constants.shared.tableName_cities + " where " + Constants.shared.field_cities_idCountry + " = " + String(idCountry) + " order by " + languageField
+        
         do {
             let cursor = try database.executeQuery(query, values: nil)
             

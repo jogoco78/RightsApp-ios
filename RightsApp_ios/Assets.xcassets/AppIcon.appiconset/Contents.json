@@ -11,8 +11,9 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "RightsApp_onlyLogo_58x58.png",
       "scale" : "2x"
     },
     {

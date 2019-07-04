@@ -13,7 +13,7 @@
         <!--SearchEntityCriteria-->
         <scene sceneID="iNo-DH-WCu">
             <objects>
-                <viewController title="SearchEntityCriteria" id="7vz-WS-FNj" customClass="SearchEntityViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SearchEntityCriteria" id="7vz-WS-FNj" customClass="SearchEntityViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YOv-Vk-zTJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,43 +36,59 @@
                     <navigationItem key="navigationItem" id="DAW-zR-9eu"/>
                     <connections>
                         <outlet property="btnSearch" destination="iqg-Yn-9Q8" id="9ga-9B-mCu"/>
-                        <segue destination="idt-gW-yV1" kind="show" identifier="toEntityDetails" id="f6U-rA-JbU"/>
+                        <outlet property="navBarEntity" destination="DAW-zR-9eu" id="7iI-er-hxM"/>
+                        <segue destination="aBQ-Sp-eAp" kind="show" identifier="SearchEntityToEntityListSegue" id="OIg-GR-rk0"/>
+                        <segue destination="IiS-7Q-Nbp" kind="show" identifier="searchToMainSegue" id="dIW-Pi-zaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4N-Pz-xhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="682.60869565217399" y="150.66964285714286"/>
         </scene>
+        <!--EntitiesList-->
+        <scene sceneID="qxJ-pr-Vde">
+            <objects>
+                <viewController id="aBQ-Sp-eAp" userLabel="EntitiesList" customClass="EntitiesListViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FiM-Ky-Oeh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6CW-ya-fos"/>
+                    </view>
+                    <connections>
+                        <segue destination="idt-gW-yV1" kind="show" id="6gF-XY-HyW"/>
+                        <segue destination="IiS-7Q-Nbp" kind="show" identifier="listToMainSegue" id="NWW-tc-Yq9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESX-BS-3VK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472" y="151"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="fEH-Qv-82w">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="IiS-7Q-Nbp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DHo-Dr-aX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1424" y="636"/>
+        </scene>
         <!--EntityDetails-->
         <scene sceneID="h3e-dI-r1N">
             <objects>
-                <viewController id="idt-gW-yV1" userLabel="EntityDetails" customClass="EntityDetailsViewController" customModule="RightsApp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="idt-gW-yV1" userLabel="EntityDetails" customClass="EntityDetailsViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHk-9i-PF3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQc-Jt-xaj">
-                                <rect key="frame" x="330" y="812" width="44" height="30"/>
-                                <state key="normal" title="Finish"/>
-                                <connections>
-                                    <action selector="btnFinishEntity:" destination="idt-gW-yV1" eventType="touchUpInside" id="dhi-fq-fjH"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="wQc-Jt-xaj" secondAttribute="bottom" constant="20" id="ZhM-8e-IE5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wQc-Jt-xaj" secondAttribute="trailing" constant="20" id="dYR-Z1-GYD"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hFS-eX-prB"/>
                     </view>
                     <connections>
-                        <outlet property="btnFinishEntity" destination="wQc-Jt-xaj" id="OjV-et-GBB"/>
+                        <segue destination="IiS-7Q-Nbp" kind="show" identifier="detailsToMainSegue" id="T3x-xv-R2d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5m-zI-CnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434.7826086956522" y="150.66964285714286"/>
+            <point key="canvasLocation" x="2222" y="151"/>
         </scene>
         <!--SearchEntityNavigationController-->
         <scene sceneID="iTz-4a-aev">
@@ -91,4 +107,7 @@
             <point key="canvasLocation" x="-139" y="151"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="T3x-xv-R2d"/>
+    </inferredMetricsTieBreakers>
 </document>

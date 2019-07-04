@@ -26,6 +26,7 @@
 "selectCountry" = "Select the country";
 "selectCity" = "Select the city";
 "alertSelected" = "You must select one option for each criteria";
+"searchEntityTitle" = "Search Entity";
 
 //Terms and conditions strings
 "appOwnership" = "App Ownership\n";
@@ -73,6 +74,7 @@
 "emergencyCallText" = "If you have been victim of a crime and you need assistance, make an emergency call to 112";
 "questionnaireText" = "Get tailored information about your rights as crime victim through our questionnaire";
 "searchEntityText" = "Get information and navigate to different assistance entities";
+"mainScreen" = "Select one option";
 
 //Questionnaire
 "questionnaire" = "Questionnaire";
