@@ -400,13 +400,14 @@ class DatabaseHelper: NSObject {
         var previousClause = false
         
         let descriptionField = Constants.shared.field_entities_description + "_" + language
+        let cityField = Constants.shared.field_cities_cityName + "_" + language
         
         var query = "select * from " + Constants.shared.tableName_entities + " inner join " + Constants.shared.tableName_cities + " on " + Constants.shared.tableName_cities + "." + Constants.shared.field_cities_id + " = " + Constants.shared.field_entities_id_city + " inner join " + Constants.shared.tableName_countries + " on " + Constants.shared.tableName_countries + "." + Constants.shared.field_countries_id + " = " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_country
         
         //inner join cities on cities.id = entities.id_city inner join countries on countries.id = entities.id_country
         
         if idEntity != nil && idEntity != 0{
-            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_city + " = " + String(idCity)
+            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_category + " = " + String(idEntity)
             previousClause = true
         }
         
@@ -440,8 +441,8 @@ class DatabaseHelper: NSObject {
                 entity.entityName = cursor.string(forColumnIndex: 1)
                 entity.entityDescription = cursor.string(forColumn: descriptionField)
                 entity.address = cursor.string(forColumnIndex: 6)
-                entity.longitude = cursor.double(forColumnIndex: 7)
-                entity.latitude = cursor.double(forColumnIndex: 8)
+                entity.longitude = cursor.double(forColumnIndex: 8)
+                entity.latitude = cursor.double(forColumnIndex: 7)
                 entity.idCity = Int(cursor.int(forColumnIndex: 9))
                 entity.idCountry = Int(cursor.int(forColumnIndex: 10))
                 entity.idCategory = Int(cursor.int(forColumnIndex: 11))
@@ -449,6 +450,7 @@ class DatabaseHelper: NSObject {
                 entity.phoneNumber2 = cursor.string(forColumnIndex: 13)
                 entity.link = cursor.string(forColumnIndex: 14)
                 entity.email = cursor.string(forColumnIndex: 15)
+                entity.cityName = cursor.string(forColumn: cityField)
                 
                 results.append(entity)
             }

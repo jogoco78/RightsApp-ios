@@ -58,8 +58,10 @@ class Constants: NSObject {
     let field_countries_id = "id"
     let field_countries_countryName = "country"
     let field_entities_description = "description"
+    let field_entities_id = "id"
     let field_entities_id_city = "id_city"
     let field_entities_id_country = "id_country"
+    let field_entities_id_category = "id_category"
     
     let latitude = "latitude"
     let longitude = "longitude"

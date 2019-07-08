@@ -11,14 +11,15 @@ import CoreLocation
 
 private let entitiesCellIdentifier = "entityCell"
 
-class EntitiesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EntitiesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
-    var idCategory = UserDefaults.standard.object(forKey: Constants.shared.searchIDEntity)
-    var idCountry = UserDefaults.standard.object(forKey: Constants.shared.searchIDCountry)
-    var idCity = UserDefaults.standard.object(forKey: Constants.shared.searchIDCity)
-    var longitude = UserDefaults.standard.double(forKey: Constants.shared.longitude)
-    var latitude = UserDefaults.standard.double(forKey: Constants.shared.latitude)
+    var idCategory = UserDefaults.standard.integer(forKey: Constants.shared.searchIDEntity)
+    var idCountry = UserDefaults.standard.integer(forKey: Constants.shared.searchIDCountry)
+    var idCity = UserDefaults.standard.integer(forKey: Constants.shared.searchIDCity)
+    var longitude: Double!
+    var latitude: Double!
     let language = LocalizationSystem.sharedInstance.getLanguage()
+    let locationManager = CLLocationManager()
     
     var entitiesTableView: UITableView!
     var entities = [EntityModel]()
@@ -26,41 +27,74 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //GPS Coordinates delegate
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
         //Sets right bar button
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
         
         //Loads the entities from the database
         if DatabaseHelper.shared.openDatabase(){
-            entities = DatabaseHelper.shared.getEntitiesList(idEntity: nil, idCountry: nil, idCity: nil, language: language)
+            entities = DatabaseHelper.shared.getEntitiesList(idEntity: idCategory, idCountry: idCountry, idCity: idCity, language: language)
         }
-        
-        //Calculates distance
-        let startLocation = CLLocation(latitude: latitude, longitude: longitude)
-        for entity in entities {
-            let endLocation = CLLocation(latitude: entity.latitude, longitude: entity.longitude)
-            let distance = startLocation.distance(from: endLocation)
-            entity.distance = distance.magnitude / 1000.0
-            print("Entity: " + String(entity.latitude) + "," + String(entity.longitude))
-            print("Distance antes: " + String(entity.distance))
-        }
-        
-        entities = entities.sorted {
-            $0.distance < $1.distance
-        }
-        //entities = sortedEntities
-        
-        for entity in entities{
-            print("Distance despues: " + String(entity.distance))
-        }
-        
+        print("Entities: " + String(entities.count) + " IDEntity: " + String(idCategory))
         configureTableView()
     }
     
     @objc func goHome(){
         performSegue(withIdentifier: "listToMainSegue", sender: nil)
     }
-
- 
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .denied:
+            //TODO: Showing an alert that the app will need location to work
+            print("User denied location permission")
+            return
+        case .authorizedWhenInUse:
+            print("App is authorized to use location while in use")
+            break
+        case .authorizedAlways:
+            print("App is authorized to always use this device's location")
+            break
+        default:
+            print("User has not yet determined location permission")
+            return
+        }
+        
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location Manager failed to get user's location. \(String(describing: error))")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let userLocation = locations.first else {
+            assertionFailure("Failed to get user's location")
+            return
+        }
+        
+        latitude = userLocation.coordinate.latitude
+        longitude = userLocation.coordinate.longitude
+        
+        //Calculates distance
+        let startLocation = CLLocation(latitude: latitude, longitude: longitude)
+        for entity in entities {
+            let endLocation = CLLocation(latitude: entity.latitude, longitude: entity.longitude)
+            let distance = startLocation.distance(from: endLocation)
+            entity.distance = distance.magnitude / 1000.0 //in kms
+            entity.distance = round(entity.distance * 100) / 100 //rounded two decimals
+        }
+        
+        entities = entities.sorted {
+            $0.distance < $1.distance
+        }
+        
+        locationManager.stopUpdatingLocation()
+    }
     
     func configureTableView(){
         entitiesTableView = UITableView()
@@ -73,7 +107,7 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         
         entitiesTableView.translatesAutoresizingMaskIntoConstraints = false
         entitiesTableView.register(entitiesTableViewCell.self , forCellReuseIdentifier: entitiesCellIdentifier)
-        entitiesTableView.rowHeight = 50
+        entitiesTableView.rowHeight = 65
         entitiesTableView.separatorStyle = .none
         entitiesTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
         entitiesTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -101,6 +135,7 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
             tableView.bounds.size.width, height: tableView.bounds.size.height))
         headerLabel.font = UIFont.systemFont(ofSize: 14)
         headerLabel.textColor = UIColor.white
+        headerLabel.numberOfLines = 0
         headerLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
         headerLabel.sizeToFit()
         headerView.addSubview(headerLabel)
@@ -118,15 +153,36 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
             if entities[indexPath.section].entityDescription != nil {
                 cell.textLabel?.text = entities[indexPath.section].entityDescription
             }else {
-                cell.textLabel?.text = "Description"
+                cell.textLabel?.text = NSLocalizedString("descriptionNotAvailable",comment: "")
             }
         case 1:
             if entities[indexPath.section].distance != nil {
-                cell.textLabel?.text = String(entities[indexPath.section].distance)
+                cell.textLabel?.text = NSLocalizedString("distance",comment: "") + ": " + String(entities[indexPath.section].distance) + " " + NSLocalizedString("kms",comment: "")
             }else {
                 cell.textLabel?.text = "Distance"
             }
-            
+        case 2:
+            if entities[indexPath.section].address != nil {
+                cell.textLabel?.text = NSLocalizedString("address",comment: "") + ": " + entities[indexPath.section].address + ", " + entities[indexPath.section].cityName
+                cell.textLabel?.numberOfLines = 0
+                cell.textLabel?.lineBreakMode = .byWordWrapping
+            } else {
+                cell.textLabel?.text = NSLocalizedString("addressNotAvailable",comment: "")
+            }
+        case 3:
+            if entities[indexPath.section].phoneNumber != nil {
+                cell.textLabel?.text = NSLocalizedString("phone",comment: "") + ": " + entities[indexPath.section].phoneNumber
+            } else {
+                cell.textLabel?.text = NSLocalizedString("phoneNotAvailable",comment: "")
+            }
+        case 4:
+            if entities[indexPath.section].link != nil {
+                cell.textLabel?.text = NSLocalizedString("link",comment: "") + entities[indexPath.section].link
+                cell.textLabel?.numberOfLines = 0
+                cell.textLabel?.isUserInteractionEnabled = true
+            } else {
+                cell.textLabel?.text = NSLocalizedString("linkNotAvailable",comment: "")
+            }
         default:
             cell.textLabel?.text = "Default"
             print("Something went wrong in cells text...")
@@ -149,19 +205,15 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
 // MARK: - TableViewCells
 
 class entitiesTableViewCell: UITableViewCell {
-    var entityTitle = UILabel()
-    //var entityDescription = UILabel()
-    //let entityAddress = UILabel()
-    //let entityPhone = UILabel()
-    //let entityLink = UILabel()
+    var entityField = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(entityTitle)
-        entityTitle.translatesAutoresizingMaskIntoConstraints = false
-        entityTitle.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        entityTitle.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        addSubview(entityField)
+        entityField.translatesAutoresizingMaskIntoConstraints = false
+        entityField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        entityField.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

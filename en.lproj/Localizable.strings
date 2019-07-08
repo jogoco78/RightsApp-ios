@@ -27,6 +27,15 @@
 "selectCity" = "Select the city";
 "alertSelected" = "You must select one option for each criteria";
 "searchEntityTitle" = "Search Entity";
+"distance" = "Distance";
+"kms" = "kms";
+"descriptionNotAvailable" = "The description is not available";
+"phone" = "Phone";
+"phoneNotAvailable" = "Phone is not available";
+"link" = "Link";
+"linkNotAvailable" = "Link not available";
+"address" = "Address";
+"addressNotAvailable" = "Address not available";
 
 //Terms and conditions strings
 "appOwnership" = "App Ownership\n";

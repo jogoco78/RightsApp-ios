@@ -17,7 +17,7 @@ private let cityCellIdentifier = "cityCell"
 
 // MARK: - ViewController main class
 
-class SearchEntityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+class SearchEntityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var navBarEntity: UINavigationItem!
@@ -30,9 +30,6 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
     var showCountry = false
     var showCity = false
     var language = LocalizationSystem.sharedInstance.getLanguage()
-    let locationManager = CLLocationManager()
-    var longitude: Double!
-    var latitude: Double!
     
     // MARK: - DB Results
     var categories = [CategoryModel]()
@@ -40,9 +37,9 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
     var countries = [CountryModel]()
     
     // MARK: - Selected rows for entity, country and city
-    var entityIndexSelected = -1
-    var countryIndexSelected = -1
-    var cityIndexSelected = -1
+    var entityIndexSelected = 0
+    var countryIndexSelected = 0
+    var cityIndexSelected = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,37 +58,11 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
             countries.insert(CountryModel(0, NSLocalizedString("allCountries",comment: ""), language), at: 0)
         }
         
-        //GPS Coordinates
-        locationManager.delegate = self
-        
-        // For use when the app is open
-        locationManager.requestWhenInUseAuthorization()
-        
-        // If location services is enabled get the users location
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest // You can change the locaiton accuary here.
-        //locationManager.startUpdatingLocation()
-        locationManager.requestLocation()
-        
         navBarEntity.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
     }
     
     @objc func goHome(){
         performSegue(withIdentifier: "searchToMainSegue", sender: nil)
-    }
-    
-    // Print out the location to the console
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("Latitude: " + String(location.coordinate.latitude))
-            print("Longitude: " + String(location.coordinate.longitude))
-            latitude = location.coordinate.latitude
-            longitude = location.coordinate.longitude
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Failed to find user's location: \(error.localizedDescription)")
     }
     
     // If we have been deined access give the user the option to change it
@@ -265,7 +236,13 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
     
     //Button listener
     @IBAction func btnSearchAction(_ sender: UIButton) {
-        if entityIndexSelected == -1 || countryIndexSelected == -1 || cityIndexSelected == -1 {
+        UserDefaults.standard.set(categories[entityIndexSelected].id, forKey:  Constants.shared.searchIDEntity)
+        UserDefaults.standard.set(countries[countryIndexSelected].id, forKey: Constants.shared.searchIDCountry)
+        UserDefaults.standard.set(cities[cityIndexSelected].id, forKey: Constants.shared.searchIDCity)
+        
+        performSegue(withIdentifier: "SearchEntityToEntityListSegue", sender: nil)
+        
+        /*if entityIndexSelected == -1 || countryIndexSelected == -1 || cityIndexSelected == -1 {
             let alert = UIAlertController(title: nil, message: NSLocalizedString("alertSelected", comment: ""), preferredStyle: .alert)
             alert.view.backgroundColor = UIColor.black
             alert.view.alpha = 0.6
@@ -277,14 +254,8 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
                 alert.dismiss(animated: true)
             }
         } else {
-            UserDefaults.standard.set(categories[entityIndexSelected].id, forKey:  Constants.shared.searchIDEntity)
-            UserDefaults.standard.set(countries[countryIndexSelected].id, forKey: Constants.shared.searchIDCountry)
-            UserDefaults.standard.set(cities[cityIndexSelected].id, forKey: Constants.shared.searchIDCity)
-            UserDefaults.standard.set(latitude, forKey: Constants.shared.latitude)
-            UserDefaults.standard.set(longitude, forKey: Constants.shared.longitude)
             
-            performSegue(withIdentifier: "SearchEntityToEntityListSegue", sender: nil)
-        }
+        }*/
     }
     
     // MARK: - Selectors
