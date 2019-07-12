@@ -56,7 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="6CW-ya-fos"/>
                     </view>
                     <connections>
-                        <segue destination="idt-gW-yV1" kind="show" id="6gF-XY-HyW"/>
+                        <segue destination="idt-gW-yV1" kind="show" identifier="ListToDetailsSegue" id="6gF-XY-HyW"/>
                         <segue destination="IiS-7Q-Nbp" kind="show" identifier="listToMainSegue" id="NWW-tc-Yq9"/>
                     </connections>
                 </viewController>

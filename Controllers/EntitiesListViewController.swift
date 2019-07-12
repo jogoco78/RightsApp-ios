@@ -32,14 +32,15 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
+        self.title = NSLocalizedString("entityListTitle",comment: "Comment")
+        
         //Sets right bar button
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
         
         //Loads the entities from the database
         if DatabaseHelper.shared.openDatabase(){
-            entities = DatabaseHelper.shared.getEntitiesList(idEntity: idCategory, idCountry: idCountry, idCity: idCity, language: language)
+            entities = DatabaseHelper.shared.getEntitiesList(idEntity: nil, idCategory: idCategory, idCountry: idCountry, idCity: idCity, language: language)
         }
-        print("Entities: " + String(entities.count) + " IDEntity: " + String(idCategory))
         configureTableView()
     }
     
@@ -93,6 +94,8 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
             $0.distance < $1.distance
         }
         
+        entitiesTableView.reloadData()
+        
         locationManager.stopUpdatingLocation()
     }
     
@@ -128,20 +131,22 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.lightGray
+        var headerCell = UITableViewCell()
         
-        let headerLabel = UILabel(frame: CGRect(x: 30, y: 0, width:
-            tableView.bounds.size.width, height: tableView.bounds.size.height))
-        headerLabel.font = UIFont.systemFont(ofSize: 14)
-        headerLabel.textColor = UIColor.white
-        headerLabel.numberOfLines = 0
-        headerLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
-        headerLabel.sizeToFit()
-        headerView.addSubview(headerLabel)
+        headerCell = tableView.dequeueReusableCell(withIdentifier: entitiesCellIdentifier) as! entitiesTableViewCell
+        headerCell.textLabel?.font = UIFont.systemFont(ofSize: 20)
+        headerCell.textLabel?.text = entities[section].entityName
+        headerCell.backgroundColor = UIColor.lightGray
+        headerCell.textLabel?.textColor = UIColor.white
+        headerCell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
-        return headerView
+        return headerCell
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
@@ -152,6 +157,9 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         case 0:
             if entities[indexPath.section].entityDescription != nil {
                 cell.textLabel?.text = entities[indexPath.section].entityDescription
+                cell.textLabel?.numberOfLines = 0
+                cell.heightAnchor.constraint(equalToConstant: 70)
+                
             }else {
                 cell.textLabel?.text = NSLocalizedString("descriptionNotAvailable",comment: "")
             }
@@ -177,7 +185,7 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
             }
         case 4:
             if entities[indexPath.section].link != nil {
-                cell.textLabel?.text = NSLocalizedString("link",comment: "") + entities[indexPath.section].link
+                cell.textLabel?.text = NSLocalizedString("link",comment: "") + ": " + entities[indexPath.section].link
                 cell.textLabel?.numberOfLines = 0
                 cell.textLabel?.isUserInteractionEnabled = true
             } else {
@@ -194,11 +202,16 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        if indexPath.row == 0 && entities[indexPath.section].entityDescription != nil {
+            return 90
+        }else{
+            return 40
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //code
+        UserDefaults.standard.set(entities[indexPath.section].id, forKey: Constants.shared.entitySelected)
+        performSegue(withIdentifier: "ListToDetailsSegue", sender: nil)
     }
 }
 
@@ -214,9 +227,11 @@ class entitiesTableViewCell: UITableViewCell {
         entityField.translatesAutoresizingMaskIntoConstraints = false
         entityField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         entityField.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        entityField.numberOfLines = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-}
+        
+    }
 }

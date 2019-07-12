@@ -377,8 +377,6 @@ class DatabaseHelper: NSObject {
             query = query + ")"
         }
         
-        print(query)
-        
         do {
             let cursor = try database.executeQuery(query, values: nil)
             
@@ -395,7 +393,7 @@ class DatabaseHelper: NSObject {
         return results
     }
     
-    func getEntitiesList(idEntity: Int!, idCountry: Int!, idCity: Int!, language: String) -> [EntityModel]{
+    func getEntitiesList(idEntity: Int!, idCategory: Int!, idCountry: Int!, idCity: Int!, language: String) -> [EntityModel]{
         var results = [EntityModel]()
         var previousClause = false
         
@@ -406,30 +404,41 @@ class DatabaseHelper: NSObject {
         
         //inner join cities on cities.id = entities.id_city inner join countries on countries.id = entities.id_country
         
-        if idEntity != nil && idEntity != 0{
-            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_category + " = " + String(idEntity)
+        if idCategory != nil && idCategory != 0 {
+            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_category + " = " + String(idCategory)
             previousClause = true
+        }
+        
+        if idEntity != nil && idEntity != 0 {
+            if previousClause {
+                query = query + " and "
+            } else {
+                query = query + " where "
+                previousClause = true
+            }
+            
+            query = query + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id + " = " + String(idEntity)
         }
         
         if idCountry != nil && idCountry != 0 {
             if previousClause {
-                query = query + " AND "
+                query = query + " and "
             } else {
-                query = query + " WHERE "
+                query = query + " where "
                 previousClause = true
             }
             
-            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_country + " = " + String(idCountry)
+            query = query + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_country + " = " + String(idCountry)
         }
         
         if idCity != nil && idCity != 0 {
             if previousClause {
-                query = query + " AND "
+                query = query + " and "
             } else {
-                query = query + " WHERE "
+                query = query + " where "
             }
             
-            query = query + " where " + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_city + " = " + String(idCity)
+            query = query + Constants.shared.tableName_entities + "." + Constants.shared.field_entities_id_city + " = " + String(idCity)
         }
         
         do {

@@ -47,6 +47,12 @@ class ParticleDetailsViewController: UIViewController {
                 break;
             }
         }
+        
+         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
+    }
+    
+    @objc func goHome(){
+        performSegue(withIdentifier: "toMain", sender: nil)
     }
     
     @IBAction func btnFinishListener(_ sender: Any) {

@@ -45,6 +45,12 @@ class ParticlesTableViewController: UITableViewController {
             subjectsText = DatabaseHelper.shared.getSubjectsTextByTag(idTags: tagsInt, language: language)
             subjectsID = DatabaseHelper.shared.getSubjectsIDByTag(idTags: tagsInt, language: language)
         }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
+    }
+    
+    @objc func goHome(){
+        performSegue(withIdentifier: "ParticleTableToMainSegue", sender: nil)
     }
     
     // MARK: - tableView data source and delegate

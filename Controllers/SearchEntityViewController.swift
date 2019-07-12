@@ -64,33 +64,6 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
     @objc func goHome(){
         performSegue(withIdentifier: "searchToMainSegue", sender: nil)
     }
-    
-    // If we have been deined access give the user the option to change it
-    /*func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-     if(status == CLAuthorizationStatus.denied) {
-     showLocationDisabledPopUp()
-     }
-     }
-     
-     // Show the popup to the user if we have been denied access
-     func showLocationDisabledPopUp() {
-     let alertController = UIAlertController(title: "Background Location Access Disabled",
-     message: "In order to submit offline report you need to enable your location services.",
-     preferredStyle: .alert)
-     
-     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-     alertController.addAction(cancelAction)
-     
-     let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
-     if let url = URL(string: UIApplication.openSettingsURLString) {
-     UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-     
-     }
-     }
-     alertController.addAction(openAction)
-     
-     self.present(alertController, animated: true, completion: nil)
-     }*/
 
     //Configure tableviews (position, size, etc.)
     func configureTableView(){
@@ -241,21 +214,6 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
         UserDefaults.standard.set(cities[cityIndexSelected].id, forKey: Constants.shared.searchIDCity)
         
         performSegue(withIdentifier: "SearchEntityToEntityListSegue", sender: nil)
-        
-        /*if entityIndexSelected == -1 || countryIndexSelected == -1 || cityIndexSelected == -1 {
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("alertSelected", comment: ""), preferredStyle: .alert)
-            alert.view.backgroundColor = UIColor.black
-            alert.view.alpha = 0.6
-            alert.view.layer.cornerRadius = 15
-            
-            self.present(alert, animated: true)
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
-                alert.dismiss(animated: true)
-            }
-        } else {
-            
-        }*/
     }
     
     // MARK: - Selectors

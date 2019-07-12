@@ -135,7 +135,7 @@ class TermsViewController: UIViewController {
             }
             
         } else {
-            //Shows an alert: temrs and conditions must be accepted
+            //Shows an alert: terms and conditions must be accepted
             let alert = UIAlertController(title: nil, message: NSLocalizedString("alertTermsConditions", comment: ""), preferredStyle: .alert)
             alert.view.backgroundColor = UIColor.black
             alert.view.alpha = 0.6

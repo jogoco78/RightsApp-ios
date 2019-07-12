@@ -86,6 +86,7 @@
                     <navigationItem key="navigationItem" title="Particles subjects" id="FpZ-LV-FP2"/>
                     <connections>
                         <segue destination="VZv-VV-UR4" kind="show" identifier="particlesSubjectToDetail" id="pnk-LN-9PI"/>
+                        <segue destination="U1l-9T-GW1" kind="show" identifier="ParticleTableToMainSegue" id="xXg-d2-Z3m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDV-D6-Jkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,15 +101,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bta-ok-DHS">
-                                <rect key="frame" x="348" y="837" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="btnFinishListener:" destination="VZv-VV-UR4" eventType="touchUpInside" id="wu0-Vd-jvD"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Particle text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N9d-3N-lwD">
-                                <rect key="frame" x="5" y="93" width="404" height="714"/>
+                                <rect key="frame" x="5" y="93" width="404" height="749"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -117,16 +111,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="N9d-3N-lwD" firstAttribute="top" secondItem="ODF-1j-uSI" secondAttribute="top" constant="5" id="C2N-jD-T9K"/>
-                            <constraint firstItem="ODF-1j-uSI" firstAttribute="trailing" secondItem="Bta-ok-DHS" secondAttribute="trailing" constant="20" id="Pqg-c2-PHc"/>
+                            <constraint firstItem="ODF-1j-uSI" firstAttribute="bottom" secondItem="N9d-3N-lwD" secondAttribute="bottom" constant="20" id="Mla-Ht-Ab0"/>
                             <constraint firstItem="N9d-3N-lwD" firstAttribute="leading" secondItem="ODF-1j-uSI" secondAttribute="leading" constant="5" id="YQ5-Jx-vyL"/>
-                            <constraint firstAttribute="bottom" secondItem="Bta-ok-DHS" secondAttribute="bottom" constant="29" id="bca-rB-Meg"/>
-                            <constraint firstItem="Bta-ok-DHS" firstAttribute="top" secondItem="N9d-3N-lwD" secondAttribute="bottom" constant="30" id="esg-BY-2M8"/>
                             <constraint firstItem="ODF-1j-uSI" firstAttribute="trailing" secondItem="N9d-3N-lwD" secondAttribute="trailing" constant="5" id="uoK-gh-8MG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ODF-1j-uSI"/>
                     </view>
                     <connections>
-                        <outlet property="btnFinish" destination="Bta-ok-DHS" id="Kpp-r6-g5M"/>
                         <outlet property="tvParticle" destination="N9d-3N-lwD" id="oap-3C-p2y"/>
                         <segue destination="U1l-9T-GW1" kind="show" identifier="toMain" id="mvJ-JR-Z8I"/>
                     </connections>
@@ -141,7 +132,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="U1l-9T-GW1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Eb-lq-7Vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2934" y="129"/>
+            <point key="canvasLocation" x="1875" y="607"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cap-oo-fh2">
@@ -160,4 +151,7 @@
             <point key="canvasLocation" x="522" y="146"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xXg-d2-Z3m"/>
+    </inferredMetricsTieBreakers>
 </document>

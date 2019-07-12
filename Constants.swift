@@ -12,6 +12,8 @@ class Constants: NSObject {
     static let shared: Constants = Constants()
     let databaseName = "rightsapp_v5_utf16.db"
     
+    let newLine = "\n"
+    
     //Emergency phone number
     let emergencyCall = "935812235"
     
@@ -22,6 +24,7 @@ class Constants: NSObject {
     let searchIDEntity = "entityTypeID"
     let searchIDCountry = "countryID"
     let searchIDCity = "cityID"
+    let entitySelected = "entitySelected"
     
     //Table names
     let tableName_questions = "questions"
