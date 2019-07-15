@@ -7,92 +7,94 @@
 */
 
 //Buttons & Tab bar items title
-"accept" = "Accept";
-"continue" = "Continue";
-"finish" = "Finish";
-"call" = "Call";
+"accept" = "Aceitar";
+"continue" = "Continuar";
+"finish" = "Terminar";
+"call" = "Chamada";
 "home" = "Home";
-"language" = "Language";
-"terms" = "Terms Conditions";
-"use" = "Use of app";
-"us" = "Us";
-"rights" = "Rights subjects";
-"navigate" = "Navigate";
+"language" = "Língua";
+"terms" = "Termos e Condições";
+"use" = "Uso aplicativo";
+"us" = "Nos";
+"rights" = "Temas";
+"navigate" = "Navegar";
 
 //SearchEntities
-"allEntities" = "All available entities";
-"allCountries" = "All available countries";
-"allCities" = "All available cities";
-"selectEntity" = "Select the type of the entity";
-"selectCountry" = "Select the country";
-"selectCity" = "Select the city";
-"alertSelected" = "You must select one option for each criteria";
-"searchEntityTitle" = "Search Entity";
-"entityListTitle" = "List of entities";
-"distance" = "Distance";
-"distanceNotAvailable" = "The distance to the entity is not available";
+"allEntities" = "Todas as entidades disponíveis";
+"allCountries" = "Todos os países disponíveis";
+"allCities" = "Todas as cidades disponíveis";
+"selectEntity" = "Selecione o tipo da entidade";
+"selectCountry" = "Selecione o país";
+"selectCity" = "Selecione a cidade";
+"alertSelected" = "Você deve selecionar uma opção para cada critério";
+"searchEntityTitle" = "Entidade de pesquisa";
+"entityListTitle" = "Lista de entidades";
+"distance" = "Distância";
+"distanceNotAvailable" = "A distância para a entidade não está disponível";
 "kms" = "kms";
-"descriptionNotAvailable" = "\nThe description is not available";
-"phone" = "\nPhone";
-"phoneNotAvailable" = "\nPhone is not available";
+"descriptionNotAvailable" = "\nA descrição não está disponível";
+"phone" = "\nTelefone";
+"phoneNotAvailable" = "\nTelefone não está disponível";
 "link" = "\nLink";
-"linkNotAvailable" = "\nLink not available";
-"address" = "\nAddress";
-"addressNotAvailable" = "\nAddress not available";
-"entityNameNotAvailable" = "\nThe entity name is not available";
+"linkNotAvailable" = "\nLink não disponível";
+"address" = "\nEndereço";
+"addressNotAvailable" = "\nEndereço não disponível";
+"entityNameNotAvailable" = "\nO nome da entidade não está disponível";
 "email" = "\nE-mail";
-"emailNotAvailable" = "\nThe e-mail is not available";
+"emailNotAvailable" = "\nO e-mail não está disponível";
 
 //Languages
-"spanish" = "Spanish";
-"english" = "English";
-"portuguese" = "Portuguese";
-"italian" = "Italian";
-"languageText" = "Select your language";
-"alertLanguageChange" = "You must restart the app for the changes to take effect";
+"spanish" = "Espanhol";
+"english" = "Inglês";
+"portuguese" = "Português";
+"italian" = "Italiano";
+"languageText" = "Selecione sua lingua";
+"alertLanguageChange" = "Você deve reiniciar o aplicativo para que as alterações entrem em vigor";
 
 //RightsApp screen
-"emergencyCallText" = "If you have been victim of a crime and you need assistance, make an emergency call to 112";
-"questionnaireText" = "Get tailored information about your rights as crime victim through our questionnaire";
-"searchEntityText" = "Get information and navigate to different assistance entities";
-"mainScreen" = "Select one option";
+"emergencyCallText" = "Se você foi vítima de um crime e precisa de assistência, faça uma ligação de emergência para o 112";
+"questionnaireText" = "Obtenha informações personalizadas sobre os seus direitos como vítima de crime através do nosso questionário";
+"searchEntityText" = "Obtenha informações e navegue para diferentes entidades de assistência";
+"mainScreen" = "Selecione uma opção";
 
 //Questionnaire
-"questionnaire" = "Questionnaire";
-"alertSelectOneOption" = "You must select one option in the questionnaire";
-"finishParticles" = "Finish";
+"questionnaire" = "Questionário";
+"alertSelectOneOption" = "Você deve selecionar uma opção no questionário";
+"finishParticles" = "Terminar";
 
 //Terms and conditions strings
-"appOwnership" = "App Ownership\n";
-"appOwnershipBody" = "This app is operated by Universitat Autonoma de Barcelona - Institute of Law and Technology (hereinafter, UAB-IDT) on behalf of the RightsApp consortium. UAB-IDT is located at:\nUniversitat Autònoma de Barcelona - Institute of Law and Technology (UAB-IDT)\nidt@uab.cat\nCampus de la UAB. Edifici B\nCerdanyola del Valles (Bellaterra), Spain\n";
-"termsConditions" = "Terms and Conditions\n";
-"termsConditionsBody" = "The RightsApp app (hereinafter, the app) is the main outcome of the DG-Justice funded project “RightsApp: Mobile Technologies applied to protect victims of a crime within the EU Area of Justice: RightsApp for e-Justice” (hereinafter RightsApp), which has received funding from the DG-Justice European Union’s Programme (2014-2020) under Grant Agreement No. 785854.\nThe app falls under the responsibility of the RightsApp consortium. It is not concerned with commercial transactions or with the exchange of data for marketing purposes. Whereas we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the app, or the information, products, services, or related graphics contained into the app for any purpose. The information in this app is provided “as is”, and no guarantee or warranty is given that the information is fit for any particular purpose. The user thereof uses the information at its sole risk and liability.\nIt is our goal to minimize disruption caused by technical errors. However, some data or information on our site may have been created or structured in files or formats that are not error-free and we cannot guarantee that our service will not be interrupted or otherwise affected by such problems. The RightsApp consortium accepts no responsibility regarding such problems incurred as a result of using this site or any linked external sites.\n";
-"privacyPolicy" = "Privacy policy\n";
-"privacyPolicyBody" = "Welcome to our Privacy Policy. Your privacy is critically important to us.\nIt is UAB-IDT\'s policy to respect your privacy regarding any information we may collect while operating our app. This Privacy Policy applies to RightsApp mobile application (hereinafter, the \"app\"). We respect your privacy and are committed to protecting personally identifiable information and personal data you may provide us through the app. We have adopted this privacy policy (\"Privacy Policy\") to explain what information may be collected on our app, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy, together with the Terms and conditions posted above, set forth the general rules and policies governing your use of our app.\n";
-"personalData" = "Personal data\n";
-"personalDataBody" = "While using our app, we will not ask you to provide us with any personally identifiable information that can be used to contact or identify you (\"Personal Data\"). UAB-IDT may collect statistics about the behaviour of visitors to the app, as explained below.\n";
-"linksToExternalSites" = "Link to external sites\n";
-"linksToExternalSitesBody" = "Our Service may contain links to external sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy and Terms and Conditions of every site you visit. We have no control over, and assume no responsibility for the content, privacy policies or practices of any third-party sites, products or services.\n";
-"aggregatedStatistics" = "Aggregated statistics\n";
-"aggregatedStatisticsBody" = "UAB-IDT may collect statistics about the behaviour of visitors to its app. UAB-IDT may display this information publicly or provide it to others. However, UAB-IDT does not disclose your personally-identifying information and statistics will be displayed or provided in a completely anonymised manner.\n";
+"appOwnership" = "Propriedade da app\n";
+"appOwnershipBody" = "Esta aplicação é operada e gerida pela Universitat Autonoma de Barcelona - Instituto de Direito e Tecnologia (doravante, UAB-IDT) através do consórcio RightsApp. A UAB-IDT tem sede na:\nUniversitat Autònoma de Barcelona - Institute of Law and Technology (UAB-IDT)\nidt@uab.cat\nCampus de la UAB. Edifici B\nCerdanyola del Valles (Bellaterra), Spain\n";
+"termsConditions" = "Termos e Condições\n";
+"termsConditionsBody" = "A aplicação RightsApp consiste no resultado principal do projecto financiado pela DG-Justiça chamado de “Tecnologias Móveis aplicadas para proteger as vítimas de crime dentro da Área de Justiça da UE: RightsApp for e-Justice” (http://rightsapp-project.eu), que recebeu financiamento do Programa da DG-Justiça da União Europeia (2014-2020) ao abrigo do contrato de subvenção n.º 785854.\nA app é da responsabilidade do consórcio da RightsApp. Não está relacionada com transacções comerciais nem com partilha de dados para fins de marketing. Considerando que nos esforçamos para manter as informações actualizadas e correctas, não concedemos representações jurídicas, nem quaisquer tipo de garantias, expressas ou implícitas, quanto à integridade, precisão, adequação ou disponibilidade da app, ou quanto às informações, produtos, serviços, ou gráficos contidos na mesma. As informações contidas nesta app são fornecidas \"como são\", e nenhuma garantia é dada de que as informações são adequadas para qualquer finalidade específica. O utilizador usa as informações por sua conta e risco.\nÉ nosso objectivo minimizar interrupções causadas por erros técnicos. No entanto, alguns dados ou informações no nosso site podem ter sido criados ou estruturados em arquivos ou formatos que não estão livres de erros e não podemos garantir que o nosso serviço não seja interrompido ou afectado por tais problemas. O consórcio RightsApp não aceita qualquer responsabilidade em relação a tais problemas incorridos como resultado do uso deste site ou de quaisquer sites externos a este vinculados.\n";
+
+"privacyPolicy" = "Política de Privacidade\n";
+"privacyPolicyBody" = "Bem-vindo à nossa Política de Privacidade. A sua privacidade é muito importante para nós.\nÉ política da UAB-IDT respeitar a privacidade em relação a qualquer informação que colectar enquanto usar a nossa app. Esta Política de Privacidade aplica-se à aplicação móvel RightsApp (doravante, a \"app\"). Respeitamos a sua privacidade e estamos comprometidos em proteger os dados pessoais que nos facultar por meio da app. Adoptamos esta política de privacidade (\"Política de Privacidade\") para explicar quais as informações que podem ser recolhidas na nossa app, como é que utilizamos estas informações, e sob quais circunstâncias podemos divulgar estas informações a terceiros. Esta Política de Privacidade, juntamente com os Termos e Condições publicados acima, estabelecem as regras gerais que regem tanto o uso como a privacidade e tratamento dos seus dados pessoais da nossa app.\n";
+"personalData" = "Dados Pessoais\n";
+"personalDataBody" = "Ao usar a nossa aplicação, não solicitaremos que nos faculte dados pessoais identificáveis que possam ser usados para contactá-lo ou identificá-lo (\"Dados pessoais\"). A UAB-IDT pode recolher estatísticas sobre o comportamento dos visitantes da aplicação, como se encontra explicado infra.\n";
+"linksToExternalSites" = "Links Para Websites Externos\n";
+"linksToExternalSitesBody" = "O nosso Serviço pode conter links para sites externos que não são operados por nós. Se clicar num link de terceiros, será direccionado para o site de terceiros. Aconselhamos vivamente que reveja a Política de Privacidade e os Termos e Condições de todos os sites que visita. Não temos controlo e não assumimos nenhuma responsabilidade pelo conteúdo, políticas de privacidade ou práticas de quaisquer sites, produtos ou serviços de terceiros.\n";
+"aggregatedStatistics" = "Informação Estatística Agregada\n";
+"aggregatedStatisticsBody" = "A UAB-IDT pode recolher informação estatística sobre o padrão de comportamento dos utilizadores da app. A UAB-IDT pode apresentar esta informação publicamente ou fornecê-la a terceiros. No entanto, a UAB-IDT não divulga os seus dados de identificação pessoal e a informação estatística será apresentada ou fornecida de maneira completamente anónima.\n";
 "googleAnalytics" = "Google analytics\n";
-"googleAnalyticsBody" = "This app uses functions of Google Analytics of Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States, which support interest-based advertising and advertising based on user browsing behaviour. Google Analytics uses a third-party cookie from DoubleClick to evaluate data regarding users’ browsing behaviour on different websites. These data can be used to prepare statistical statements on demographic data and areas of interest of website users.\nWe expressly draw your attention to the fact that we cannot view data related to individual users and that the statistical data we use cannot be traced back to specific users.\nFor more information about Google’s terms of use and privacy, please visit: https://policies.google.com/privacy\n";
-"privacyPolicyChanges"= "Privacy policy changes\n";
-"privacyPolicyChangesBody" = "Although most changes are likely to be minor, UAB-IDT may change its Privacy Policy from time to time, and in UAB-IDT's sole discretion.\nUAB-IDT encourages visitors to frequently check this screen for any changes to its Privacy Policy. Your continued use of this site after any change in this Privacy Policy will constitute your acceptance of such change.\n";
+"googleAnalyticsBody" = "Esta app utiliza funções da Google Analytics do Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, um de análise de dados do comportamento de navegação dos utilizadores da Internet fornecido pela Google. A Google Analytics utiliza um cookie analítico da DoubleClick para avaliar dados sobre o comportamento de navegação dos utilizadores em diferentes sites. Esses dados podem ser usados para análise estatística de dados demográficos e áreas de interesse dos utilizadores do site. Chamamos a atenção para o facto de que não podemos visualizar dados relacionados com utilizadores individuais e que os dados estatísticos que usamos não podem ser rastreados até usuários específicos.\nPara mais informações sobre os termos de uso e privacidade do Google, visite:\nhttps://policies.google.com/privacy\n";
+"privacyPolicyChanges"= "Alterações à Política de Privacidade\n";
+"privacyPolicyChangesBody" = "Embora a maioria das mudanças possa ser mínima, a UAB-IDT pode alterar a sua Política de Privacidade, actualizando-a em qualquer momento, e a seu exclusivo critério.\nA UAB-IDT incentiva os visitantes a verificarem frequentemente esta tela para quaisquer alterações à sua Política de Privacidade. O uso continuado desta app após qualquer alteração à Política de Privacidade aceitação de tal mudança.\n";
 
 "alertTermsConditions" = "You must accept the terms and conditions of the app";
 
 "labelTermsConditions" = "I have read and accept the terms and conditions";
 
 //How to use the app strings
-"howToUseTheApp" = "How to use the app\n";
-"bottomMenu" = "Bottom Menu\n";
-"bottomMenuBody" = "When you start the RightsApp application (hereinafter, the \"app\"), you must first accept the Terms and conditions of the app. Within these Terms and conditions you can find the privacy policy. UAB-IDT strongly recommends you to carefully review these terms and conditions that will always be available in the \"Preferences\" menu.\nThe Preferences menu consists of 4 different sections:\nLanguage: the app is available in four languages: Spanish, English, Portuguese and Italian. You can change the language of the app (except during the questionnaire response) on this screen.\nHow to use the app: it shows this explanation in the language active at that moment.\nTerms and conditions: This screen shows the Terms and conditions of use of the app. This includes the Privacy policy.\nAbout us: it contains the description of the RightsApp consortium and the available ways to contact the consortium.\n";
-"howTheAppWorks" = "How the app works\n";
-"howTheAppWorksBody" = "The app includes three different scenarios in which the user that has been victim of a crime within the European Union can found himself/herself. The first scenario is the need to make an emergency call to 112.With just a push of a button the user can make an emergency call to 112.\nThe second scenario is the need to be provided with information regarding rights of European Union citizens’ who have been victims of a crime. In order to obtain particularized information, the user has to fill in a small questionnaire (with a minimum of X and a maximum of Y questions). Once the user has answered this questionnaire, the rights that assist the user in her/his specific situation will appear grouped by subject (this grouping is due to the size of mobile devices’ screens, in order to facilitate the visualization). Once the title of any subject has been pressed, a more detailed definition of the rights that assist the user with respect to that subject will be displayed.\nIn the latter scenario the app provides the citizen who has been the victim of a crime with information regarding entities and centres that provide crime victim support. First, the user chooses three parameters to facilitate the search among these institutions and centres. The first parameter is the type of entity you are looking for, the second indicates in which country, and finally in which city. At the moment, only entities and centres that provide assistance to victims of crime in the Autonomous Community of Catalonia are available. Once these parameters are established, an ordered list will appear from less to more distant with respect to the user's location. Once one of the entities or assistance centres has been selected, the app will offer the possibility of calling that particular entity or centre, navigating to it (using GoogleMaps) or going back to carry out another search.";
-"doNotShow" = "Do not show this message again";
+"howToUseTheApp" = "Como usar o aplicativo\n";
+"bottomMenu" = "Menu de preferências\n";
+"bottomMenuBody" = "Quando inicia a aplicação RightsApp (doravante, a \"app\"), o utilizador deve primeiro aceitar os Termos e Condições da app. Dentro destes Termos e Condições, pode encontrar a política de privacidade. A UAB-IDT recomenda que leia cuidadosamente estes termos e condições que estarão sempre disponíveis no menu \"Preferências\". O menu Preferências consiste em 4 secções diferentes:\n\tLíngua: a aplicação está disponível em quatro línguas: espanhol, inglês, português e italiano. Pode alterar a língua da aplicação nesta tela (excepto quando responder ao questionário).\n\tComo usar a aplicação: esta secção mostra esta explicação na língua seleccionada naquele momento.\n\tTermos e condições: esta tela mostra os Termos e condições de uso da aplicação. Estes termos incluem a política de privacidade.\n\tSobre nós: contém a descrição do consórcio RightsApp e as formas disponíveis para entrar em contacto com o consórcio.\n";
+"howTheAppWorks" = "Como funciona a aplicação\n";
+"howTheAppWorksBody" = "A aplicação inclui três cenários diferentes nos quais um utilizador que foi vítima de crime, dentro da União Europeia, se pode identificar. O primeiro cenário refere-se à necessidade de fazer uma chamada de emergência para o 112. Com apenas o toque de um botão, o utilizador pode fazer uma chamada de emergência para o 112.\nO segundo cenário consiste na necessidade de receber informação sobre os direitos dos cidadãos da União Europeia vítimas de um crime. Para obter informações específicas, o utilizador deve preencher um pequeno questionário (com um mínimo de X e um máximo de Y perguntas). Depois de responder a este questionário, os direitos relativos à sua situação específica aparecem associados por tema (esta organização é devida ao tamanho das telas dos dispositivos móveis, e no sentido de facilitar a visualização). Quando o respectivo título de um tema é seleccionado, é então exibida uma definição mais detalhada dos direitos que auxiliam o utilizador quanto a esse assunto.\nQuanto ao último cenário, a aplicação fornece aos cidadãos vítimas de crime informações sobre as entidades e centros que fornecem apoio às mesmas. Primeiro, o utilizador pode escolher três parâmetros para facilitar a sua pesquisa de entre estas instituições e centros existentes. O primeiro parâmetro corresponde ao tipo de entidade que procura, o segundo indica qual o país e finalmente qual a cidade. Neste momento, apenas estão disponíveis as entidades e centros que prestam assistência às vítimas de crimes na Comunidade Autónoma da Catalunha. Após a selecção destes parâmetros, aparece uma lista que disponibiliza os locais mais próximos e distantes em relação à localização respectiva do utilizador. Depois da selecção de uma das entidades ou centros de assistência, a aplicação oferece a possibilidade de telefonar para esta mesma entidade ou centro, navegando até à mesma (utilizando o GoogleMaps) ou voltando à aplicação para realizar uma outra pesquisa.";
 
 //About us strings
-"aboutUs" = "About us\n";
-"aboutUsBody" = "The RightsApp app is the main outcome for the DG-Justice funded project “Mobile Technologies applied to protect victims of a crime within the EU Area of Justice: RightsApp for e-Justice” (http://rightsapp-project.eu), which has received funding from the DG-Justice European Union’s Programme (2014-2020) under Grant Agreement No. 785854.\nThe Consortium is composed of two non-profit organizations within the Universitat Autònoma de Barcelona (UAB): the UAB Institute of Law and Technology (IDT-UAB, http://idt.uab.cat) and the UAB International Welcome Point (IWP-UAB, https://www.uab.cat/international-welcome-point/).\nThe UAB Institute of Law and Technology (IDT-UAB) is a research centre promoting cutting-edge research on law and technology from an interdisciplinary perspective. Its core mission is that of fostering research devoted to providing legal professionals, institutions, organizations, and citizens with appropriate technologies to enhance their legal work or to improve the exercise of their rights. Appropriate technologies in this context imply that research is user oriented, so that both the technological design and its developments are tailored to the needs of the end users and not the opposite.\nThe UAB International Welcome Point (IWP-UAB) is an office designed by the International Relationships Office to provide services to all foreigner members of the UAB community. Thus, giving support for the students, lecturers, administrative staff and services staff from other countries. It provides practical information like legal procedures for EU and non-EU citizens, health cover for EU citizens, budget for living in Barcelona and useful addresses. Moreover, the IWP provides support on foreigners stay and work permit renewal applications, coordinates assistance among UAB offices and assistance to international postgraduate grant holders.\nMoreover, UAB Faculty of Law (FoL, https://www.uab.cat/dret/), LAST-JD Erasmus Mundus (LAST-JD) and Catalan Society of Victimology (CSV, https://www.victimologia.cat/)  also contribute to qualitative and quantitative research and dissemination as well. The UAB Faculty of Law receives every year more than 60 students from other countries in its student mobility programs (Erasmus Programme) and every year about 2.600 individuals enrol on its degrees and post degree courses. The Catalan Society of Victimology groups together lawyers, psychologists, doctors, social workers, among others.";
+"aboutUs" = "Sobre nós\n";
+"aboutUsBody" = "A aplicação <b>RightsApp</b> consiste no resultado principal do projecto financiado pela DG-Justiça chamado de “Tecnologias Móveis aplicadas para proteger as vítimas de crime dentro da Área de Justiça da UE: RightsApp for e-Justice” (<a href=\"http://rightsapp-project.eu\" target=\"blank\">http://rightsapp-project.eu</a>), que recebeu financiamento do Programa da DG-Justiça da União Europeia (2014-2020) ao abrigo do contrato de subvenção no. 785854.\n\nO consórcio é composto por duas organizações sem fins lucrativos parte da própria orgânica da Universidade Autónoma de Barcelona (UAB): o Instituto de Direito e Tecnologia (IDT-UAB, <a href=\"http://idt.uab.cat\" target=\"blank\">http://idt.uab.cat</a>) e o Ponto de Boas-Vindas Internacionais da UAB (IWP-UAB, <a href=\"https://www.uab.cat/international-welcome-point/\" target=\"blank\">https://www.uab.cat/international-welcome-point/</a>).\n\nO Instituto de Direito e Tecnologia da UAB (IDT-UAB) é um centro de investigação que promove investigação de ponta sobre direito e tecnologia a partir de uma perspectiva interdisciplinar. A sua missão principal é a de fomentar a investigação dedicada a fornecer aos profissionais da área jurídica, instituições, organizações e cidadãos as tecnologias apropriadas para reforçar o seu trabalho jurídico ou melhorar o exercício de seus direitos. As tecnologias apropriadas neste contexto implicam que a investigação seja orientada para o utilizador, de modo a que tanto o design tecnológico, quanto o seu desenvolvimento, sejam adaptados às necessidades dos utilizadores finais e não o contrário.\n\nO Ponto de Acolhimento Internacional da UAB (IWP-UAB) é um gabinete projectado pelo Gabinete de Relações Internacionais para fornecer serviços a todos os membros estrangeiros da comunidade da UAB. Desta forma, concede ajuda aos alunos, professores, funcionários administrativos e aos funcionários de serviços de outros países. Fornece informações práticas, como por exemplo, quanto a procedimentos jurídicos para os cidadãos da UE e cidadãos de países terceiros, cobertura de saúde para os cidadãos da UE, orçamento para residir em Barcelona e endereços úteis. Além disso, o IWP fornece apoio a estrangeiros quanto a pedidos de autorização de residência e de renovação de autorização para trabalhar, coordena a assistência entre os gabinetes da UAB e ajuda a bolseiros pós-graduados de carácter internacional.\n\nAlém disso, a Faculdade de Direito da UAB (FoL, <a href=\"https://www.uab.cat/dret/\">https://www.uab.cat/dret/</a>), o programa de Erasmus Mundus LAST-JD (LAST-JD) e a Sociedade Catalã de Vitimologia (CSV, <a href=\"https://www.victimologia.cat/\">https://www.victimologia.cat/</a>) também contribuem para a investigação de forma qualitativa e quantitativa e também para a sua disseminação. A Faculdade de Direito da UAB recebe, a cada ano, mais de 60 estudantes de outros países através de programas de mobilidade de estudantes (Programa Erasmus) e, a cada ano, cerca de 2.600 pessoas matriculam-se em disciplinas de licenciatura e nos cursos de pós-graduação. A Sociedade Catalã de Vitimologia reúne advogados, psicólogos, médicos, assistentes sociais, entre outros profissionais.";
+
+
 
