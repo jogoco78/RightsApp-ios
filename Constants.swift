@@ -41,6 +41,7 @@ class Constants: NSObject {
     
     //Fields
     let field_questions_id = "id"
+    let field_questions_text = "text"
     let field_answers_id = "id"
     let field_questions_answers_id_question = "id_question"
     let field_questions_answers_id_answer = "id_answer"

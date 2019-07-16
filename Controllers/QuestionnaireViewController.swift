@@ -114,7 +114,6 @@ class QuestionnaireViewController: UIViewController {
         
         if DatabaseHelper.shared.openDatabase(){
             results = DatabaseHelper.shared.getQuestionText(id_question: idCurrentQuestion, language: language)
-            print(results)
         }
         return results
     }
@@ -181,8 +180,8 @@ class QuestionnaireViewController: UIViewController {
                 UserDefaults.standard.set(parameters.dropLast(), forKey: Constants.shared.parameters)
                 
                 //Show particles
-                print(tags)
-                print(parameters)
+                //print(tags)
+                //print(parameters)
                 
                 performSegue(withIdentifier: "questionnaireToParticles", sender: nil)
             } else {
@@ -241,15 +240,4 @@ class QuestionnaireViewController: UIViewController {
         }
         sender.setImage(UIImage(named: "ButtonChecked"), for: .normal)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -11,7 +11,6 @@ import UIKit
 class ParticleDetailsViewController: UIViewController {
     
     @IBOutlet weak var tvParticle: UITextView!
-    @IBOutlet weak var btnFinish: UIButton!
     
     var idSubject = UserDefaults.standard.integer(forKey: Constants.shared.particles_id_subject)
     var tags = UserDefaults.standard.string(forKey: Constants.shared.tags)
@@ -22,8 +21,6 @@ class ParticleDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        btnFinish.setTitle(NSLocalizedString("finishParticles",comment: ""), for: .normal)
         
         let tagsComponents = (tags?.components(separatedBy: ","))
         var tagsInt = [Int]()
@@ -54,20 +51,4 @@ class ParticleDetailsViewController: UIViewController {
     @objc func goHome(){
         performSegue(withIdentifier: "toMain", sender: nil)
     }
-    
-    @IBAction func btnFinishListener(_ sender: Any) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        performSegue(withIdentifier: "toMain", sender: nil)
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

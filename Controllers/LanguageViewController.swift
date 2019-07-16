@@ -10,12 +10,13 @@ import UIKit
 
 class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var tv_selectLanguage: UITextView!
-    @IBOutlet weak var pv_selectLanguage: UIPickerView!
-    @IBOutlet weak var bt_continue: UIButton!
+    var pvSelectLanguage = UIPickerView()
+    var tvSelectLanguage = UITextView()
+    var tvAlertCloseApp = UITextView()
+    var btnAccept = UIButton()
     
     let languages = [NSLocalizedString("spanish",comment: ""), NSLocalizedString("english",comment: ""), NSLocalizedString("portuguese",comment: ""), NSLocalizedString("italian",comment: "")]
-    let languageCodes = ["es","en","pt","it"]
+    let languageCodes = ["es","en","por","it"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +27,66 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 3
         
-        pv_selectLanguage.delegate = self
-        pv_selectLanguage.dataSource = self
-        bt_continue.setTitle(NSLocalizedString("continue", comment: ""), for: .normal)
+        view.addSubview(pvSelectLanguage)
+        view.addSubview(tvSelectLanguage)
+        view.addSubview(tvAlertCloseApp)
+        view.addSubview(btnAccept)
         
-        let s = NSMutableAttributedString(string: NSLocalizedString("languageText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.paragraphStyle: paragraphStyle])
-        tv_selectLanguage.attributedText = s
+        pvSelectLanguage.delegate = self
+        pvSelectLanguage.dataSource = self
+        
+        tvSelectLanguage.translatesAutoresizingMaskIntoConstraints = false
+        tvSelectLanguage.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+        tvSelectLanguage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        tvSelectLanguage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        tvSelectLanguage.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        var s = NSMutableAttributedString(string: NSLocalizedString("languageText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        tvSelectLanguage.attributedText = s
+        
+        tvAlertCloseApp.translatesAutoresizingMaskIntoConstraints = false
+        tvAlertCloseApp.topAnchor.constraint(equalTo: tvSelectLanguage.bottomAnchor, constant: 20).isActive = true
+        tvAlertCloseApp.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        tvAlertCloseApp.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        tvAlertCloseApp.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        s = NSMutableAttributedString(string: NSLocalizedString("alertLanguageChange",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        tvAlertCloseApp.attributedText = s
+        
+        btnAccept.translatesAutoresizingMaskIntoConstraints = false
+        btnAccept.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60).isActive = true
+        btnAccept.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        btnAccept.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        btnAccept.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        btnAccept.setTitle(NSLocalizedString("accept",comment: ""), for: .normal)
+        btnAccept.setTitleColor(UIColor.blue, for: .normal)
+        btnAccept.addTarget(self, action: #selector(btnAcceptListener), for: .touchUpInside)
+        
+        pvSelectLanguage.translatesAutoresizingMaskIntoConstraints = false
+        pvSelectLanguage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        pvSelectLanguage.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        pvSelectLanguage.widthAnchor.constraint(equalToConstant: 275).isActive = true
+        pvSelectLanguage.heightAnchor.constraint(equalToConstant: 275).isActive = true
+        
+    }
+    
+    @objc func btnAcceptListener(sender: UIButton){
+        let selectedLanguage = pvSelectLanguage.selectedRow(inComponent: 0)
+        UserDefaults.standard.set([languageCodes[selectedLanguage]], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+        
+        let alertController = UIAlertController(title: NSLocalizedString("language",comment: ""), message: NSLocalizedString("alertLanguageChange",comment: ""), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("accept",comment: ""), style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+            exit(0)
+        }
+        /*let cancelAction = UIAlertAction(title: "Restart later".localized(), style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+            NSLog("Cancel Pressed")
+        }*/
+        alertController.addAction(okAction)
+        //alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,40 +110,9 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     @IBAction func selectLanguage(_ sender: UIButton) {
-        let selectedLanguage = pv_selectLanguage.selectedRow(inComponent: 0)
-        
-        LocalizationSystem.sharedInstance.setLanguage(languageCode: languageCodes[selectedLanguage])
-        viewDidLoad()
-        
-        //Shows an alert: the user should accept at least one option in the questionnaire
-        //let alert = UIAlertController(title: nil, message: NSMutableAttributedString(string: NSLocalizedString("appOwnership",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24)]), preferredStyle: .alert)
-        
-        let alert = UIAlertController(title: nil, message: NSLocalizedString("alertLanguageChange", comment: ""), preferredStyle: .alert)
-        alert.view.backgroundColor = UIColor.black
-        alert.view.alpha = 0.6
-        alert.view.layer.cornerRadius = 15
-        
-        let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 125)
-        alert.view.addConstraint(height)
-        
-        self.present(alert, animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3){
-            alert.dismiss(animated: true)
-        }
         /*let vc = self.storyboard?.instantiateViewController(withIdentifier: "Language") as! ViewController
         let appDlg = UIApplication.shared.delegate as? AppDelegate
         appDlg?.window?.rootViewController = vc*/
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

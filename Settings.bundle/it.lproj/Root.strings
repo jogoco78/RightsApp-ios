@@ -1,0 +1,13 @@
+/* A single strings file, whose title is specified in your preferences schema. The strings files provide the localized content to display to the user for each of your preferences. */
+
+"Group" = "Idioma";
+"Name" = "Name";
+"none given" = "none given";
+"Enabled" = "Enabled";
+"english" = "Inglés";
+"spanish" = "Español";
+"italian" = "Italiano";
+"portuguese" = "Portugués";
+"appinfo" = "App Info";
+"version" = "Versión";
+"build" = "Build";

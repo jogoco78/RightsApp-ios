@@ -81,6 +81,7 @@ class DatabaseHelper: NSObject {
     // Return an array of text for the ids given by parameter
     func getQuestionsText(id_questions: [Int], language: String) -> [String]{
         var results = [String]() //empty array string
+        let languageField = Constants.shared.field_questions_text + "_" + language
         
         var query = "SELECT * FROM " + Constants.shared.tableName_questions + " WHERE "
         query = query + Constants.shared.field_questions_id + " IN (" + String(id_questions[0])
@@ -90,24 +91,10 @@ class DatabaseHelper: NSObject {
         }
         query = query + ")"
         
-        print(query)
-        
         do {
-            var result = ""
             let cursor = try database.executeQuery(query, values: nil)
             while cursor.next(){
-                switch(language){
-                case "en":
-                    result = cursor.string(forColumnIndex: 2)!
-                    break
-                case "es":
-                    result = cursor.string(forColumnIndex: 1)!
-                    break
-                default:
-                    //do by default
-                    print("The specified language not match")
-                }
-                results.append(result)
+                results.append(cursor.string(forColumn: languageField)!)
             }
             
             cursor.close()
@@ -258,7 +245,6 @@ class DatabaseHelper: NSObject {
         var results = [ParticleModel]()
         
         let languageField = Constants.shared.field_particles_text + "_" + language
-        //let languageField = Constants.shared.field_particles_text + "_es"
         
         var query = "select * from " + Constants.shared.tableName_particles + " where " + Constants.shared.field_particles_id + " in (" + String(idParticles[0])
         for index in 1..<idParticles.count {
@@ -268,11 +254,7 @@ class DatabaseHelper: NSObject {
         
         do {
             let cursor = try database.executeQuery(query, values: nil)
-            print("Column count " + String(cursor.columnCount))
             while cursor.next(){
-                //print("ID: " + String(cursor.int(forColumnIndex: 5)))
-                //print("Text: " + cursor.string(forColumn: languageField)!)
-              //  let particle = ParticleModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField), cursor.int(forColumnIndex: 5), language)
                 results.append(ParticleModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, Int(cursor.int(forColumnIndex: 5)), language))
             }
             
