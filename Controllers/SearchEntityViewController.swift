@@ -26,9 +26,9 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
     var categoryTableView: UITableView!
     var countryTableView: UITableView!
     var cityTableView: UITableView!
-    var showEntity = false
-    var showCountry = false
-    var showCity = false
+    var showEntity = true
+    var showCountry = true
+    var showCity = true
     var language = LocalizationSystem.sharedInstance.getLanguage()
     
     // MARK: - DB Results
@@ -101,17 +101,17 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
         categoryTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
         categoryTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         categoryTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        categoryTableView.heightAnchor.constraint(equalToConstant: 190).isActive = true
+        categoryTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
         
         countryTableView.topAnchor.constraint(equalTo: categoryTableView.bottomAnchor, constant: 5).isActive = true
         countryTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         countryTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        countryTableView.heightAnchor.constraint(equalToConstant: 190).isActive = true
+        countryTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
         
         cityTableView.topAnchor.constraint(equalTo: countryTableView.bottomAnchor, constant: 5).isActive = true
         cityTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         cityTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        cityTableView.heightAnchor.constraint(equalToConstant: 190).isActive = true
+        cityTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -17,6 +17,7 @@ class QuestionnaireViewController: UIViewController {
     
     let screenSize = UIScreen.main.bounds
     var tvQuestion = UITextView()
+    var tvTitle = UITextView()
     var buttonsArrayImage = [UIButton]()
     var textViewAnswersArray = [UITextView]()
     var answersArray = [AnswerModel]()
@@ -27,20 +28,20 @@ class QuestionnaireViewController: UIViewController {
     //Positions and margins
     let initTitleY = 30
     let initQuestionX = 20
-    let initQuestionY = 50
+    let initQuestionY = 100
     let questionMarginX = 40
-    let questionHeight = 45
+    let questionHeight = 55
     let initButtonsX = 40
-    let initButtonsY = 50
+    let initButtonsY = 70
     let buttonsWidth = 20
     let buttonsHeight = 20
     let buttonsMarginY = 35
     let answersHeight = 45
     
     //Fonts
-    let titleFont = 24
-    let questionFont = 15
-    let answersFont = 14
+    let titleFont = UIScreen.main.bounds.height * 0.036 //24 in a heuight 667 screen
+    let questionFont = UIScreen.main.bounds.height * 0.022 // 15 in a height 667 screen
+    let answersFont = UIScreen.main.bounds.height * 0.02 // 14 in a height of 667 screen
     
     //Tags and parameters
     var tags = ""
@@ -54,10 +55,18 @@ class QuestionnaireViewController: UIViewController {
         if UserDefaults.standard.object(forKey: "tags") != nil {
             UserDefaults.standard.set("", forKey: "tags")
         }
+        view.addSubview(tvTitle)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
         
-        let tvTitle = makeTextView(text: NSLocalizedString("questionnaire",comment: ""), xPos: 0, yPos: initTitleY, width: 160, height: 40, font: titleFont)
-        tvTitle.center.x = self.view.center.x
-        self.view.addSubview(tvTitle)
+        tvTitle.translatesAutoresizingMaskIntoConstraints = false
+        tvTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: screenSize.height * 0.07).isActive = true
+        tvTitle.leftAnchor.constraint(equalTo: view.leftAnchor, constant: screenSize.width * 0.05).isActive = true
+        tvTitle.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -screenSize.width * 0.05).isActive = true
+        tvTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        tvTitle.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        tvTitle.isEditable = false
+        tvTitle.attributedText = NSMutableAttributedString(string: NSLocalizedString("questionnaire",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(titleFont)), NSAttributedString.Key.paragraphStyle: paragraphStyle])
         
         updateQuestion()
         
@@ -65,7 +74,7 @@ class QuestionnaireViewController: UIViewController {
     }
     
     func updateQuestion(){
-        let screenWidth = screenSize.width
+        //let screenWidth = screenSize.width
         answersArray = getAnswers()
         numberOfAnswers = answersArray.count
         
@@ -86,26 +95,62 @@ class QuestionnaireViewController: UIViewController {
         }
         
         //Sets the text and position of the question
-        tvQuestion = makeTextView(text: getQuestionText(), xPos: initQuestionX, yPos: initQuestionY + initTitleY, width: (Int(screenWidth) - questionMarginX), height: questionHeight, font: questionFont)
-    
-        self.view.addSubview(tvQuestion)
+        view.addSubview(tvQuestion)
+        tvQuestion.translatesAutoresizingMaskIntoConstraints = false
+        tvQuestion.topAnchor.constraint(equalTo: tvTitle.bottomAnchor, constant: screenSize.height * 0.02).isActive = true
+        tvQuestion.leftAnchor.constraint(equalTo: view.leftAnchor, constant: screenSize.width * 0.10).isActive = true
+        tvQuestion.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -screenSize.width * 0.10).isActive = true
+        tvQuestion.heightAnchor.constraint(equalToConstant: CGFloat(questionHeight)).isActive = true
+        tvQuestion.isEditable = false
+        tvQuestion.attributedText = NSMutableAttributedString(string: getQuestionText(), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(questionFont))])
         
         //Sets the buttonImage
-        var yMargin = initButtonsY + initQuestionY + initTitleY
+        var initButtonImage = tvQuestion.bottomAnchor
+        for i in 0..<numberOfAnswers {
+            let myButton = UIButton(type: UIButton.ButtonType.system)
+            view.addSubview(myButton)
+            myButton.translatesAutoresizingMaskIntoConstraints = false
+            myButton.topAnchor.constraint(equalTo: initButtonImage, constant: screenSize.height * 0.02).isActive = true
+            myButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: screenSize.width * 0.10).isActive = true
+            myButton.widthAnchor.constraint(equalToConstant: CGFloat(buttonsWidth)).isActive = true
+            myButton.heightAnchor.constraint(equalToConstant: CGFloat(buttonsHeight)).isActive = true
+            myButton.setImage(UIImage(named: "ButtonUnchecked"), for: .normal)
+            myButton.addTarget(self, action: #selector(whenButtonIsClicked), for: .touchUpInside)
+            buttonsArrayImage.append(myButton)
+            initButtonImage = myButton.bottomAnchor
+        }
+        
+        //Sets the answers text
+        for i in 0..<numberOfAnswers {
+            let tvAnswer = UITextView()
+            view.addSubview(tvAnswer)
+            tvAnswer.translatesAutoresizingMaskIntoConstraints = false
+            tvAnswer.isEditable = false
+            tvAnswer.centerYAnchor.constraint(equalTo: buttonsArrayImage[i].centerYAnchor, constant: 5).isActive = true
+            tvAnswer.leftAnchor.constraint(equalTo: buttonsArrayImage[i].rightAnchor, constant: screenSize.height * 0.01).isActive = true
+            tvAnswer.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -screenSize.width * 0.10).isActive = true
+            tvAnswer.heightAnchor.constraint(equalToConstant: CGFloat(answersHeight)).isActive = true
+            tvAnswer.attributedText = NSMutableAttributedString(string: answersArray[i].text, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(answersFont))])
+            textViewAnswersArray.append(tvAnswer)
+        }
+        
+        
+        
+       /* var yMargin = initButtonsY + initQuestionY + initTitleY
         for i in 0..<numberOfAnswers{
             buttonsArrayImage.append(makeButtonWithImage(xPos: initButtonsX, yPos: yMargin, width: buttonsWidth, height: buttonsHeight))
             yMargin = yMargin + buttonsMarginY
             self.view.addSubview(buttonsArrayImage[i])
-        }
+        }*/
         
         //Sets the answers text
-        yMargin = initButtonsY + initQuestionY + initTitleY - 5
+       /* yMargin = initButtonsY + initQuestionY + initTitleY - 5
         let textViewWidth = (Int(screenWidth) - initButtonsX - buttonsWidth - 20)
         for i in 0..<numberOfAnswers{
             textViewAnswersArray.append(makeTextView(text: answersArray[i].text, xPos: initButtonsX + buttonsWidth, yPos: yMargin, width: textViewWidth, height: answersHeight, font: answersFont))
             yMargin = yMargin + buttonsMarginY
             self.view.addSubview(textViewAnswersArray[i])
-        }
+        }*/
     }
     
     func getQuestionText() -> String {
