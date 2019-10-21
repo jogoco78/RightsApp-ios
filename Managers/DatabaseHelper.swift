@@ -37,7 +37,18 @@ class DatabaseHelper: NSObject {
         
         let finalDatabaseURL = documentsUrl.first!.appendingPathComponent("\(databaseFileName)")
         
-        if !( (try? finalDatabaseURL.checkResourceIsReachable()) ?? false) {
+        let databaseInMainBundleURL = Bundle.main.resourceURL?.appendingPathComponent("\(databaseFileName)")
+        
+        do {
+            if fileManager.fileExists(atPath: finalDatabaseURL.path){
+                try fileManager.removeItem(atPath: finalDatabaseURL.path)
+            }
+            try fileManager.copyItem(atPath: (databaseInMainBundleURL?.path)!, toPath: finalDatabaseURL.path)
+        } catch let error as NSError {
+            print("Couldn't copy file to final location! Error:\(error.description)")
+        }
+        
+        /*if !( (try? finalDatabaseURL.checkResourceIsReachable()) ?? false) {
             print("DB does not exist in documents folder")
             let databaseInMainBundleURL = Bundle.main.resourceURL?.appendingPathComponent("\(databaseFileName)")
             
@@ -48,7 +59,7 @@ class DatabaseHelper: NSObject {
             }
         } else {
             print("Database file found at path: \(finalDatabaseURL.path)")
-        }
+        }*/
     }
     
     //Opens the database if it is not open yet

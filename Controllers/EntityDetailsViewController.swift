@@ -86,7 +86,7 @@ class EntityDetailsViewController: UIViewController {
         }
         
         if entity.link != nil {
-            s = NSMutableAttributedString(string: "\n" + NSLocalizedString("link",comment: "") + ": " + entity.phoneNumber2, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+            s = NSMutableAttributedString(string: "\n" + NSLocalizedString("link",comment: "") + ": " + entity.link , attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
         }else {
             s = NSMutableAttributedString(string: "\n" + NSLocalizedString("linkNotAvailable", comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
         }
