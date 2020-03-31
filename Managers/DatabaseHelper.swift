@@ -3,7 +3,7 @@
 //  RightsApp_ios
 //
 //  Created by Jorge Gonzalez Conejero on 12/06/2019.
-//  Copyright © 2019 uab. All rights reserved.
+//  Copyright © 2019 Jorge Gonzalez Conejero. All rights reserved.
 //
 
 import UIKit
@@ -47,19 +47,6 @@ class DatabaseHelper: NSObject {
         } catch let error as NSError {
             print("Couldn't copy file to final location! Error:\(error.description)")
         }
-        
-        /*if !( (try? finalDatabaseURL.checkResourceIsReachable()) ?? false) {
-            print("DB does not exist in documents folder")
-            let databaseInMainBundleURL = Bundle.main.resourceURL?.appendingPathComponent("\(databaseFileName)")
-            
-            do {
-                try fileManager.copyItem(atPath: (databaseInMainBundleURL?.path)!, toPath: finalDatabaseURL.path)
-            } catch let error as NSError {
-                print("Couldn't copy file to final location! Error:\(error.description)")
-            }
-        } else {
-            print("Database file found at path: \(finalDatabaseURL.path)")
-        }*/
     }
     
     //Opens the database if it is not open yet
@@ -179,9 +166,7 @@ class DatabaseHelper: NSObject {
         return result
     }
     
-    /*
      // MARK: - Subjects and particles
-     */
     
     func getSubjectsIDByTag(idTags: [Int], language: String) -> [Int] {
         let particles = getParticlesByTag(idTags: idTags, language: language)
@@ -231,6 +216,13 @@ class DatabaseHelper: NSObject {
     
     func getParticlesByTag(idTags: [Int], language: String) -> [ParticleModel] {
         var results = [Int]()
+        //TODO: Adapt to the new database
+        /*String query = "SELECT DISTINCT pm." + DBContract.Particles_MainTags.COLUMN_NAME_ID_PARTICLE +  " * FROM " + DBContract.Particles_MainTags.TABLE_NAME + " pm INNER JOIN " + DBContract.Particles_residenceTags.TABLE_NAME + " pr ON pm." + DBContract.Particles_MainTags.COLUMN_NAME_ID_PARTICLE + "=pr." + DBContract.Particles_residenceTags.COLUMN_NAME_ID_PARTICLE;*/
+        
+        var select = "select distinct pm." + Constants.shared.field_particles_mainTags_idParticle + " from " + Constants.shared.tableName_particlesMain_tags + " pm "
+        var innerJoin = "inner join " + Constants.shared.tableName_particlesResidence_tags + " pr on pm." + Constants.shared.field_particles_mainTags_idParticle + "=pr." + Constants.shared.field_particles_residenceTags_idParticle
+        
+        
         
         var query = "select " + Constants.shared.field_particles_tags_idParticle + " from " + Constants.shared.tableName_particles_tags + " where " + Constants.shared.field_particles_tags_idTag + " in (" + String(idTags[0])
         for index in 1..<idTags.count {

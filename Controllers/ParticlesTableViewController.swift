@@ -3,7 +3,7 @@
 //  RightsApp_ios
 //
 //  Created by Jorge Gonzalez Conejero on 19/06/2019.
-//  Copyright © 2019 uab. All rights reserved.
+//  Copyright © 2019 Jorge Gonzalez Conejero. All rights reserved.
 //
 
 import UIKit
@@ -32,6 +32,52 @@ class ParticlesTableViewController: UITableViewController {
         
         self.navigationItem.title = NSLocalizedString("rights",comment: "Comment")
         
+        //Main tags
+        var mainTags = [Int]()
+        if((tags?.contains(String(Constants.shared.tag_terrorism)))!){
+            //Terrorism
+            mainTags.append(Constants.shared.tag_terrorism)
+        } else if((tags?.contains(String(Constants.shared.tag_violence_against_women)))!){
+            //Violence against women
+            mainTags.append(Constants.shared.tag_violence_against_women)
+        } else if((tags?.contains(String(Constants.shared.tag_domestic_violence)))!){
+            //Domestic violence
+            mainTags.append(Constants.shared.tag_domestic_violence)
+            if((tags?.contains(String(Constants.shared.tag_violent_crimes)))!){
+                //Plus Violent crimes
+                mainTags.append(Constants.shared.tag_violent_crimes)
+            }
+        } else if((tags?.contains(String(Constants.shared.tag_violent_crimes)))!){
+            //Violent crimes
+            mainTags.append(Constants.shared.tag_violent_crimes)
+        } else{
+            //Common crimes
+            mainTags.append(Constants.shared.tag_common_crime)
+        }
+        
+        if((tags?.contains(String(Constants.shared.tag_sexual_attack)))!){
+            //Sexual attack
+            mainTags.append(Constants.shared.tag_sexual_attack)
+        }
+        
+        //Residence tags
+        var residenceTags = [Int]()
+        if((tags?.contains(String(Constants.shared.tag_spanish_resident)))!){
+            //Spanish resident
+            residenceTags.append(Constants.shared.tag_spanish_resident)
+        } else if((tags?.contains(String(Constants.shared.tag_EU_resident)))!){
+            //EU resident
+            
+        } else if((tags?.contains(String(Constants.shared.tag_non_EU_resident)))!){
+            //Non EU resident
+            
+        } else {
+          //Error
+            
+        }
+        
+        
+        
         let tagsComponents = (tags?.components(separatedBy: ","))
         var tagsInt = [Int]()
         for tag in tagsComponents! {
@@ -40,6 +86,8 @@ class ParticlesTableViewController: UITableViewController {
                tagsInt.append(Int(tag)!)
             }
         }
+        
+        
         
         if DatabaseHelper.shared.openDatabase(){
             subjectsText = DatabaseHelper.shared.getSubjectsTextByTag(idTags: tagsInt, language: language)

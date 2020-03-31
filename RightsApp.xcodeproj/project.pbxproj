@@ -49,6 +49,7 @@
 		EBB61D2122B1442200F749D7 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */; };
 		EBBB089A22C4FF9C00918F15 /* EntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBB089922C4FF9C00918F15 /* EntityModel.swift */; };
 		EBC35A2322CCEDD0003EFA20 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */; };
+		EBC5FF3D2431FC4900B70773 /* rightsapp_v6_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */; };
 		EBC80F5722CCD2D900870B27 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC80F5622CCD2D900870B27 /* InitViewController.swift */; };
 		EBC80F5922CCD4D300870B27 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC80F5822CCD4D300870B27 /* TermsViewController.swift */; };
 		EBE8797422A805300040EB58 /* HowToUseTheAppTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */; };
@@ -153,6 +154,7 @@
 		EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		EBBB089922C4FF9C00918F15 /* EntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityModel.swift; sourceTree = "<group>"; };
 		EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
+		EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v6_utf16.db; sourceTree = "<group>"; };
 		EBC80F5622CCD2D900870B27 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		EBC80F5822CCD4D300870B27 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppTextViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				EBB61D1F22B1440900F749D7 /* Managers */,
 				EBA4D54622AFE87300B1B566 /* FMDB */,
 				EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */,
+				EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */,
 				EB205C8B22A7D733006B5BDC /* Controllers */,
 				EB8A66FA229ED4DE003855BD /* Localizable.strings */,
 				EBFA91DE229D816100802BC7 /* Storyboards */,
@@ -467,6 +470,7 @@
 				EB59E27E22CCCC9C00396BCC /* Init.storyboard in Resources */,
 				EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */,
 				EB75877322DCC6E400AE32A4 /* Settings.bundle in Resources */,
+				EBC5FF3D2431FC4900B70773 /* rightsapp_v6_utf16.db in Resources */,
 				EB993A53229D3B7A0082DE76 /* LaunchScreen.storyboard in Resources */,
 				EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */,
 				EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */,
@@ -865,14 +869,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P36P3P2FH6;
 				INFOPLIST_FILE = RightsApp_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.21;
+				MARKETING_VERSION = 1.22;
 				PRODUCT_BUNDLE_IDENTIFIER = cat.uab.idt.RightsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -892,14 +896,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = P36P3P2FH6;
 				INFOPLIST_FILE = RightsApp_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.21;
+				MARKETING_VERSION = 1.22;
 				PRODUCT_BUNDLE_IDENTIFIER = cat.uab.idt.RightsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

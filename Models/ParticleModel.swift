@@ -3,7 +3,7 @@
 //  RightsApp_ios
 //
 //  Created by Jorge Gonzalez Conejero on 19/06/2019.
-//  Copyright © 2019 uab. All rights reserved.
+//  Copyright © 2019 Jorge Gonzalez Conejero. All rights reserved.
 //
 
 import UIKit

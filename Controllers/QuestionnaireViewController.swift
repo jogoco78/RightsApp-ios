@@ -3,7 +3,7 @@
 //  RightsApp_ios
 //
 //  Created by Jorge Gonzalez Conejero on 11/06/2019.
-//  Copyright © 2019 uab. All rights reserved.
+//  Copyright © 2019 Jorge Gonzalez Conejero. All rights reserved.
 //
 
 import UIKit
@@ -39,7 +39,7 @@ class QuestionnaireViewController: UIViewController {
     let answersHeight = 45
     
     //Fonts
-    let titleFont = UIScreen.main.bounds.height * 0.036 //24 in a heuight 667 screen
+    let titleFont = UIScreen.main.bounds.height * 0.036 //24 in a height 667 screen
     let questionFont = UIScreen.main.bounds.height * 0.022 // 15 in a height 667 screen
     let answersFont = UIScreen.main.bounds.height * 0.02 // 14 in a height of 667 screen
     
