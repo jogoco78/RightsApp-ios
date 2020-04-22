@@ -10,6 +10,8 @@ import UIKit
 
 class Constants: NSObject {
     static let shared: Constants = Constants()
+    
+    //MARK: Database name
     let databaseName = "rightsapp_v6_utf16.db"
     
     let newLine = "\n"

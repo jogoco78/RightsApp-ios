@@ -36,7 +36,7 @@ class QuestionnaireViewController: UIViewController {
     let buttonsWidth = 20
     let buttonsHeight = 20
     let buttonsMarginY = 35
-    let answersHeight = 45
+    let answersHeight = 50
     
     //Fonts
     let titleFont = UIScreen.main.bounds.height * 0.036 //24 in a height 667 screen
@@ -133,29 +133,10 @@ class QuestionnaireViewController: UIViewController {
             tvAnswer.attributedText = NSMutableAttributedString(string: answersArray[i].text, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(answersFont))])
             textViewAnswersArray.append(tvAnswer)
         }
-        
-        
-        
-       /* var yMargin = initButtonsY + initQuestionY + initTitleY
-        for i in 0..<numberOfAnswers{
-            buttonsArrayImage.append(makeButtonWithImage(xPos: initButtonsX, yPos: yMargin, width: buttonsWidth, height: buttonsHeight))
-            yMargin = yMargin + buttonsMarginY
-            self.view.addSubview(buttonsArrayImage[i])
-        }*/
-        
-        //Sets the answers text
-       /* yMargin = initButtonsY + initQuestionY + initTitleY - 5
-        let textViewWidth = (Int(screenWidth) - initButtonsX - buttonsWidth - 20)
-        for i in 0..<numberOfAnswers{
-            textViewAnswersArray.append(makeTextView(text: answersArray[i].text, xPos: initButtonsX + buttonsWidth, yPos: yMargin, width: textViewWidth, height: answersHeight, font: answersFont))
-            yMargin = yMargin + buttonsMarginY
-            self.view.addSubview(textViewAnswersArray[i])
-        }*/
     }
     
     func getQuestionText() -> String {
         var results = ""
-        //var a: CityModel = CityModel()
         
         if DatabaseHelper.shared.openDatabase(){
             results = DatabaseHelper.shared.getQuestionText(id_question: idCurrentQuestion, language: language)

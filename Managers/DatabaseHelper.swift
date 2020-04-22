@@ -224,11 +224,13 @@ class DatabaseHelper: NSObject {
         
         
         
-        var query = "select " + Constants.shared.field_particles_tags_idParticle + " from " + Constants.shared.tableName_particles_tags + " where " + Constants.shared.field_particles_tags_idTag + " in (" + String(idTags[0])
+        /*var query = "select " + Constants.shared.field_particles_tags_idParticle + " from " + Constants.shared.tableName_particles_tags + " where " + Constants.shared.field_particles_tags_idTag + " in (" + String(idTags[0])
         for index in 1..<idTags.count {
             query.append("," + String(idTags[index]))
         }
-        query.append(")")
+        query.append(")")*/
+        
+        var query = select + innerJoin
         
         do {
             let cursor = try database.executeQuery(query, values: nil)
@@ -347,12 +349,51 @@ class DatabaseHelper: NSObject {
         return results
     }
     
+    /// Returns the cities where institutions from the given category are available
+    ///
+    /// - Warning: No nil checking
+    /// - parameter idCategory: ID of the category
+    /// - parameter language: Language to get the city name
+    /// - returns: an array with CityModels
+    func getCitiesFromCategories(idCategory: Int, language: String) -> [CityModel] {
+        var results = [CityModel]()
+        
+        let languageField = Constants.shared.field_cities_cityName + "_" + language
+        
+        let select = "select distinct c.* from " + Constants.shared.tableName_entities + " e," + Constants.shared.tableName_cities + " c "
+        let qwhere = "where e." + Constants.shared.field_entities_id_category + " = " + String(idCategory)
+        let and = " and e." + Constants.shared.field_entities_id_city + " = c." + Constants.shared.field_cities_id
+        let order = " order by " + languageField
+        
+        let query = select + qwhere + and + order
+        
+        do {
+            let cursor = try database.executeQuery(query, values: nil)
+            
+            while cursor.next(){
+                results.append(CityModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, Int(cursor.int(forColumnIndex: 5)), language))
+            }
+            
+            cursor.close()
+        }catch {
+            print("Could not execute the query")
+        }
+        
+        return results
+    }
+    
+    /// Gets country information from the DB
+    ///
+    /// - Warning:
+    /// - parameter idCountries:
+    /// - parameter language:
+    /// - returns:
     func getCountriesList(idCountries: [Int]!, language: String) -> [CountryModel]{
         var results = [CountryModel]()
         
         let languageField = Constants.shared.field_countries_countryName + "_" + language
         
-        var query = "select * from " + Constants.shared.tableName_countries
+        var query = "select distinct * from " + Constants.shared.tableName_countries
         
         if idCountries != nil && !idCountries.isEmpty {
             query = query + " where " + Constants.shared.field_countries_id + " in (" + String(idCountries[0])

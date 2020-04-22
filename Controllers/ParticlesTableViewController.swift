@@ -67,16 +67,14 @@ class ParticlesTableViewController: UITableViewController {
             residenceTags.append(Constants.shared.tag_spanish_resident)
         } else if((tags?.contains(String(Constants.shared.tag_EU_resident)))!){
             //EU resident
-            
+            residenceTags.append(Constants.shared.tag_EU_resident)
         } else if((tags?.contains(String(Constants.shared.tag_non_EU_resident)))!){
             //Non EU resident
-            
+            residenceTags.append(Constants.shared.tag_non_EU_resident)
         } else {
           //Error
             
         }
-        
-        
         
         let tagsComponents = (tags?.components(separatedBy: ","))
         var tagsInt = [Int]()

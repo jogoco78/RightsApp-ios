@@ -181,23 +181,38 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
         switch tableView {
         case categoryTableView:
             entityIndexSelected = indexPath.row
+            
+            //Updates cities and countries when a category is selected
+            if DatabaseHelper.shared.openDatabase(){
+                if(entityIndexSelected == 0){
+                    cities = DatabaseHelper.shared.getCitiesList(idCities: nil, language: language)
+                    countries = DatabaseHelper.shared.getCountriesList(idCountries: nil, language: language)
+                }else{
+                    cities = DatabaseHelper.shared.getCitiesFromCategories(idCategory: categories[entityIndexSelected].id, language: language)
+                    var countries_list = [Int]()
+                    for city in cities {
+                        countries_list.append(city.idCountry)
+                    }
+                    countries = DatabaseHelper.shared.getCountriesList(idCountries: countries_list, language: language)
+                }
+                cities.insert(CityModel(0, NSLocalizedString("allCities",comment: ""), 0, language), at: 0)
+                countries.insert(CountryModel(0, NSLocalizedString("allCountries",comment: ""), language), at: 0)
+                
+                cityTableView.reloadData()
+                countryTableView.reloadData()
+            }
         case countryTableView:
             countryIndexSelected = indexPath.row
             
             //Reloads the cities available when a country is selected
             if DatabaseHelper.shared.openDatabase(){
-                //categories = DatabaseHelper.shared.getCategoriesList(language: language)
-                //categories.insert(CategoryModel(0, NSLocalizedString("allEntities",comment: ""), language), at: 0)
                 
-                if countryIndexSelected == 0{
+                if countryIndexSelected == 0 {
                     cities = DatabaseHelper.shared.getCitiesList(idCities: nil, language: language)
                 } else {
                     cities = DatabaseHelper.shared.getCitiesFromCountry(idCountry: countries[countryIndexSelected].id, language: language)
                 }
                 cities.insert(CityModel(0, NSLocalizedString("allCities",comment: ""), 0, language), at: 0)
-                    
-                //countries = DatabaseHelper.shared.getCountriesList(idCountries: nil, language: language)
-                //countries.insert(CountryModel(0, NSLocalizedString("allCountries",comment: ""), language), at: 0)
             }
             cityTableView.reloadData()
         case cityTableView:
