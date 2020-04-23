@@ -6,7 +6,7 @@
   Copyright © 2019 Jorge Gonzalez Conejero. All rights reserved.
 */
 
-//Buttons & Tab bar items title
+//MARK: Buttons & Tab bar items title
 "accept" = "Accept";
 "continue" = "Continue";
 "finish" = "Finish";
@@ -19,7 +19,7 @@
 "rights" = "Rights subjects";
 "navigate" = "Navigate";
 
-//SearchEntities
+//MARK: SearchEntities
 "allEntities" = "All available entities";
 "allCountries" = "All available countries";
 "allCities" = "All available cities";
@@ -43,7 +43,7 @@
 "email" = "\nE-mail";
 "emailNotAvailable" = "\nThe e-mail is not available";
 
-//Languages
+//MARK: Languages
 "spanish" = "Spanish";
 "english" = "English";
 "portuguese" = "Portuguese";
@@ -51,18 +51,18 @@
 "languageText" = "Select your language";
 "alertLanguageChange" = "You must restart the app for the changes to take effect";
 
-//RightsApp screen
+//MARK: RightsApp screen
 "emergencyCallText" = "If you have been victim of a crime and you need assistance, make an emergency call to 112";
 "questionnaireText" = "Get tailored information about your rights as crime victim through our questionnaire";
 "searchEntityText" = "Get information and navigate to different assistance entities";
 "mainScreen" = "Select one option";
 
-//Questionnaire
+//MARK: Questionnaire
 "questionnaire" = "Questionnaire";
 "alertSelectOneOption" = "You must select one option in the questionnaire";
 "finishParticles" = "Finish";
 
-//Terms and conditions strings
+//MARK: Terms and conditions strings
 "appOwnership" = "App Ownership\n";
 "appOwnershipBody" = "This app is operated by Universitat Autonoma de Barcelona - Institute of Law and Technology (hereinafter, UAB-IDT) on behalf of the RightsApp consortium. UAB-IDT is located at:\nUniversitat Autònoma de Barcelona - Institute of Law and Technology (UAB-IDT)\nidt@uab.cat\nCampus de la UAB. Edifici B\nCerdanyola del Valles (Bellaterra), Spain\n";
 "termsConditions" = "Terms and Conditions\n";
@@ -84,7 +84,7 @@
 
 "labelTermsConditions" = "I have read and accept the terms and conditions";
 
-//How to use the app strings
+//MARK: How to use the app strings
 "howToUseTheApp" = "How to use the app\n";
 "bottomMenu" = "Bottom Menu\n";
 "bottomMenuBody" = "When you start the RightsApp application (hereinafter, the \"app\"), you must first accept the Terms and conditions of the app. Within these Terms and conditions you can find the privacy policy. UAB-IDT strongly recommends you to carefully review these terms and conditions that will always be available in the \"Preferences\" menu.\nThe Preferences menu consists of 4 different sections:\nLanguage: the app is available in four languages: Spanish, English, Portuguese and Italian. You can change the language of the app (except during the questionnaire response) on this screen.\nHow to use the app: it shows this explanation in the language active at that moment.\nTerms and conditions: This screen shows the Terms and conditions of use of the app. This includes the Privacy policy.\nAbout us: it contains the description of the RightsApp consortium and the available ways to contact the consortium.\n";
@@ -92,9 +92,13 @@
 "howTheAppWorksBody" = "The app includes three different scenarios in which the user that has been victim of a crime within the European Union can found himself/herself. The first scenario is the need to make an emergency call to 112.With just a push of a button the user can make an emergency call to 112.\nThe second scenario is the need to be provided with information regarding rights of European Union citizens’ who have been victims of a crime. In order to obtain particularized information, the user has to fill in a small questionnaire (with a minimum of X and a maximum of Y questions). Once the user has answered this questionnaire, the rights that assist the user in her/his specific situation will appear grouped by subject (this grouping is due to the size of mobile devices’ screens, in order to facilitate the visualization). Once the title of any subject has been pressed, a more detailed definition of the rights that assist the user with respect to that subject will be displayed.\nIn the latter scenario the app provides the citizen who has been the victim of a crime with information regarding entities and centres that provide crime victim support. First, the user chooses three parameters to facilitate the search among these institutions and centres. The first parameter is the type of entity you are looking for, the second indicates in which country, and finally in which city. At the moment, only entities and centres that provide assistance to victims of crime in the Autonomous Community of Catalonia are available. Once these parameters are established, an ordered list will appear from less to more distant with respect to the user's location. Once one of the entities or assistance centres has been selected, the app will offer the possibility of calling that particular entity or centre, navigating to it (using GoogleMaps) or going back to carry out another search.";
 "doNotShow" = "Do not show this message again";
 
-//About us strings
+//MARK: About us strings
 "aboutUs" = "About us\n";
 "aboutUsBody" = "The RightsApp app is the main outcome for the DG-Justice funded project “Mobile Technologies applied to protect victims of a crime within the EU Area of Justice: RightsApp for e-Justice” (http://rightsapp-project.eu), which has received funding from the DG-Justice European Union’s Programme (2014-2020) under Grant Agreement No. 785854.\nThe Consortium is composed of two non-profit organizations within the Universitat Autònoma de Barcelona (UAB): the UAB Institute of Law and Technology (IDT-UAB, http://idt.uab.cat) and the UAB International Welcome Point (IWP-UAB, https://www.uab.cat/international-welcome-point/).\nThe UAB Institute of Law and Technology (IDT-UAB) is a research centre promoting cutting-edge research on law and technology from an interdisciplinary perspective. Its core mission is that of fostering research devoted to providing legal professionals, institutions, organizations, and citizens with appropriate technologies to enhance their legal work or to improve the exercise of their rights. Appropriate technologies in this context imply that research is user oriented, so that both the technological design and its developments are tailored to the needs of the end users and not the opposite.\nThe UAB International Welcome Point (IWP-UAB) is an office designed by the International Relationships Office to provide services to all foreigner members of the UAB community. Thus, giving support for the students, lecturers, administrative staff and services staff from other countries. It provides practical information like legal procedures for EU and non-EU citizens, health cover for EU citizens, budget for living in Barcelona and useful addresses. Moreover, the IWP provides support on foreigners stay and work permit renewal applications, coordinates assistance among UAB offices and assistance to international postgraduate grant holders.\nMoreover, UAB Faculty of Law (FoL, https://www.uab.cat/dret/), LAST-JD Erasmus Mundus (LAST-JD) and Catalan Society of Victimology (CSV, https://www.victimologia.cat/)  also contribute to qualitative and quantitative research and dissemination as well. The UAB Faculty of Law receives every year more than 60 students from other countries in its student mobility programs (Erasmus Programme) and every year about 2.600 individuals enrol on its degrees and post degree courses. The Catalan Society of Victimology groups together lawyers, psychologists, doctors, social workers, among others.";
 
-
+//MARK: Clusters
+"citizensRights" = "Rights to citizens victim of a crime";
+"sexualAttackProtocol" = "Protocol of action in a serious sexual attack";
+"EUCitizensRights" = "Rights specially granted to citizens victim of a crime that reside in another EU country";
+"NoEUCitizenRights" = "Rights specially granted to citizens victim of a crime that reside in a non EU country";
 

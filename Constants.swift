@@ -27,6 +27,7 @@ class Constants: NSObject {
     let searchIDCountry = "countryID"
     let searchIDCity = "cityID"
     let entitySelected = "entitySelected"
+    let idTagUser_key =  "idTagUser"
     
      //MARK: - Table names
     let tableName_questions = "questions"
@@ -58,6 +59,8 @@ class Constants: NSObject {
     let field_particles_residenceTags_idParticle = "id_particle"
     let field_subjects_id = "id"
     let field_subjects_text = "text"
+    let field_subjects_priority = "priority"
+    let field_subjects_cluster = "cluster"
     let field_categories_id = "id"
     let field_categories_text = "category"
     let field_cities_id = "id"

@@ -31,7 +31,8 @@ class ParticleDetailsViewController: UIViewController {
             }
         }
         if DatabaseHelper.shared.openDatabase(){
-            particles = DatabaseHelper.shared.getParticlesByTag(idTags: tagsInt, language: language)
+            //particles = DatabaseHelper.shared.getParticlesByTag(idTags: tagsInt, language: language)
+            particles = [ParticleModel]()
         }
         
         for particle in particles {

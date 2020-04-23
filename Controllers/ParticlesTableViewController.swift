@@ -16,7 +16,8 @@ class ParticlesSubjectTableViewCell: UITableViewCell {
 
 class ParticlesTableViewController: UITableViewController {
 
-    var tags = UserDefaults.standard.string(forKey: "tags")
+    var tags = UserDefaults.standard.string(forKey: Constants.shared.tags)
+    var idTagUser = UserDefaults.standard.integer(forKey: Constants.shared.idTagUser_key)
     var language = LocalizationSystem.sharedInstance.getLanguage()
     var subjectsText = [String]()
     var subjectsID = [Int]()
@@ -55,41 +56,38 @@ class ParticlesTableViewController: UITableViewController {
             mainTags.append(Constants.shared.tag_common_crime)
         }
         
-        if((tags?.contains(String(Constants.shared.tag_sexual_attack)))!){
-            //Sexual attack
+        if(idTagUser == Constants.shared.tag_sexual_attack){
             mainTags.append(Constants.shared.tag_sexual_attack)
         }
         
-        //Residence tags
         var residenceTags = [Int]()
-        if((tags?.contains(String(Constants.shared.tag_spanish_resident)))!){
-            //Spanish resident
+        if(idTagUser == Constants.shared.tag_common_crime ||
+            idTagUser == Constants.shared.tag_terrorism ||
+            idTagUser == Constants.shared.tag_violence_against_women ||
+            idTagUser == Constants.shared.tag_domestic_violence ||
+            idTagUser == Constants.shared.tag_violent_crimes) {
             residenceTags.append(Constants.shared.tag_spanish_resident)
-        } else if((tags?.contains(String(Constants.shared.tag_EU_resident)))!){
-            //EU resident
+        }
+        
+        if(idTagUser == Constants.shared.tag_EU_resident){
             residenceTags.append(Constants.shared.tag_EU_resident)
-        } else if((tags?.contains(String(Constants.shared.tag_non_EU_resident)))!){
-            //Non EU resident
+        }
+        
+        if(idTagUser == Constants.shared.tag_non_EU_resident){
             residenceTags.append(Constants.shared.tag_non_EU_resident)
-        } else {
-          //Error
-            
         }
-        
-        let tagsComponents = (tags?.components(separatedBy: ","))
-        var tagsInt = [Int]()
-        for tag in tagsComponents! {
-            print(tag)
-            if !tag.isEmpty {
-               tagsInt.append(Int(tag)!)
-            }
-        }
-        
-        
         
         if DatabaseHelper.shared.openDatabase(){
-            subjectsText = DatabaseHelper.shared.getSubjectsTextByTag(idTags: tagsInt, language: language)
-            subjectsID = DatabaseHelper.shared.getSubjectsIDByTag(idTags: tagsInt, language: language)
+            let particles = DatabaseHelper.shared.getParticlesByTag(mainTags, residenceTags, language)
+            for particle in particles{
+                subjectsText.append(particle.subjectText)
+        }
+            
+        //Deletes the empty cells and their separators
+        tableView.tableFooterView = UIView()
+        
+        //subjectsText = DatabaseHelper.shared.getSubjectsTextByTag(idTags: tagsInt, language: language)
+        //subjectsID = DatabaseHelper.shared.getSubjectsIDByTag(idTags: tagsInt, language: language)
         }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))

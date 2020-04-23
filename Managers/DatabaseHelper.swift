@@ -168,7 +168,7 @@ class DatabaseHelper: NSObject {
     
      // MARK: - Subjects and particles
     
-    func getSubjectsIDByTag(idTags: [Int], language: String) -> [Int] {
+    /*func getSubjectsIDByTag(idTags: [Int], language: String) -> [Int] {
         let particles = getParticlesByTag(idTags: idTags, language: language)
         var idSubjects = [Int]()
         
@@ -177,9 +177,9 @@ class DatabaseHelper: NSObject {
         }
         
         return idSubjects
-    }
+    }*/
     
-    func getSubjectsTextByTag(idTags: [Int], language: String) -> [String] {
+    /*func getSubjectsTextByTag(idTags: [Int], language: String) -> [String] {
         let particles = getParticlesByTag(idTags: idTags, language: language)
         var idSubjects = [Int]()
         
@@ -188,7 +188,7 @@ class DatabaseHelper: NSObject {
         }
         
         return getSubjectbyID(idSubjects: idSubjects, language: language)
-    }
+    }*/
     
     func getSubjectbyID(idSubjects: [Int], language: String) -> [String] {
         var results = [String]()
@@ -214,23 +214,30 @@ class DatabaseHelper: NSObject {
         return results
     }
     
-    func getParticlesByTag(idTags: [Int], language: String) -> [ParticleModel] {
+    func getParticlesByTag(_ particlesMainTags: [Int],_ particlesResidenceTags: [Int],_ language: String) -> [ParticleModel] {
         var results = [Int]()
-        //TODO: Adapt to the new database
-        /*String query = "SELECT DISTINCT pm." + DBContract.Particles_MainTags.COLUMN_NAME_ID_PARTICLE +  " * FROM " + DBContract.Particles_MainTags.TABLE_NAME + " pm INNER JOIN " + DBContract.Particles_residenceTags.TABLE_NAME + " pr ON pm." + DBContract.Particles_MainTags.COLUMN_NAME_ID_PARTICLE + "=pr." + DBContract.Particles_residenceTags.COLUMN_NAME_ID_PARTICLE;*/
+        //String query = "SELECT DISTINCT pm." + DBContract.Particles_MainTags.COLUMN_NAME_ID_PARTICLE +  " * FROM " + DBContract.Particles_MainTags.TABLE_NAME + " pm INNER JOIN " + DBContract.Particles_residenceTags.TABLE_NAME + " pr ON pm." + DBContract.Particles_MainTags.COLUMN_NAME_ID_PARTICLE + "=pr." + DBContract.Particles_residenceTags.COLUMN_NAME_ID_PARTICLE;*/
         
-        var select = "select distinct pm." + Constants.shared.field_particles_mainTags_idParticle + " from " + Constants.shared.tableName_particlesMain_tags + " pm "
-        var innerJoin = "inner join " + Constants.shared.tableName_particlesResidence_tags + " pr on pm." + Constants.shared.field_particles_mainTags_idParticle + "=pr." + Constants.shared.field_particles_residenceTags_idParticle
+        let select = "select distinct pm." + Constants.shared.field_particles_mainTags_idParticle + " from " + Constants.shared.tableName_particlesMain_tags + " pm "
+        let innerJoin = "inner join " + Constants.shared.tableName_particlesResidence_tags + " pr on pm." + Constants.shared.field_particles_mainTags_idParticle + "=pr." + Constants.shared.field_particles_residenceTags_idParticle
         
-        
-        
-        /*var query = "select " + Constants.shared.field_particles_tags_idParticle + " from " + Constants.shared.tableName_particles_tags + " where " + Constants.shared.field_particles_tags_idTag + " in (" + String(idTags[0])
-        for index in 1..<idTags.count {
-            query.append("," + String(idTags[index]))
+        //Construct the where clauses
+        var whereClauses = [String]()
+        for main in particlesMainTags {
+            for residence in particlesResidenceTags{
+                whereClauses.append("pm." + Constants.shared.field_particles_mainTags_idTag + "=" + String(main) + " AND pr." + Constants.shared.field_particles_residenceTags_idTag + "=" + String(residence))
+            }
         }
-        query.append(")")*/
+        var qwhere = " WHERE "
+        for w in whereClauses{
+            qwhere.append(w)
+            if (whereClauses.firstIndex(of: w)! < whereClauses.count - 1){
+                qwhere.append(" OR ")
+            }
+        }
         
-        var query = select + innerJoin
+        //Constructs and launchs the query
+        let query = select + innerJoin + qwhere
         
         do {
             let cursor = try database.executeQuery(query, values: nil)
@@ -243,11 +250,41 @@ class DatabaseHelper: NSObject {
             print("Could not execute the query")
         }
         
-        return getParticles(idParticles: results, language: language)
+        return getParticles(results, language)
     }
     
-    func getParticles(idParticles: [Int], language: String) -> [ParticleModel] {
+    func getParticles(_ idParticles: [Int]!,_ language: String) -> [ParticleModel] {
         var results = [ParticleModel]()
+        
+        //Construct select syntax
+        let select = "select p." + Constants.shared.field_particles_id + ",p." + Constants.shared.field_particles_text + "_" + language + ",p." + Constants.shared.field_particles_idSubject + ",s." + Constants.shared.field_subjects_text + "_" + language + ",s." + Constants.shared.field_subjects_priority + ",s." + Constants.shared.field_subjects_cluster + " from " + Constants.shared.tableName_particles + " p," + Constants.shared.tableName_subjects + " s"
+        
+        //Construct where clause
+        var qwhere = ""
+        if(idParticles != nil){
+            qwhere = " where p." + Constants.shared.field_particles_id + " in ("
+            var first = true
+            for id in idParticles{
+                if first{
+                    first = false
+                }else{
+                    qwhere.append(",")
+                }
+                qwhere.append(String(id))
+            }
+            //There is a previous where clause
+            qwhere.append(") and ")
+        }else{
+            //There is no previous where clause
+            qwhere.append("where")
+        }
+        qwhere.append("s." + Constants.shared.field_subjects_id + "= p." + Constants.shared.field_particles_idSubject)
+        
+        //Constructs order clause
+        let order = " order by s." + Constants.shared.field_subjects_cluster + " ASC, s." + Constants.shared.field_subjects_priority + " ASC"
+        
+        let query = select + qwhere + order/*
+        
         
         let languageField = Constants.shared.field_particles_text + "_" + language
         
@@ -255,12 +292,13 @@ class DatabaseHelper: NSObject {
         for index in 1..<idParticles.count {
             query.append("," + String(idParticles[index]))
         }
-        query.append(")")
+        query.append(")")*/
         
         do {
             let cursor = try database.executeQuery(query, values: nil)
             while cursor.next(){
-                results.append(ParticleModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, Int(cursor.int(forColumnIndex: 5)), language))
+                //Particle ID; Particle Text; Subject ID; Subject Text; Language
+                results.append(ParticleModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumnIndex: 1)!, Int(cursor.int(forColumnIndex: 2)), cursor.string(forColumnIndex: 3)!, language))
             }
             
             cursor.close()
