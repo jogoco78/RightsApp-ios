@@ -14,7 +14,6 @@ class ParticleDetailsViewController: UIViewController {
     
     let particleID = UserDefaults.standard.integer(forKey: Constants.shared.particle_id)
     let language = LocalizationSystem.sharedInstance.getLanguage()
-    var particles = [ParticleModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,24 @@ class ParticleDetailsViewController: UIViewController {
         
         if DatabaseHelper.shared.openDatabase(){
             let particle = DatabaseHelper.shared.getParticles([particleID], language)
-            tvParticle.text = "-" + particle[0].text.replacingOccurrences(of: Constants.shared.rawSeparator, with: Constants.shared.newSeparator)
+            
+            let fullParticle = NSMutableAttributedString()
+            let image1Attachment = NSTextAttachment()
+            image1Attachment.image = UIImage(named: "Bullet")
+            let image1String = NSAttributedString(attachment: image1Attachment)
+            let splitParticle = particle[0].text.split(separator: "-")
+            
+            //line spacing
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 12
+            
+            for i in 0..<splitParticle.count{
+                fullParticle.append(image1String)
+                fullParticle.append(NSAttributedString(string: "\t" + String(splitParticle[i]) + "\n\n", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17), NSAttributedString.Key.paragraphStyle: paragraphStyle]))
+            }
+            tvParticle.attributedText = fullParticle
+            //tvParticle.text = "-" + particle[0].text.replacingOccurrences(of: Constants.shared.rawSeparator, with: Constants.shared.newSeparator)
+            
         }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))

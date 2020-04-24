@@ -56,7 +56,7 @@ class RightsAppViewController: UIViewController {
         btnTextEmergency.heightAnchor.constraint(equalToConstant: 75).isActive = true
         btnTextEmergency.titleLabel?.numberOfLines = 0
         btnTextEmergency.setTitleColor(UIColor.black, for: .normal)
-        btnTextEmergency.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("emergencyCallText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]), for: .normal)
+        btnTextEmergency.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("emergencyCallText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]), for: .normal)
         btnTextEmergency.addTarget(self, action: #selector(emergencyCallListener), for: .touchUpInside)
         
         //Questionnaire properties
@@ -74,7 +74,7 @@ class RightsAppViewController: UIViewController {
         btnTextQuestionnaire.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         btnTextQuestionnaire.titleLabel?.numberOfLines = 0
         //btnTextQuestionnaire.setTitle(NSLocalizedString("questionnaireText",comment: ""), for: .normal)
-        btnTextQuestionnaire.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("questionnaireText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]), for: .normal)
+        btnTextQuestionnaire.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("questionnaireText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]), for: .normal)
         btnTextQuestionnaire.addTarget(self, action: #selector(questionnaireListener), for: .touchUpInside)
         
         //Search Entity properties
@@ -91,7 +91,7 @@ class RightsAppViewController: UIViewController {
         btnTextSearchEntity.leftAnchor.constraint(equalTo: btnImageSearchEntity.rightAnchor, constant: 20).isActive = true
         btnTextSearchEntity.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         btnTextSearchEntity.titleLabel?.numberOfLines = 0
-        btnTextSearchEntity.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("searchEntityText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]), for: .normal)
+        btnTextSearchEntity.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("searchEntityText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]), for: .normal)
         //btnTextSearchEntity.setTitle(NSLocalizedString("searchEntityText",comment: ""), for: .normal)
         btnTextSearchEntity.addTarget(self, action: #selector(searchEntityListener), for: .touchUpInside)
         

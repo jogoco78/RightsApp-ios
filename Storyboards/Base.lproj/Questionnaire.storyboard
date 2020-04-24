@@ -18,6 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knd-MG-Ql3">
                                 <rect key="frame" x="328" y="812" width="66" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="btQuestionnaireContinue:" destination="rCt-Xw-nIb" eventType="touchUpInside" id="qiA-gP-gTA"/>
@@ -51,15 +52,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ParticleClusterItem" id="dN9-WO-Sfz" customClass="ParticlesClusterTableViewCell" customModule="RightsApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="39.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dN9-WO-Sfz" id="dim-k2-dLW">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="39.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="42"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jE-O0-eBx" userLabel="Particle cluster label">
-                                            <rect key="frame" x="20" y="11" width="355" height="17.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <rect key="frame" x="20" y="11" width="355" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -100,15 +101,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ParticleSubjectItem" id="M00-qe-Bfb" customClass="ParticlesSubjectTableViewCell" customModule="RightsApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="39.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M00-qe-Bfb" id="UiX-LJ-OFR">
-                                    <rect key="frame" x="0.0" y="0.0" width="383" height="39.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="42"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle subject item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIY-rR-bsz">
-                                            <rect key="frame" x="20" y="11" width="355" height="17.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <rect key="frame" x="20" y="11" width="355" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

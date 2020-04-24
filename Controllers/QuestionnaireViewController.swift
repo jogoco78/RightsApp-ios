@@ -33,15 +33,15 @@ class QuestionnaireViewController: UIViewController {
     let questionHeight = 55
     let initButtonsX = 40
     let initButtonsY = 70
-    let buttonsWidth = 20
-    let buttonsHeight = 20
+    let buttonsWidth = 25
+    let buttonsHeight = 25
     let buttonsMarginY = 35
-    let answersHeight = 50
+    let answersHeight = 70
     
     //Fonts
-    let titleFont = UIScreen.main.bounds.height * 0.036 //24 in a height 667 screen
-    let questionFont = UIScreen.main.bounds.height * 0.022 // 15 in a height 667 screen
-    let answersFont = UIScreen.main.bounds.height * 0.02 // 14 in a height of 667 screen
+    let titleFont = UIScreen.main.bounds.height * 0.038 //24 in a height 667 screen
+    let questionFont = UIScreen.main.bounds.height * 0.026 // 15 in a height 667 screen
+    let answersFont = UIScreen.main.bounds.height * 0.025 // 14 in a height of 667 screen
     
     //Tags and parameters
     var tags = ""
@@ -106,11 +106,15 @@ class QuestionnaireViewController: UIViewController {
         
         //Sets the buttonImage
         var initButtonImage = tvQuestion.bottomAnchor
+        var buttonsMargin = 0.032
+        if (numberOfAnswers > 3){
+            buttonsMargin = 0.02
+        }
         for i in 0..<numberOfAnswers {
             let myButton = UIButton(type: UIButton.ButtonType.system)
             view.addSubview(myButton)
             myButton.translatesAutoresizingMaskIntoConstraints = false
-            myButton.topAnchor.constraint(equalTo: initButtonImage, constant: screenSize.height * 0.02).isActive = true
+            myButton.topAnchor.constraint(equalTo: initButtonImage, constant: screenSize.height * CGFloat(buttonsMargin)).isActive = true
             myButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: screenSize.width * 0.10).isActive = true
             myButton.widthAnchor.constraint(equalToConstant: CGFloat(buttonsWidth)).isActive = true
             myButton.heightAnchor.constraint(equalToConstant: CGFloat(buttonsHeight)).isActive = true
@@ -126,10 +130,11 @@ class QuestionnaireViewController: UIViewController {
             view.addSubview(tvAnswer)
             tvAnswer.translatesAutoresizingMaskIntoConstraints = false
             tvAnswer.isEditable = false
-            tvAnswer.centerYAnchor.constraint(equalTo: buttonsArrayImage[i].centerYAnchor, constant: 5).isActive = true
+            tvAnswer.centerYAnchor.constraint(equalTo: buttonsArrayImage[i].centerYAnchor, constant: 15).isActive = true
             tvAnswer.leftAnchor.constraint(equalTo: buttonsArrayImage[i].rightAnchor, constant: screenSize.height * 0.01).isActive = true
             tvAnswer.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -screenSize.width * 0.10).isActive = true
             tvAnswer.heightAnchor.constraint(equalToConstant: CGFloat(answersHeight)).isActive = true
+            
             tvAnswer.attributedText = NSMutableAttributedString(string: answersArray[i].text, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: CGFloat(answersFont))])
             textViewAnswersArray.append(tvAnswer)
         }
