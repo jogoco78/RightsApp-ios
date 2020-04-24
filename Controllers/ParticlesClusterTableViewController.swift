@@ -36,7 +36,7 @@ class ParticlesClusterTableViewController: UITableViewController {
     
         if((tags?.contains(String(Constants.shared.tag_sexual_attack)))!){
             //Sexual attack cluster
-            dataSet.append(ClusterModel(Constants.shared.tag_sexual_attack, NSLocalizedString("sexual_attack_protocol", comment: ""), language))
+            dataSet.append(ClusterModel(Constants.shared.tag_sexual_attack, NSLocalizedString("sexualAttackProtocol", comment: ""), language))
         }
         
         if((tags?.contains(String(Constants.shared.tag_EU_resident)))!){

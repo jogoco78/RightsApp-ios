@@ -238,6 +238,7 @@ class DatabaseHelper: NSObject {
         
         //Constructs and launchs the query
         let query = select + innerJoin + qwhere
+        print("\n\nQuery: " + query)
         
         do {
             let cursor = try database.executeQuery(query, values: nil)

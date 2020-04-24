@@ -15,12 +15,15 @@ class Constants: NSObject {
     let databaseName = "rightsapp_v6_utf16.db"
     
     let newLine = "\n"
+    let newSeparator = "\n\n-"
+    let rawSeparator = "--"
     
     //MARK: Emergency phone number
     let emergencyCall = "112"
     
     //MARK: Stored information keys
-    let particles_id_subject = "idSubject"
+    //let particles_id_subject = "idSubject"
+    let particle_id = "particleID"
     let tags = "tags"
     let parameters = "parameters"
     let searchIDEntity = "entityTypeID"
