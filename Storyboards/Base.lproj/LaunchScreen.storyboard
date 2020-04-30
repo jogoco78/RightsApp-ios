@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kdQ-Xa-tI0">
-                                <rect key="frame" x="10" y="54" width="394" height="256"/>
+                                <rect key="frame" x="66" y="114" width="282" height="256"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Funding" id="iyS-YZ-mJb">
-                                <rect key="frame" x="20" y="684" width="374" height="128"/>
+                                <rect key="frame" x="20" y="498" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -32,9 +32,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kdQ-Xa-tI0" firstAttribute="top" secondItem="Lr4-Xu-Ual" secondAttribute="top" constant="10" id="9SK-a8-zGY"/>
-                            <constraint firstItem="kdQ-Xa-tI0" firstAttribute="centerX" secondItem="iyS-YZ-mJb" secondAttribute="centerX" id="hBf-hZ-BYt"/>
-                            <constraint firstItem="kdQ-Xa-tI0" firstAttribute="leading" secondItem="Lr4-Xu-Ual" secondAttribute="leading" constant="10" id="ibg-RE-UNp"/>
+                            <constraint firstItem="iyS-YZ-mJb" firstAttribute="top" secondItem="kdQ-Xa-tI0" secondAttribute="bottom" constant="128" id="OC2-Wb-NeT"/>
+                            <constraint firstItem="kdQ-Xa-tI0" firstAttribute="top" secondItem="Lr4-Xu-Ual" secondAttribute="top" constant="70" id="lH9-Es-wq1"/>
+                            <constraint firstItem="Lr4-Xu-Ual" firstAttribute="trailing" secondItem="kdQ-Xa-tI0" secondAttribute="trailing" constant="66" id="mcP-Wf-2oh"/>
+                            <constraint firstItem="kdQ-Xa-tI0" firstAttribute="leading" secondItem="Lr4-Xu-Ual" secondAttribute="leading" constant="66" id="zvo-w8-2n8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lr4-Xu-Ual"/>
                     </view>
