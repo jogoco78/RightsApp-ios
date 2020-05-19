@@ -11,7 +11,7 @@
         <!--QuestionnaireViewController-->
         <scene sceneID="IO7-cr-5P5">
             <objects>
-                <viewController id="rCt-Xw-nIb" userLabel="QuestionnaireViewController" customClass="QuestionnaireViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rCt-Xw-nIb" userLabel="QuestionnaireViewController" customClass="QuestionnaireViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1p5-ad-aDb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,9 +188,9 @@
         <!--Navigation Controller-->
         <scene sceneID="cap-oo-fh2">
             <objects>
-                <navigationController id="uNM-h7-ESd" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="uNM-h7-ESd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="egh-9O-Al1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
