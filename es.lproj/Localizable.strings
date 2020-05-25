@@ -18,6 +18,9 @@
 "us" = "Nosotros";
 "rights" = "Derechos";
 "navigate" = "Navegar";
+"cancel" = "Cancelar";
+"main_screen" = "Pantalla principal";
+"whats_next" = "¿Y ahora qué?";
 
 // MARK: SearchEntities
 "allEntities" = "Todas las categorias disponibles";
@@ -102,3 +105,17 @@
 "sexualAttackProtocol" = "Protocolo de actuación ante un ataque sexual grave";
 "EUCitizensRights" = "Derechos especialmente otorgados a los ciudadanos víctima de un delito con residencia en un país miembro de la UE";
 "NoEUCitizenRights" = "Derechos especialmente otorgados a los ciudadanos víctima de un delito con residencia en un país no miembro de la UE";
+
+//MARK: Alert dialogs
+"exit_questionnaire" = "Si pulsas Aceptar volverás a la pantalla principal y tus respuestas actuales se perderán.";
+
+//MARK: Whats next strings
+"phone_112" = "Realiza una llamada de emergencia al 112";
+"victims_association" = "Acude a una oficina de atención a las víctimas de delito para recibir más información";
+"police_station" = "Acude a una comisaria para poner una denuncia";
+"phone_against_violence" = "Llama al teléfono contra el maltrato";
+"hospital" = "Acude a un hospital";
+"consulate_embassy" = "Acude a tu consulado o embajada para recibir más información";
+
+//MARK: Titles
+"emergency_call" = "Llamada emergencia";

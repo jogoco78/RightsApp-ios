@@ -15,9 +15,12 @@ class ParticlesClusterTableViewCell: UITableViewCell {
 
 class ParticlesClusterTableViewController: UITableViewController {
     
-    var tags = UserDefaults.standard.string(forKey: "tags")
+    var tags = UserDefaults.standard.string(forKey: Constants.keys.tags)
     var language = LocalizationSystem.sharedInstance.getLanguage()
     var dataSet = [ClusterModel]()
+    var main_tag = 0
+    var side_tag = 0
+    var residence_tag = Constants.tags.spanish_resident
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +28,66 @@ class ParticlesClusterTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        
+        //Screen title
         self.navigationItem.title = NSLocalizedString("rights", comment: "")
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
+        
+        
+        if((tags?.contains(String(Constants.tags.terrorism)))!){
+            //Terrorism
+            main_tag = Constants.tags.terrorism
+            dataSet.append(ClusterModel(Constants.tags.terrorism, NSLocalizedString("citizensRights", comment: ""), language))
+        }else if((tags?.contains(String(Constants.tags.violence_against_women)))!){
+            //Violence against women
+            main_tag = Constants.tags.violence_against_women
+            dataSet.append(ClusterModel(Constants.tags.violence_against_women, NSLocalizedString("citizensRights", comment: ""), language))
+            if((tags?.contains(String(Constants.tags.sexual_attack)))!){
+                //Sexual attack
+                side_tag = Constants.tags.sexual_attack
+                dataSet.append(ClusterModel(Constants.tags.sexual_attack, NSLocalizedString("sexualAttackProtocol", comment: ""), language))
+            }
+        }else if((tags?.contains(String(Constants.tags.domestic_violence)))!){
+            //Domestic violence
+            main_tag = Constants.tags.domestic_violence
+            dataSet.append(ClusterModel(Constants.tags.domestic_violence, NSLocalizedString("citizensRights", comment: ""), language))
+            if((tags?.contains(String(Constants.tags.sexual_attack)))!){
+                //Sexual attack
+                side_tag = Constants.tags.sexual_attack
+                dataSet.append(ClusterModel(Constants.tags.sexual_attack, NSLocalizedString("sexualAttackProtocol", comment: ""), language))
+            }
+        }else if((tags?.contains(String(Constants.tags.violent_crimes)))!){
+            //Violent crimes
+            main_tag = Constants.tags.violent_crimes
+            dataSet.append(ClusterModel(Constants.tags.violent_crimes, NSLocalizedString("citizensRights", comment: ""), language))
+            if((tags?.contains(String(Constants.tags.sexual_attack)))!){
+                //Sexual attack
+                side_tag = Constants.tags.sexual_attack
+                dataSet.append(ClusterModel(Constants.tags.sexual_attack, NSLocalizedString("sexualAttackProtocol", comment: ""), language))
+            }
+        }else if((tags?.contains(String(Constants.tags.common_crime)))!){
+            //Common crimes
+            main_tag = Constants.tags.common_crime
+            dataSet.append(ClusterModel(Constants.tags.common_crime, NSLocalizedString("citizensRights", comment: ""), language))
+        }
+        
+        if((tags?.contains(String(Constants.tags.EU_resident)))!){
+            //EU residents
+            residence_tag = Constants.tags.EU_resident
+            dataSet.append(ClusterModel(Constants.tags.EU_resident, NSLocalizedString("EUCitizensRights", comment: ""), language))
+        }else if((tags?.contains(String(Constants.tags.non_EU_resident)))!){
+            //Non EU residents
+            residence_tag = Constants.tags.non_EU_resident
+            dataSet.append(ClusterModel(Constants.tags.non_EU_resident, NSLocalizedString("NoEUCitizenRights", comment: ""), language))
+        }
+        
+        //Stores the tags provided by the questionnaire
+        UserDefaults.standard.set(main_tag, forKey: Constants.keys.main_tag)
+        UserDefaults.standard.set(side_tag, forKey: Constants.keys.side_tag)
+        UserDefaults.standard.set(residence_tag, forKey: Constants.keys.residence_tag)
+        
         //Common crimes cluster is always included
-        dataSet.append(ClusterModel(Constants.shared.tag_common_crime, NSLocalizedString("citizensRights", comment: ""), language))
+       /* dataSet.append(ClusterModel(Constants.shared.tag_common_crime, NSLocalizedString("citizensRights", comment: ""), language))
     
         if((tags?.contains(String(Constants.shared.tag_sexual_attack)))!){
             //Sexual attack cluster
@@ -47,11 +102,15 @@ class ParticlesClusterTableViewController: UITableViewController {
         if((tags?.contains(String(Constants.shared.tag_non_EU_resident)))!){
             //No EU resident cluster
             dataSet.append(ClusterModel(Constants.shared.tag_non_EU_resident, NSLocalizedString("NoEUCitizenRights", comment: ""), language))
-        }
+        }*/
         
         //Deletes the empty cells and their separators
         tableView.tableFooterView = UIView()
     
+    }
+    
+    @objc func goHome(){
+        performSegue(withIdentifier: "clusterToMainSegue", sender: nil)
     }
 
     // MARK: - Table view data source
@@ -75,7 +134,7 @@ class ParticlesClusterTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UserDefaults.standard.set(dataSet[indexPath.row].tag_id, forKey: Constants.shared.idTagUser_key)
+        UserDefaults.standard.set(dataSet[indexPath.row].tag_id, forKey: Constants.keys.user_selected_tag)
         performSegue(withIdentifier: "ParticleClusterToSubjectsSegue", sender: nil)
     }
     

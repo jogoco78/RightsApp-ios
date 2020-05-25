@@ -13,9 +13,9 @@ private let entitiesCellIdentifier = "entityCell"
 
 class EntitiesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
-    var idCategory = UserDefaults.standard.integer(forKey: Constants.shared.searchIDEntity)
-    var idCountry = UserDefaults.standard.integer(forKey: Constants.shared.searchIDCountry)
-    var idCity = UserDefaults.standard.integer(forKey: Constants.shared.searchIDCity)
+    var idCategory = UserDefaults.standard.integer(forKey: Constants.keys.searchIDEntity)
+    var idCountry = UserDefaults.standard.integer(forKey: Constants.keys.searchIDCountry)
+    var idCity = UserDefaults.standard.integer(forKey: Constants.keys.searchIDCity)
     var longitude: Double!
     var latitude: Double!
     let language = LocalizationSystem.sharedInstance.getLanguage()
@@ -210,7 +210,7 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        UserDefaults.standard.set(entities[indexPath.section].id, forKey: Constants.shared.entitySelected)
+        UserDefaults.standard.set(entities[indexPath.section].id, forKey: Constants.keys.entitySelected)
         performSegue(withIdentifier: "ListToDetailsSegue", sender: nil)
     }
 }

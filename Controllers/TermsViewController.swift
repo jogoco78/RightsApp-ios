@@ -48,7 +48,7 @@ class TermsViewController: UIViewController {
         swSwitch.leftAnchor.constraint(equalTo: view.leftAnchor, constant:20).isActive = true
         swSwitch.centerYAnchor.constraint(equalTo: btAccept.centerYAnchor).isActive = true
         swSwitch.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        swSwitch.heightAnchor.constraint(equalToConstant: 30)
+        swSwitch.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         //Text properties
         tvTerms.translatesAutoresizingMaskIntoConstraints = false

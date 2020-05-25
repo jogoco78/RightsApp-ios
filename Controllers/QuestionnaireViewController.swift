@@ -13,7 +13,7 @@ class QuestionnaireViewController: UIViewController {
     
     @IBOutlet var myView: UIView!
     @IBOutlet weak var btQuestionnaireContinue: UIButton!
-    
+    @IBOutlet weak var btn_main_screen: UIButton!
     
     let screenSize = UIScreen.main.bounds
     var tvQuestion = UITextView()
@@ -40,8 +40,8 @@ class QuestionnaireViewController: UIViewController {
     
     //Fonts
     let titleFont = UIScreen.main.bounds.height * 0.038 //24 in a height 667 screen
-    let questionFont = UIScreen.main.bounds.height * 0.026 // 15 in a height 667 screen
-    let answersFont = UIScreen.main.bounds.height * 0.025 // 14 in a height of 667 screen
+    let questionFont = UIScreen.main.bounds.height * 0.022 // 15 in a height 667 screen
+    let answersFont = UIScreen.main.bounds.height * 0.017 // 14 in a height of 667 screen
     
     //Tags and parameters
     var tags = ""
@@ -49,12 +49,14 @@ class QuestionnaireViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        if UserDefaults.standard.object(forKey: "tags") != nil {
-            UserDefaults.standard.set("", forKey: "tags")
-        }
+        //Remove previous stored tags
+        UserDefaults.standard.removeObject(forKey: Constants.keys.tags)
+        UserDefaults.standard.removeObject(forKey: Constants.keys.main_tag)
+        UserDefaults.standard.removeObject(forKey: Constants.keys.side_tag)
+        UserDefaults.standard.removeObject(forKey: Constants.keys.residence_tag)
+        UserDefaults.standard.removeObject(forKey: Constants.keys.user_selected_tag)
+        
         view.addSubview(tvTitle)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -71,6 +73,7 @@ class QuestionnaireViewController: UIViewController {
         updateQuestion()
         
         btQuestionnaireContinue.setTitle(NSLocalizedString("continue", comment: ""),for: .normal)
+        btn_main_screen.setTitle(NSLocalizedString("main_screen", comment: ""), for: .normal)
     }
     
     func updateQuestion(){
@@ -167,7 +170,27 @@ class QuestionnaireViewController: UIViewController {
         return result
     }
   
-   
+    @IBAction func btn_main_screen_listener(_ sender: Any) {
+        //Shows an alert: the user should accept at least one option in the questionnaire
+        let alert = UIAlertController(title: nil, message: NSLocalizedString("exit_questionnaire", comment: ""), preferredStyle: .alert)
+        alert.view.backgroundColor = UIColor.black
+        alert.view.alpha = 0.6
+        alert.view.layer.cornerRadius = 15
+        
+        let okAction = UIAlertAction (title: NSLocalizedString("accept", comment: ""), style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.goHome()
+        })
+
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            print("Do nothing")
+        })
+    
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true)
+    }
+    
     @IBAction func btQuestionnaireContinue(_ sender: UIButton) {
         let idAnswer = getAnswerIDFromButton()
         
@@ -186,8 +209,8 @@ class QuestionnaireViewController: UIViewController {
         } else {
             //Initialize tags and parameters 
             if idCurrentQuestion == 1 {
-                UserDefaults.standard.set("", forKey: Constants.shared.tags)
-                UserDefaults.standard.set("", forKey: Constants.shared.parameters)
+                UserDefaults.standard.set("", forKey: Constants.keys.tags)
+                UserDefaults.standard.set("", forKey: Constants.keys.parameters)
             }
             
             //Checks if any tag is raised with the current question and answer
@@ -205,10 +228,10 @@ class QuestionnaireViewController: UIViewController {
             }
             if idCurrentQuestion == 0 {
                 //Stores the tags raised
-                UserDefaults.standard.set(tags.dropLast(), forKey: Constants.shared.tags)
+                UserDefaults.standard.set(tags.dropLast(), forKey: Constants.keys.tags)
                 
                 //Stores the parameters
-                UserDefaults.standard.set(parameters.dropLast(), forKey: Constants.shared.parameters)
+                UserDefaults.standard.set(parameters.dropLast(), forKey: Constants.keys.parameters)
                 
                 //Show particles
                 //print(tags)
@@ -270,5 +293,9 @@ class QuestionnaireViewController: UIViewController {
             }
         }
         sender.setImage(UIImage(named: "ButtonChecked"), for: .normal)
+    }
+    
+    @objc func goHome(){
+        performSegue(withIdentifier: "questionnaireToMain", sender: nil)
     }
 }

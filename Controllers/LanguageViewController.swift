@@ -14,13 +14,14 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var tvSelectLanguage = UITextView()
     var tvAlertCloseApp = UITextView()
     var btnAccept = UIButton()
+    @IBOutlet weak var tabBar: UITabBarItem!
     
     let languages = [NSLocalizedString("spanish",comment: ""), NSLocalizedString("english",comment: ""), NSLocalizedString("portuguese",comment: ""), NSLocalizedString("italian",comment: "")]
     let languageCodes = ["es","en","por","it"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         //line spacing
@@ -53,13 +54,14 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         tvAlertCloseApp.attributedText = s
         
         btnAccept.translatesAutoresizingMaskIntoConstraints = false
-        btnAccept.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60).isActive = true
+        btnAccept.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
         btnAccept.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         btnAccept.widthAnchor.constraint(equalToConstant: 70).isActive = true
         btnAccept.heightAnchor.constraint(equalToConstant: 30).isActive = true
         btnAccept.setTitle(NSLocalizedString("accept",comment: ""), for: .normal)
         btnAccept.setTitleColor(UIColor.blue, for: .normal)
         btnAccept.addTarget(self, action: #selector(btnAcceptListener), for: .touchUpInside)
+        
         
         pvSelectLanguage.translatesAutoresizingMaskIntoConstraints = false
         pvSelectLanguage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

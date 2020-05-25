@@ -18,6 +18,11 @@ class EmergencyCallViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Screen title
+        self.navigationItem.title = NSLocalizedString("emergency_call", comment: "")
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
 
         // Do any additional setup after loading the view.
         tvEmergencyCall.text = NSLocalizedString("emergencyCallText",comment: "")
@@ -26,7 +31,7 @@ class EmergencyCallViewController: UIViewController {
     }
     
     @IBAction func btEmergencyCallTouch(_ sender: UIButton) {
-        guard let number = URL(string: "tel://" + Constants.shared.emergencyCall) else { return }
+        guard let number = URL(string: "tel://" + Constants.call.emergency) else { return }
         UIApplication.shared.open(number)
     }
     
@@ -35,8 +40,12 @@ class EmergencyCallViewController: UIViewController {
     }
     
     @IBAction func btCall(_ sender: Any) {
-        guard let number = URL(string: "tel://" + Constants.shared.emergencyCall) else { return }
+        guard let number = URL(string: "tel://" + Constants.call.emergency) else { return }
         UIApplication.shared.open(number)
+    }
+    
+    @objc func goHome(){
+        performSegue(withIdentifier: "toMain", sender: nil)
     }
     /*
     // MARK: - Navigation

@@ -18,6 +18,9 @@
 "us" = "Us";
 "rights" = "Rights subjects";
 "navigate" = "Navigate";
+"cancel" = "Cancel";
+"main_screen" = "Main screen";
+"whats_next" = "What\'s next?";
 
 //MARK: SearchEntities
 "allEntities" = "All available entities";
@@ -101,4 +104,18 @@
 "sexualAttackProtocol" = "Protocol of action in a serious sexual attack";
 "EUCitizensRights" = "Rights specially granted to citizens victim of a crime that reside in another EU country";
 "NoEUCitizenRights" = "Rights specially granted to citizens victim of a crime that reside in a non EU country";
+
+//MARK: Alert dialogs
+"exit_questionnaire" = "If you press Accept you will be redirected to the main screen and your current answers will be lost.";
+
+//MARK: Whats next strings
+"phone_112" = "Make an emergency call to 112";
+"victims_association" = "Go to a victim assistance office to receive more information";
+"police_station" = "Go to a police station to file a complaint";
+"phone_against_violence" = "Call the phone against women abuse";
+"hospital" = "Go to a hospital";
+"consulate_embassy" = "Go to your consulate or embassy to receive more information";
+
+//MARK: Titles
+"emergency_call" = "Emergency Call";
 

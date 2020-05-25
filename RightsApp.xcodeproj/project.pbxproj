@@ -41,6 +41,8 @@
 		EB993A69229D3B7B0082DE76 /* RightsApp_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB993A68229D3B7B0082DE76 /* RightsApp_iosUITests.swift */; };
 		EB99E0C522C22EAC005643BF /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */; };
 		EB9C6F7B22BBD7A600D09334 /* EmergencyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */; };
+		EB9D8C6D247BE0D300225E37 /* WhatsNextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D8C6C247BE0D300225E37 /* WhatsNextTableViewController.swift */; };
+		EB9D8C6F247BE9FE00225E37 /* WhatsNextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D8C6E247BE9FE00225E37 /* WhatsNextModel.swift */; };
 		EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */; };
 		EBA4D54522AFDCD000B1B566 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54422AFDCD000B1B566 /* QuestionnaireViewController.swift */; };
 		EBA4D55322AFEAB500B1B566 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54822AFEAB400B1B566 /* FMResultSet.m */; };
@@ -48,6 +50,7 @@
 		EBA4D55522AFEAB500B1B566 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54D22AFEAB500B1B566 /* FMDatabaseQueue.m */; };
 		EBA4D55622AFEAB500B1B566 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54E22AFEAB500B1B566 /* FMDatabase.m */; };
 		EBA4D55722AFEAB500B1B566 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D55022AFEAB500B1B566 /* FMDatabasePool.m */; };
+		EBACD44E247839360063085E /* rightsapp_v7_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBACD44D247839360063085E /* rightsapp_v7_utf16.db */; };
 		EBB61D2122B1442200F749D7 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */; };
 		EBBB089A22C4FF9C00918F15 /* EntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBB089922C4FF9C00918F15 /* EntityModel.swift */; };
 		EBC35A2322CCEDD0003EFA20 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */; };
@@ -141,6 +144,8 @@
 		EB993A6A229D3B7B0082DE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB99E0C422C22EAC005643BF /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCallViewController.swift; sourceTree = "<group>"; };
+		EB9D8C6C247BE0D300225E37 /* WhatsNextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextTableViewController.swift; sourceTree = "<group>"; };
+		EB9D8C6E247BE9FE00225E37 /* WhatsNextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextModel.swift; sourceTree = "<group>"; };
 		EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v5_utf16.db; sourceTree = "<group>"; };
 		EBA4D54422AFDCD000B1B566 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		EBA4D54722AFEAB400B1B566 /* RightsApp_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RightsApp_ios-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		EBA4D55022AFEAB500B1B566 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		EBA4D55122AFEAB500B1B566 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		EBA4D55222AFEAB500B1B566 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		EBACD44D247839360063085E /* rightsapp_v7_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v7_utf16.db; sourceTree = "<group>"; };
 		EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		EBBB089922C4FF9C00918F15 /* EntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityModel.swift; sourceTree = "<group>"; };
 		EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 				EBC80F5822CCD4D300870B27 /* TermsViewController.swift */,
 				EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */,
 				EB36E5E822CE37D4008B7ACD /* EntitiesListViewController.swift */,
+				EB9D8C6C247BE0D300225E37 /* WhatsNextTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 				EB09F12D22C4B0C20015F48C /* CountryModel.swift */,
 				EBBB089922C4FF9C00918F15 /* EntityModel.swift */,
 				EB8F10E32450AAE60089D5D2 /* ClusterModel.swift */,
+				EB9D8C6E247BE9FE00225E37 /* WhatsNextModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 				EBA4D54622AFE87300B1B566 /* FMDB */,
 				EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */,
 				EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */,
+				EBACD44D247839360063085E /* rightsapp_v7_utf16.db */,
 				EB205C8B22A7D733006B5BDC /* Controllers */,
 				EB8A66FA229ED4DE003855BD /* Localizable.strings */,
 				EBFA91DE229D816100802BC7 /* Storyboards */,
@@ -482,6 +491,7 @@
 				EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */,
 				EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */,
 				EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */,
+				EBACD44E247839360063085E /* rightsapp_v7_utf16.db in Resources */,
 				EB7C3F8523478B31002D8610 /* GoogleService-Info.plist in Resources */,
 				EB993A50229D3B7A0082DE76 /* Assets.xcassets in Resources */,
 				EB993A4E229D3B7A0082DE76 /* Main.storyboard in Resources */,
@@ -632,6 +642,7 @@
 				EBA4D55522AFEAB500B1B566 /* FMDatabaseQueue.m in Sources */,
 				EB993A49229D3B7A0082DE76 /* AppDelegate.swift in Sources */,
 				EB09F12E22C4B0C20015F48C /* CountryModel.swift in Sources */,
+				EB9D8C6D247BE0D300225E37 /* WhatsNextTableViewController.swift in Sources */,
 				EB8F10E42450AAE60089D5D2 /* ClusterModel.swift in Sources */,
 				EBA4D55722AFEAB500B1B566 /* FMDatabasePool.m in Sources */,
 				EBFB22DB22C4157C0065E91F /* CategoryModel.swift in Sources */,
@@ -645,6 +656,7 @@
 				EBA4D55422AFEAB500B1B566 /* FMDatabaseAdditions.m in Sources */,
 				EBF55CFE22BA78BC00CAE991 /* ParticlesTableViewController.swift in Sources */,
 				EBC80F5922CCD4D300870B27 /* TermsViewController.swift in Sources */,
+				EB9D8C6F247BE9FE00225E37 /* WhatsNextModel.swift in Sources */,
 				EB5CE66122B1907E00570231 /* CityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

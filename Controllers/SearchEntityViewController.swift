@@ -224,9 +224,9 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
     
     //Button listener
     @IBAction func btnSearchAction(_ sender: UIButton) {
-        UserDefaults.standard.set(categories[entityIndexSelected].id, forKey:  Constants.shared.searchIDEntity)
-        UserDefaults.standard.set(countries[countryIndexSelected].id, forKey: Constants.shared.searchIDCountry)
-        UserDefaults.standard.set(cities[cityIndexSelected].id, forKey: Constants.shared.searchIDCity)
+        UserDefaults.standard.set(categories[entityIndexSelected].id, forKey:  Constants.keys.searchIDEntity)
+        UserDefaults.standard.set(countries[countryIndexSelected].id, forKey: Constants.keys.searchIDCountry)
+        UserDefaults.standard.set(cities[cityIndexSelected].id, forKey: Constants.keys.searchIDCity)
         
         performSegue(withIdentifier: "SearchEntityToEntityListSegue", sender: nil)
     }

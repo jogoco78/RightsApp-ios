@@ -18,7 +18,7 @@ class EntityDetailsViewController: UIViewController {
     var btnNavigate = UIButton()
     
     var language = LocalizationSystem.sharedInstance.getLanguage()
-    var entityID = UserDefaults.standard.integer(forKey: Constants.shared.entitySelected)
+    var entityID = UserDefaults.standard.integer(forKey: Constants.keys.entitySelected)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class EntityDetailsViewController: UIViewController {
             s = NSMutableAttributedString(string: NSLocalizedString("descriptionNotAvailable", comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
         }
         
-        s.append(NSMutableAttributedString(string: Constants.shared.newLine, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]))
+        s.append(NSMutableAttributedString(string: Constants.text.newLine, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]))
         attributedText.append(s)
         
         if entity.address != nil {
