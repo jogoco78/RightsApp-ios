@@ -18,10 +18,12 @@
 "use" = "Uso app";
 "us" = "Nosotros";
 "rights" = "Derechos";
+"clusters" = "Grupos de derechos";
 "navigate" = "Navegar";
 "cancel" = "Cancelar";
 "main_screen" = "Pantalla principal";
 "whats_next" = "¿Y ahora qué?";
+"what_can_i_do" = "¿Qué puedo hacer?";
 
 // MARK: SearchEntities
 "allEntities" = "Todas las categorias disponibles";
@@ -95,10 +97,24 @@
 
 //MARK: How to use the app strings
 "howToUseTheApp" = "Como utilizar la app\n";
+"htaw_body" = "La app incluye tres situaciones diferentes en las que el usuario que ha sido víctima de un delito dentro de la Unión Europea se puede encontrar:\n";
+"htaw_first_scenario_title" = "Primera situación: ";
+"htaw_first_scenario_body" = "La primera de ellas es la necesidad de realizar una llamada de emergencia al 112. Con tan sólo pulsar un botón el usuario podrá realizar una llamada de emergencia al 112.\n";
+"htaw_second_scenario_title" = "Segunda situación: ";
+"htaw_second_scenario_body" = "La segunda situación consiste en la necesidad de obtener información relativa a los derechos del ciudadano de la Unión Europea que ha sido víctima de un delito. Con el fin de obtener esta información de forma particularizada, el usuario tendrá que rellenar un pequeño cuestionario. Una vez respondido este cuestionario, los derechos que asisten al usuario en su situación concreta aparecerán agrupados por temática (esta agrupación se debe al tamaño de las pantallas de algunos dispositivos móviles, con el fin de facilitar la visualización). Una vez pulsado el título de una temática cualquiera, se desplegará una definición más detallada de los derechos que asisten al usuario respecto de esa temática.\n";
+"htaw_third_scenario_title" = "Tercera situación: ";
+"htaw_third_scenario_body" = "La última situación es la necesidad de que el ciudadano que ha sido víctima de un delito pueda obtener la información relativa a las instituciones y centros donde se le puede prestar asistencia. Primero, el usuario deberá escoger tres parámetros para facilitar la búsqueda de estas instituciones y centros. El primer parámetro es el tipo de entidad que está buscando, el segundo indica en que país, y por último en que ciudad. Por el momento, están disponibles las entidades y centros que prestan asistencia a las víctimas de delitos en la Comunidad Autónoma de Cataluña. Una vez establecidos estos parámetros, aparecerá una lista ordenada de menos a más distancia con respecto a la ubicación del usuario. Una vez seleccionada una de las instituciones o centros de asistencia, la app ofrecerá la posibilidad de llamar a ese centro concreto, navegar hasta él (mediante GoogleMaps) o volver atrás para realizar otra búsqueda.\n";
 "bottomMenu" = "Menú inferior\n";
-"bottomMenuBody" = "Al iniciar la aplicación RightsApp (en adelante, la “app”), en primer lugar, deben aceptarse los Términos y condiciones de la misma. Dentro de estos Términos y condiciones está incluida la política de privacidad. UAB-IDT recomienda encarecidamente una lectura detenida de estos términos y condiciones que siempre estarán disponibles en el menú “Preferencias”.\nEl menú “Preferencias” está compuesto por 4 secciones diferentes:\nIdioma: la aplicación está disponible en cuatro idiomas: español, inglés, portugués e italiano. Se puede cambiar el idioma de la aplicación) en esta pantalla (excepto durante la respuesta al cuestionario).\nCómo utilizar la app: nos muestra esta explicación en el idioma que esté activo en ese momento.\nTérminos y condiciones: nos muestra los Términos y condiciones de uso de la app. Estos incluyen la Política de privacidad de ésta.\nSobre nosotros: contiene la descripción del consorcio RightsApp y las diferentes formas de contacto disponibles.\n";
-"howTheAppWorks" = "Funcionamiento de la app\n";
-"howTheAppWorksBody" = "La app incluye tres situaciones diferentes en las que el usuario que ha sido víctima de un delito dentro de la Unión Europea se puede encontrar La primera de ellas es la necesidad de realizar una llamada de emergencia al 112. Con tan sólo pulsar un botón el usuario podrá realizar una llamada de emergencia al 112.\nLa segunda situación consiste en la necesidad de obtener información relativa a los derechos del ciudadano de la Unión Europea que ha sido víctima de un delito. Con el fin de obtener esta información de forma particularizada, el usuario tendrá que rellenar un pequeño cuestionario (con un mínimo de X y un máximo de Y preguntas). Una vez respondido este cuestionario, los derechos que asisten al usuario en su situación concreta aparecerán agrupados por temática (esta agrupación se debe al tamaño de las pantallas de algunos dispositivos móviles, con el fin de facilitar la visualización). Una vez pulsado el título de una temática cualquiera, se desplegará una definición más detallada de los derechos que asisten al usuario respecto de esa temática.\nLa última situación es la necesidad de que el ciudadano que ha sido víctima de un delito pueda obtener la información relativa a las instituciones y centros donde se le puede prestar asistencia. Primero, el usuario deberá escoger tres parámetros para facilitar la búsqueda de estas instituciones y centros. El primer parámetro es el tipo de entidad que está buscando, el segundo indica en que país, y por último en que ciudad. Por el momento, están disponibles las entidades y centros que prestan asistencia a las víctimas de delitos en la Comunidad Autónoma de Cataluña. Una vez establecidos estos parámetros, aparecerá una lista ordenada de menos a más distancia con respecto a la ubicación del usuario. Una vez seleccionada una de las instituciones o centros de asistencia, la app ofrecerá la posibilidad de llamar a ese centro concreto, navegar hasta él (mediante GoogleMaps) o volver atrás para realizar otra búsqueda.\n";
+"bottomMenuBody" = "El \"Menú Inferior\" está compuesto por 4 secciones diferentes:\n";
+"bm_first_option_title" = "Idioma: ";
+"bm_first_option_body" = "La aplicación está disponible en cuatro idiomas: español, inglés, portugués e italiano. Se puede cambiar el idioma de la aplicación) en esta pantalla (excepto durante la respuesta al cuestionario).\n";
+"bm_second_option_title" = "Cómo utilizar la app: ";
+"bm_second_option_body" = "nos muestra esta explicación en el idioma que esté activo en ese momento.\n";
+"bm_third_option_title" = "Términos y condiciones: ";
+"bm_third_option_body" = "nos muestra los Términos y condiciones de uso de la app. Estos incluyen la Política de privacidad de ésta.\n";
+"bm_fourth_option_title" = "Sobre nosotros: ";
+"bm_fourth_option_body" = "contiene la descripción del consorcio RightsApp y las diferentes formas de contacto disponibles.";
+
 "doNotShow" = "No volver a mostrar este mensaje";
 
 //MARK: About us string
@@ -106,10 +122,10 @@
 "aboutUsBody" = "La aplicación RightsApp es el principal resultado del proyecto “Mobile Technologies applied to protect victims of a crime within the EU Area of Justice: RightsApp for e-Justice” (http://rightsapp-project.eu) financiado por el Programa “DG-Justice European Union’s Programme (2014-2020)” con el número de Grant Agreement 785854.\nEl Consorcio está formado por dos entidades sin ánimo de lucro que forman parte de la Universidad Autónoma de Barcelona (UAB, http://uab.cat): el Instituto de Derecho y Tecnología de la UAB (IDT-UAB, http://idt.uab.cat) y el International Welcome Point de la UAB (IWP-UAB, https://www.uab.cat/international-welcome-point/).\nEl Instituto de Derecho y Tecnología de la UAB (IDT-UAB) es un centro de investigación que promueve la investigación pionera dentro del derecho y la tecnología desde un punto de vista interdisciplinar. Su misión principal es fomentar la investigación dedicada a proveer a los profesionales del mundo legal, instituciones, organizaciones, y ciudadanos con las tecnologías apropiadas para mejorar su trabajo legal o mejorar el ejercicio de sus derechos. Las tecnologías adecuadas a este contexto implican que la investigación esté centrada en el usuario, de esta manera, tanto el diseño de la tecnología como sus progresos están adaptados a las necesidades de los usuarios finales y no al revés.\nEl International Welcome Point de la UAB (IWP-UAB) es una oficina diseñada por la Oficina de Relaciones Institucionales de la UAB para proporcionar servicios a todos los miembros extranjeros de la Comunidad de la UAB. Ofreciendo así ayuda a todos los estudiantes, profesores, personal administrativo y personal de servicios de otros países. El IWP-UAB provee información practica como procedimientos legales para ciudadanos de la UE y de fuera de la UE, cobertura sanitaria para los ciudadanos de la UE, presupuesto para vivir en Barcelona y direcciones relevantes. Además, el IWP-UAB provee de ayuda a los extranjeros con la renovación del permiso de residencia y trabajo, coordina la ayuda que proporcionan las diferentes oficinas de la UAB y ofrece ayuda a posgraduados y beneficiarios de becas de otros países.\nPor otra parte, la Facultad de Derecho de la UAB (FoL, https://www.uab.cat/dret/), LAST-JD Erasmus Mundus (LAST-JD) and Catalan Society of Victimology (CSV, https://www.victimologia.cat) también están contribuyendo a la investigación tanto cualitativa como cuantitativa. La Facultad de Derecho de la UAB recibe cada año más de 60 estudiantes foráneos dentro de sus programas de movilidad (Erasmus Programme) y cada año alrededor de 2.600 personas se apuntan a alguno de sus grados o posgrados. La Sociedad Catalana de Victimología agrupa a juristas, psicólogos, doctores, trabajadores sociales, entre otros.";
 
 //MARK: Clusters
-"citizensRights" = "Derechos de los ciudadanos que han sido víctimas de un delito";
+"citizensRights" = "Derechos que asisten a todas las personas que han sido víctimas de un delito";
 "sexualAttackProtocol" = "Protocolo de actuación ante un ataque sexual grave";
-"EUCitizensRights" = "Derechos especialmente otorgados a los ciudadanos víctima de un delito con residencia en un país miembro de la UE";
-"NoEUCitizenRights" = "Derechos especialmente otorgados a los ciudadanos víctima de un delito con residencia en un país no miembro de la UE";
+"EUCitizensRights" = "Derechos que asisten a los ciudadanos de otro país miembro de la UE";
+"NoEUCitizenRights" = "Derechos que asisten a los ciudadanos de un país fuera de la UE";
 
 //MARK: Alert dialogs
 "exit_questionnaire" = "Si pulsas Aceptar volverás a la pantalla principal y tus respuestas actuales se perderán.";

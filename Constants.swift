@@ -68,6 +68,12 @@ struct Constants {
             static let id_category = "id_category"
         }
     }
+    struct categories{
+        static let police_stations = 1
+        static let victim_assistance_offices = 2
+        static let medical_centres = 3
+        static let consulates_embassies = 4
+    }
     struct GPS{
         static let latitude = "latitude"
         static let longitude = "longitude"
@@ -99,6 +105,7 @@ struct Constants {
     }
     struct call{
         static let emergency = "112"
+        static let violence_against_women = "016"
     }
     struct text{
         static let newLine = "\n"

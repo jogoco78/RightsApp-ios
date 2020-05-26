@@ -217,6 +217,7 @@
                     <connections>
                         <segue destination="U1l-9T-GW1" kind="show" identifier="WhatsNextToMainSegue" id="cUJ-qk-J13"/>
                         <segue destination="geg-hS-rhw" kind="show" identifier="WhatsNextToMakeCallSegue" id="LtS-t6-Tz5"/>
+                        <segue destination="cfV-sE-v26" kind="show" identifier="WhatsNextToEntitiesListSegue" id="Soc-Uz-HF7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5K-j5-dcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -252,6 +253,16 @@
             </objects>
             <point key="canvasLocation" x="2709" y="-492"/>
         </scene>
+        <!--EntitiesList-->
+        <scene sceneID="61f-2p-mNL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchEntity" referencedIdentifier="EntitiesList" id="cfV-sE-v26" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="J8K-BV-AzZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iyl-nd-XvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3636" y="-494"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cap-oo-fh2">
             <objects>
@@ -270,6 +281,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xXg-d2-Z3m"/>
+        <segue reference="cUJ-qk-J13"/>
     </inferredMetricsTieBreakers>
 </document>

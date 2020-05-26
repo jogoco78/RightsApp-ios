@@ -104,4 +104,28 @@ class ParticlesTableViewController: UITableViewController {
         UserDefaults.standard.set(particles[indexPath.row].id, forKey: Constants.keys.particle_id)
         performSegue(withIdentifier: "particlesSubjectToDetail", sender: nil)
     }
+    
+    /*override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.lightGray
+        footerView.frame = CGRect(x: 0, y: 70, width: self.view.frame.width, height: 200)
+        //footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 10).isActive = true
+        let button = UIButton()
+        footerView.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.topAnchor.constraint(equalTo: footerView.topAnchor).isActive = true
+        button.centerXAnchor.constraint(equalTo: footerView.centerXAnchor).isActive = true
+        
+        
+        //button.frame = CGRect(x: 20, y: tableView.y, width: 300, height: 50)
+        
+        //button.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: -20).isActive = true
+        //button.leftAnchor.constraint(equalTo: tableView.leftAnchor, constant: 20).isActive = true
+        //button.rightAnchor.constraint(equalTo: tableView.rightAnchor, constant: -20).isActive = true
+        button.setTitle("Accept", for: .normal)
+        button.backgroundColor = UIColor.purple
+        //button.backgroundColor = colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        
+        return footerView
+    }*/
 }

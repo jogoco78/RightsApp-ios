@@ -29,7 +29,7 @@ class ParticlesClusterTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         //Screen title
-        self.navigationItem.title = NSLocalizedString("rights", comment: "")
+        self.navigationItem.title = NSLocalizedString("clusters", comment: "")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
         

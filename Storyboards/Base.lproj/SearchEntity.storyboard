@@ -46,7 +46,7 @@
         <!--EntitiesList-->
         <scene sceneID="qxJ-pr-Vde">
             <objects>
-                <viewController id="aBQ-Sp-eAp" userLabel="EntitiesList" customClass="EntitiesListViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EntitiesList" id="aBQ-Sp-eAp" userLabel="EntitiesList" customClass="EntitiesListViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FiM-Ky-Oeh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +106,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dIW-Pi-zaV"/>
+        <segue reference="NWW-tc-Yq9"/>
     </inferredMetricsTieBreakers>
 </document>

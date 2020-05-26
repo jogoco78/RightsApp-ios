@@ -40,10 +40,21 @@ class RightsAppViewController: UIViewController {
         let s = NSMutableAttributedString(string: NSLocalizedString("mainScreen",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24)])
         tvTitleVC.attributedText = s
         
+        //Attributes of the text
+        let font = UIFont.systemFont(ofSize: 14)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 8
+        paragraphStyle.alignment = .justified
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: paragraphStyle]
+        
         //Emergency call properties
         btnImageEmergency.translatesAutoresizingMaskIntoConstraints = false
         btnImageEmergency.topAnchor.constraint(equalTo: tvTitleVC.bottomAnchor , constant: 30).isActive = true
-        btnImageEmergency.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        btnImageEmergency.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         btnImageEmergency.widthAnchor.constraint(equalToConstant: 75).isActive = true
         btnImageEmergency.heightAnchor.constraint(equalToConstant: 75).isActive = true
         btnImageEmergency.setImage(UIImage(named: "EmergencyCall"), for: .normal)
@@ -56,13 +67,13 @@ class RightsAppViewController: UIViewController {
         btnTextEmergency.heightAnchor.constraint(equalToConstant: 75).isActive = true
         btnTextEmergency.titleLabel?.numberOfLines = 0
         btnTextEmergency.setTitleColor(UIColor.black, for: .normal)
-        btnTextEmergency.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("emergencyCallText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]), for: .normal)
+        btnTextEmergency.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("emergencyCallText",comment: ""), attributes: attributes), for: .normal)
         btnTextEmergency.addTarget(self, action: #selector(emergencyCallListener), for: .touchUpInside)
         
         //Questionnaire properties
         btnImageQuestionnaire.translatesAutoresizingMaskIntoConstraints = false
-        btnImageQuestionnaire.topAnchor.constraint(equalTo: btnImageEmergency.bottomAnchor, constant: 50).isActive = true
-        btnImageQuestionnaire.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        btnImageQuestionnaire.topAnchor.constraint(equalTo: btnImageEmergency.bottomAnchor, constant: 60).isActive = true
+        btnImageQuestionnaire.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         btnImageQuestionnaire.widthAnchor.constraint(equalToConstant: 75).isActive = true
         btnImageQuestionnaire.heightAnchor.constraint(equalToConstant: 75).isActive = true
         btnImageQuestionnaire.setImage(UIImage(named: "Questionnaire"), for: .normal)
@@ -74,13 +85,13 @@ class RightsAppViewController: UIViewController {
         btnTextQuestionnaire.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         btnTextQuestionnaire.titleLabel?.numberOfLines = 0
         //btnTextQuestionnaire.setTitle(NSLocalizedString("questionnaireText",comment: ""), for: .normal)
-        btnTextQuestionnaire.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("questionnaireText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]), for: .normal)
+        btnTextQuestionnaire.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("questionnaireText",comment: ""), attributes: attributes), for: .normal)
         btnTextQuestionnaire.addTarget(self, action: #selector(questionnaireListener), for: .touchUpInside)
         
         //Search Entity properties
         btnImageSearchEntity.translatesAutoresizingMaskIntoConstraints = false
-        btnImageSearchEntity.topAnchor.constraint(equalTo: btnImageQuestionnaire.bottomAnchor, constant: 50).isActive = true
-        btnImageSearchEntity.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50).isActive = true
+        btnImageSearchEntity.topAnchor.constraint(equalTo: btnImageQuestionnaire.bottomAnchor, constant: 60).isActive = true
+        btnImageSearchEntity.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         btnImageSearchEntity.widthAnchor.constraint(equalToConstant: 75).isActive = true
         btnImageSearchEntity.heightAnchor.constraint(equalToConstant: 75).isActive = true
         btnImageSearchEntity.setImage(UIImage(named: "Maps"), for: .normal)
@@ -91,7 +102,7 @@ class RightsAppViewController: UIViewController {
         btnTextSearchEntity.leftAnchor.constraint(equalTo: btnImageSearchEntity.rightAnchor, constant: 20).isActive = true
         btnTextSearchEntity.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         btnTextSearchEntity.titleLabel?.numberOfLines = 0
-        btnTextSearchEntity.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("searchEntityText",comment: ""), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]), for: .normal)
+        btnTextSearchEntity.setAttributedTitle(NSMutableAttributedString(string: NSLocalizedString("searchEntityText",comment: ""), attributes: attributes), for: .normal)
         //btnTextSearchEntity.setTitle(NSLocalizedString("searchEntityText",comment: ""), for: .normal)
         btnTextSearchEntity.addTarget(self, action: #selector(searchEntityListener), for: .touchUpInside)
         

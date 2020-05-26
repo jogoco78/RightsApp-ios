@@ -54,28 +54,10 @@
                     <view key="view" contentMode="scaleToFill" id="8Qv-Si-aom">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="How to use the app" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IcV-ha-U0r" userLabel="tvHowUseAppText">
-                                <rect key="frame" x="20" y="20" width="335" height="578"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="IcV-ha-U0r" firstAttribute="leading" secondItem="NK8-FR-fSb" secondAttribute="leading" constant="20" id="mTa-mh-LIs"/>
-                            <constraint firstItem="NK8-FR-fSb" firstAttribute="bottom" secondItem="IcV-ha-U0r" secondAttribute="bottom" constant="20" id="x2K-ck-2Bm"/>
-                            <constraint firstItem="NK8-FR-fSb" firstAttribute="trailing" secondItem="IcV-ha-U0r" secondAttribute="trailing" constant="20" id="xxa-PU-gDt"/>
-                            <constraint firstItem="IcV-ha-U0r" firstAttribute="top" secondItem="NK8-FR-fSb" secondAttribute="top" constant="20" id="zxe-Vk-TWD"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NK8-FR-fSb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Information" id="F9v-JD-tmH" userLabel="How to use the app"/>
-                    <connections>
-                        <outlet property="tvHowUseAppText" destination="IcV-ha-U0r" id="Y4j-LK-I6O"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6j-zv-IDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

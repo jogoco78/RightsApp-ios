@@ -20,7 +20,7 @@ class WhatsNextTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = NSLocalizedString("",comment: "")
+        self.navigationItem.title = NSLocalizedString("what_can_i_do",comment: "")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
         
         let main_tag = UserDefaults.standard.integer(forKey: Constants.keys.main_tag)
@@ -79,13 +79,33 @@ class WhatsNextTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch(dataSet[indexPath.row].id){
             case 0:
+                //Emergency call to 112
                 UserDefaults.standard.set(Constants.call.emergency, forKey: Constants.keys.phone_to_call)
                 performSegue(withIdentifier: "WhatsNextToMakeCallSegue" , sender: nil)
-          /* case 1:
+            case 1:
+                UserDefaults.standard.set(Constants.categories.victim_assistance_offices, forKey:  Constants.keys.searchIDEntity)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)
+                performSegue(withIdentifier: "WhatsNextToEntitiesListSegue", sender: nil)
             case 2:
+                UserDefaults.standard.set(Constants.categories.police_stations, forKey:  Constants.keys.searchIDEntity)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)
+                performSegue(withIdentifier: "WhatsNextToEntitiesListSegue", sender: nil)
             case 3:
+                //Call to 016
+                UserDefaults.standard.set(Constants.call.violence_against_women, forKey: Constants.keys.phone_to_call)
+                performSegue(withIdentifier: "WhatsNextToMakeCallSegue" , sender: nil)
             case 4:
-            case 5:*/
+                UserDefaults.standard.set(Constants.categories.medical_centres, forKey:  Constants.keys.searchIDEntity)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)
+                performSegue(withIdentifier: "WhatsNextToEntitiesListSegue", sender: nil)
+            case 5:
+                UserDefaults.standard.set(Constants.categories.consulates_embassies, forKey:  Constants.keys.searchIDEntity)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
+                UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)
+                performSegue(withIdentifier: "WhatsNextToEntitiesListSegue", sender: nil)
         default:
             performSegue(withIdentifier: "WhatsNextToMainSegue", sender: nil)
         }

@@ -18,10 +18,13 @@
 "use" = "Uso dell\'app";
 "us" = "Noi";
 "rights" = "Diritti";
+"clusters" = "Gruppi di diritti";
 "navigate" = "Navigare";
 "cancel" = "Annulla";
 "main_screen" = "Schermo principale";
 "whats_next" = "Qual è il prossimo?";
+"what_can_i_do" = "Che cosa posso fare?";
+
 
 //MARK: SearchEntities
 "allEntities" = "Tutte le categorie disponibili";
@@ -95,10 +98,23 @@
 
 //MARK: How to use the app strings
 "howToUseTheApp" = "Come usare l\'app\n";
-"bottomMenu" = "Menu Preferenze\n";
-"bottomMenuBody" = "Quando si avvia l\'applicazione RightsApp (di seguito, \"app\"), devono prima essere accettati i Termini e le condizioni della domanda. All\'interno di questi Termini e Condizioni è inclusa l\'informativa sulla privacy. UAB-IDT raccomanda vivamente un\'attenta lettura di questi termini e condizioni che saranno sempre disponibili nel menu \"Preferenze\". Il menu \"Preferenze\" è composto da 4 diverse sezioni:\n\tLingua: l\'applicazione è disponibile in quattro lingue: spagnolo, inglese, portoghese e italiano. È possibile modificare la lingua dell\'applicazione) su questa schermata (tranne durante la risposta al questionario).\n\tCome usare l\'app: ci mostra questa spiegazione nella lingua che è attiva in quel momento.\n\tTermini e condizioni: ci mostra i termini e le condizioni di utilizzo dell\'app. Questi includono la politica sulla privacy di questo.\n\tInformazioni su di noi: contiene la descrizione del consorzio RightsApp e i diversi moduli di contatto disponibili.\n";
-"howTheAppWorks" = "Funzionamento dell\'app\n";
-"howTheAppWorksBody" = "L\'app include tre diverse situazioni in cui è possibile trovare l\'utente che è stato vittima di un crimine all\'interno dell\'Unione europea. Il primo di questi è la necessità di effettuare una chiamata di emergenza al 112. Con la semplice pressione di un pulsante l\'utente È possibile effettuare una chiamata di emergenza al 112.\nLa seconda situazione è la necessità di ottenere informazioni sui diritti del cittadino dell\'Unione europea che è stato vittima di un crimine. Per ottenere queste informazioni in un modo particolare, l\'utente dovrà compilare un piccolo questionario (con un minimo di X e un massimo di domande Y). Una volta risposto a questo questionario, i diritti che assistono l\'utente nella sua situazione specifica appariranno raggruppati per tema (questo raggruppamento è dovuto alla dimensione degli schermi di alcuni dispositivi mobili, al fine di facilitare la visualizzazione). Una volta premuto il titolo di qualsiasi argomento, verrà visualizzata una definizione più dettagliata dei diritti che assistono l\'utente rispetto a tale argomento.\nL\'ultima situazione è la necessità per il cittadino che è stato vittima di un crimine di ottenere informazioni sulle istituzioni e sui centri in cui può essere fornita assistenza. Innanzitutto, l\'utente deve scegliere tre parametri per facilitare la ricerca di queste istituzioni e centri. Il primo parametro è il tipo di entità che stai cercando, il secondo indica in quale paese e infine in quale città. Al momento, sono disponibili le entità e i centri che forniscono assistenza alle vittime di reato nella Comunità autonoma della Catalogna. Una volta stabiliti questi parametri, una lista ordinata apparirà da meno a più lontano rispetto alla posizione dell\'utente. Una volta selezionata una delle istituzioni o dei centri di assistenza, l\'app offrirà la possibilità di chiamare quel particolare centro, navigare verso di esso (usando GoogleMaps) o tornare indietro per effettuare un\'altra ricerca.\n";
+"htaw_body" = "L\'app include tre diverse situazioni in cui è possibile trovare l\'utente che è stato vittima di un crimine all\'interno dell\'Unione europea.\n";
+"htaw_first_scenario_title" = "Prima situazione: ";
+"htaw_first_scenario_body" = "Il primo di questi è la necessità di effettuare una chiamata di emergenza al 112. Con la semplice pressione di un pulsante l\'utente È possibile effettuare una chiamata di emergenza al 112.\n";
+"htaw_second_scenario_title" = "Seconda situazione: ";
+"htaw_second_scenario_body" = "La seconda situazione è la necessità di ottenere informazioni sui diritti del cittadino dell\'Unione europea che è stato vittima di un crimine. Per ottenere queste informazioni in un modo particolare, l\'utente dovrà compilare un piccolo questionario. Una volta risposto a questo questionario, i diritti che assistono l\'utente nella sua situazione specifica appariranno raggruppati per tema (questo raggruppamento è dovuto alla dimensione degli schermi di alcuni dispositivi mobili, al fine di facilitare la visualizzazione). Una volta premuto il titolo di qualsiasi argomento, verrà visualizzata una definizione più dettagliata dei diritti che assistono l\'utente rispetto a tale argomento.\n";
+"htaw_third_scenario_title" = "Terza situazione: ";
+"htaw_third_scenario_body" = "L\'ultima situazione è la necessità per il cittadino che è stato vittima di un crimine di ottenere informazioni sulle istituzioni e sui centri in cui può essere fornita assistenza. Innanzitutto, l\'utente deve scegliere tre parametri per facilitare la ricerca di queste istituzioni e centri. Il primo parametro è il tipo di entità che stai cercando, il secondo indica in quale paese e infine in quale città. Al momento, sono disponibili le entità e i centri che forniscono assistenza alle vittime di reato nella Comunità autonoma della Catalogna. Una volta stabiliti questi parametri, una lista ordinata apparirà da meno a più lontano rispetto alla posizione dell\'utente. Una volta selezionata una delle istituzioni o dei centri di assistenza, l\'app offrirà la possibilità di chiamare quel particolare centro, navigare verso di esso (usando GoogleMaps) o tornare indietro per effettuare un\'altra ricerca.\n";
+"bottomMenu" = "Menu Inferiore\n";
+"bottomMenuBody" = "Il \"Menu Inferiore\" è composto da 4 diverse sezioni:\n";
+"bm_first_option_title" = "Lingua: ";
+"bm_first_option_body" = "l\'applicazione è disponibile in quattro lingue: spagnolo, inglese, portoghese e italiano. È possibile modificare la lingua dell\'applicazione) su questa schermata (tranne durante la risposta al questionario).\n";
+"bm_second_option_title" = "Come usare l\'app: ";
+"bm_second_option_body" = "ci mostra questa spiegazione nella lingua che è attiva in quel momento.\n";
+"bm_third_option_title" = "Termini e condizioni: ";
+"bm_third_option_body" = "ci mostra i termini e le condizioni di utilizzo dell\'app. Questi includono la politica sulla privacy di questo.\n";
+"bm_fourth_option_title" = "Informazioni su di noi: ";
+"bm_fourth_option_body" = "contiene la descrizione del consorzio RightsApp e i diversi moduli di contatto disponibili.\n";
 "doNotShow" = "Non mostrare più questo messaggio";
 
 //MARK: About us string
@@ -107,10 +123,10 @@
 
 
 //MARK: Clusters
-"citizensRights" = "Diritti dei cittadini che sono stati vittime di reato";
+"citizensRights" = "Diritti che aiutano tutte le persone che sono state vittime di un crimine";
 "sexualAttackProtocol" = "Protocollo d\'azione per un grave attacco sessuale";
-"EUCitizensRights" = "Diritti concessi in particolare ai cittadini vittime di reato residenti in un paese membro dell\'UE";
-"NoEUCitizenRights" = "Diritti speciali concessi ai cittadini vittime di reato residenti in un paese terzo";
+"EUCitizensRights" = "Diritti che aiutano i cittadini di un altro paese membro dell\'UE";
+"NoEUCitizenRights" = "Diritti che aiutano i cittadini di un paese al di fuori dell\'UE";
 
 //MARK: Alert dialogs
 "exit_questionnaire" = "Se premi Accetta, verrai reindirizzato alla schermata principale e le tue risposte attuali andranno perse.";

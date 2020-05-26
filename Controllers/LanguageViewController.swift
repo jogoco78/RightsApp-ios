@@ -56,7 +56,7 @@ class LanguageViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         btnAccept.translatesAutoresizingMaskIntoConstraints = false
         btnAccept.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
         btnAccept.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        btnAccept.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        btnAccept.widthAnchor.constraint(equalToConstant: 90).isActive = true
         btnAccept.heightAnchor.constraint(equalToConstant: 30).isActive = true
         btnAccept.setTitle(NSLocalizedString("accept",comment: ""), for: .normal)
         btnAccept.setTitleColor(UIColor.blue, for: .normal)

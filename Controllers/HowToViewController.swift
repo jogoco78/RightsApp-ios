@@ -10,7 +10,7 @@ import UIKit
 
 class HowToViewController: UIViewController {
     
-    var tvTerms = UITextView()
+    var tv_how_to = UITextView()
     let btAccept = UIButton()
     let swSwitch = UISwitch()
     let lbAcceptText = UILabel()
@@ -19,7 +19,7 @@ class HowToViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.addSubview(tvTerms)
+        view.addSubview(tv_how_to)
         view.addSubview(btAccept)
         view.addSubview(swSwitch)
         view.addSubview(lbAcceptText)
@@ -49,36 +49,80 @@ class HowToViewController: UIViewController {
         swSwitch.leftAnchor.constraint(equalTo: view.leftAnchor, constant:20).isActive = true
         swSwitch.centerYAnchor.constraint(equalTo: btAccept.centerYAnchor).isActive = true
         swSwitch.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        swSwitch.heightAnchor.constraint(equalToConstant: 30)
+        swSwitch.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         //Text properties
-        tvTerms.translatesAutoresizingMaskIntoConstraints = false
-        tvTerms.isEditable = false
-        tvTerms.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-        tvTerms.bottomAnchor.constraint(equalTo: btAccept.topAnchor, constant: -10).isActive = true
-        tvTerms.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
-        tvTerms.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+        tv_how_to.translatesAutoresizingMaskIntoConstraints = false
+        tv_how_to.isEditable = false
+        tv_how_to.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        tv_how_to.bottomAnchor.constraint(equalTo: btAccept.topAnchor, constant: -10).isActive = true
+        tv_how_to.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        tv_how_to.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
         
-        //line spacing
+       //Attributes of the text
+        let font = UIFont.systemFont(ofSize: 14)
+        let font_bold = UIFont.boldSystemFont(ofSize: 14.0)
+        let font_title = UIFont.boldSystemFont(ofSize: 24)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 3
+        paragraphStyle.lineSpacing = 8
+        paragraphStyle.alignment = .justified
+        paragraphStyle.paragraphSpacing = 8
+        
+        let attributes_title: [NSAttributedString.Key: Any] = [
+        .font: font_title,
+        .foregroundColor: UIColor.black,
+        .paragraphStyle: paragraphStyle]
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.black,
+            .paragraphStyle: paragraphStyle]
+        
+        let attributes_bold: [NSAttributedString.Key: Any] = [
+        .font: font_bold,
+        .foregroundColor: UIColor.black,
+        .paragraphStyle: paragraphStyle]
         
         //How to use the app
-        s = NSMutableAttributedString(string: NSLocalizedString("howToUseTheApp",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        s = NSMutableAttributedString(string: NSLocalizedString("howToUseTheApp",comment: "Comment"), attributes: attributes_title)
         let attributedText = s
-        //Bottom menu
-        s = NSMutableAttributedString(string: NSLocalizedString("bottomMenu",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        s = NSMutableAttributedString(string: NSLocalizedString("htaw_body",comment: "Comment"), attributes: attributes)
         attributedText.append(s)
-        s = NSMutableAttributedString(string: NSLocalizedString("bottomMenuBody",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        s = NSMutableAttributedString(string: NSLocalizedString("htaw_first_scenario_title",comment: "Comment"), attributes: attributes_bold)
         attributedText.append(s)
-        //How the App works
-        s = NSMutableAttributedString(string: NSLocalizedString("howTheAppWorks",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        s = NSMutableAttributedString(string: NSLocalizedString("htaw_first_scenario_body",comment: "Comment"), attributes: attributes)
         attributedText.append(s)
-        s = NSMutableAttributedString(string: NSLocalizedString("howTheAppWorksBody",comment: "Comment"), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        s = NSMutableAttributedString(string: NSLocalizedString("htaw_second_scenario_title",comment: "Comment"), attributes: attributes_bold)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("htaw_second_scenario_body",comment: "Comment"), attributes: attributes)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("htaw_third_scenario_title",comment: "Comment"), attributes: attributes_bold)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("htaw_third_scenario_body",comment: "Comment"), attributes: attributes)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bottomMenu",comment: "Comment"), attributes: attributes_title)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bottomMenuBody",comment: "Comment"), attributes: attributes)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_first_option_title",comment: "Comment"), attributes: attributes_bold)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_first_option_body",comment: "Comment"), attributes: attributes)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_second_option_title",comment: "Comment"), attributes: attributes_bold)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_second_option_body",comment: "Comment"), attributes: attributes)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_third_option_title",comment: "Comment"), attributes: attributes_bold)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_third_option_body",comment: "Comment"), attributes: attributes)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_fourth_option_title",comment: "Comment"), attributes: attributes_bold)
+        attributedText.append(s)
+        s = NSMutableAttributedString(string: NSLocalizedString("bm_fourth_option_body",comment: "Comment"), attributes: attributes)
         attributedText.append(s)
         
         //Sets the attributted text to the textview
-        tvTerms.attributedText = attributedText
+        tv_how_to.attributedText = attributedText
     }
     
     //Button listener when touch inside
