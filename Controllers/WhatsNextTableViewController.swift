@@ -80,7 +80,7 @@ class WhatsNextTableViewController: UITableViewController {
         switch(dataSet[indexPath.row].id){
             case 0:
                 UserDefaults.standard.set(Constants.call.emergency, forKey: Constants.keys.phone_to_call)
-                performSegue(withIdentifier: "WhatsNextToEmergencyCallSegue" , sender: nil)
+                performSegue(withIdentifier: "WhatsNextToMakeCallSegue" , sender: nil)
           /* case 1:
             case 2:
             case 3:

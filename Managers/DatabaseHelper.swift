@@ -435,7 +435,6 @@ class DatabaseHelper: NSObject {
             
             while cursor.next(){
                 results.append(CountryModel(Int(cursor.int(forColumnIndex: 0)), cursor.string(forColumn: languageField)!, language))
-                print("Column count: " + String(cursor.columnCount) )
             }
             
             cursor.close()

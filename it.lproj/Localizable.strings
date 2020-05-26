@@ -8,6 +8,7 @@
 
 //MARK: Buttons & Tab bar items title
 "accept" = "Accettare";
+"back" = "Torna";
 "continue" = "Continuare";
 "finish" = "Ultimare";
 "call" = "Chiamata";
@@ -60,6 +61,10 @@
 "questionnaireText" = "Ottieni informazioni specifiche sui tuoi diritti come vittima di un crimine tramite il nostro questionario";
 "searchEntityText" = "Ottenere informazioni e navigare verso diverse entità di assistenza";
 "mainScreen" = "Seleziona un\'opzione";
+
+//MARK: Emergency Call screen
+"emergency_call" = "Se sei stato vittima di un crimine e hai bisogno di assistenza, effettua una chiamata di emergenza al ";
+"emergency_call_go_home" = " toccando l\'icona del telefono o tornare alla schermata principale toccando l\'icona dell\'app in alto a destra.";
 
 //MARK: Questionnaire
 "questionnaire" = "Questionario";
@@ -119,4 +124,4 @@
 "consulate_embassy" = "Vai al tuo consolato o ambasciata per ricevere maggiori informazioni";
 
 //MARK: Titles
-"emergency_call" = "Chiamata d\'emergenza";
+"emergency_call_title" = "Chiama a ";

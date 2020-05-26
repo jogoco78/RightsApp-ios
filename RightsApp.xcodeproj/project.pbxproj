@@ -61,6 +61,7 @@
 		EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */; };
 		EBF55CFE22BA78BC00CAE991 /* ParticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */; };
 		EBFB22DB22C4157C0065E91F /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFB22DA22C4157C0065E91F /* CategoryModel.swift */; };
+		EBFEFCFD247D1B5700AC7C4E /* MakeCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFEFCFC247D1B5700AC7C4E /* MakeCallViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsTextViewController.swift; sourceTree = "<group>"; };
 		EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesTableViewController.swift; sourceTree = "<group>"; };
 		EBFB22DA22C4157C0065E91F /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		EBFEFCFC247D1B5700AC7C4E /* MakeCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCallViewController.swift; sourceTree = "<group>"; };
 		ED6C64DAEF3ED7A0DBCA7251 /* Pods-RightsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RightsAppTests.release.xcconfig"; path = "Target Support Files/Pods-RightsAppTests/Pods-RightsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 				EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */,
 				EB36E5E822CE37D4008B7ACD /* EntitiesListViewController.swift */,
 				EB9D8C6C247BE0D300225E37 /* WhatsNextTableViewController.swift */,
+				EBFEFCFC247D1B5700AC7C4E /* MakeCallViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				EB9D8C6D247BE0D300225E37 /* WhatsNextTableViewController.swift in Sources */,
 				EB8F10E42450AAE60089D5D2 /* ClusterModel.swift in Sources */,
 				EBA4D55722AFEAB500B1B566 /* FMDatabasePool.m in Sources */,
+				EBFEFCFD247D1B5700AC7C4E /* MakeCallViewController.swift in Sources */,
 				EBFB22DB22C4157C0065E91F /* CategoryModel.swift in Sources */,
 				EB8F10E22450A50F0089D5D2 /* ParticlesClusterTableViewController.swift in Sources */,
 				EBA4D54522AFDCD000B1B566 /* QuestionnaireViewController.swift in Sources */,

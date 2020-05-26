@@ -1,15 +1,15 @@
 //
-//  EmergencyCallViewController.swift
-//  RightsApp_ios
+//  MakeCallViewController.swift
+//  RightsApp
 //
-//  Created by Jorge Gonzalez Conejero on 20/06/2019.
-//  Copyright © 2019 Jorge Gonzalez Conejero. All rights reserved.
+//  Created by Jorge Gonzalez Conejero on 26/05/2020.
+//  Copyright © 2020 uab. All rights reserved.
 //
 
 import UIKit
 
-class EmergencyCallViewController: UIViewController {
-    
+class MakeCallViewController: UIViewController {
+
     let ib_emergency_call = UIButton()
     let tv_emergency_call = UITextView()
     var phone_to_call = Constants.call.emergency
@@ -27,6 +27,8 @@ class EmergencyCallViewController: UIViewController {
         //Screen title & Home icon
         self.navigationItem.title = NSLocalizedString("emergency_call_title", comment: "") + phone_to_call
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "AppIcon"), style: .plain, target: self, action: #selector(self.goHome))
+        self.navigationItem.backBarButtonItem?.title = NSLocalizedString("back", comment: "")
+        self.navigationItem.backBarButtonItem?.isEnabled = true
         
         view.addSubview(ib_emergency_call)
         view.addSubview(tv_emergency_call)
@@ -79,16 +81,7 @@ class EmergencyCallViewController: UIViewController {
     }
     
     @objc func goHome(){
-        performSegue(withIdentifier: "toMain", sender: nil)
+        performSegue(withIdentifier: "MakeCallToMain", sender: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,6 +8,7 @@
 
 //MARK: Buttons & Tab bar items title
 "accept" = "Accept";
+"back" = "Back";
 "continue" = "Continue";
 "finish" = "Finish";
 "call" = "Call";
@@ -59,6 +60,10 @@
 "questionnaireText" = "Get tailored information about your rights as crime victim through our questionnaire";
 "searchEntityText" = "Get information and navigate to different assistance entities";
 "mainScreen" = "Select one option";
+
+//MARK: Emergency Call screen
+"emergency_call" = "If you have been victim of a crime and you need assistance, make an emergency call to ";
+"emergency_call_go_home" = " by tapping the phone icon, or return to the main screen by tapping the app icon in the upper right.";
 
 //MARK: Questionnaire
 "questionnaire" = "Questionnaire";
@@ -117,5 +122,5 @@
 "consulate_embassy" = "Go to your consulate or embassy to receive more information";
 
 //MARK: Titles
-"emergency_call" = "Emergency Call";
+"emergency_call_title" = "Make a Call to ";
 

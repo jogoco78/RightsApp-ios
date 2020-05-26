@@ -216,12 +216,31 @@
                     <navigationItem key="navigationItem" id="WiB-Zw-CHJ"/>
                     <connections>
                         <segue destination="U1l-9T-GW1" kind="show" identifier="WhatsNextToMainSegue" id="cUJ-qk-J13"/>
-                        <segue destination="8MO-op-JLG" kind="show" identifier="WhatsNextToEmergencyCallSegue" id="xBW-3r-qsg"/>
+                        <segue destination="geg-hS-rhw" kind="show" identifier="WhatsNextToMakeCallSegue" id="LtS-t6-Tz5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5K-j5-dcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3133" y="263"/>
+        </scene>
+        <!--Make Call View Controller-->
+        <scene sceneID="kAC-Bo-nb4">
+            <objects>
+                <viewController id="geg-hS-rhw" customClass="MakeCallViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EmT-V9-0b5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="O8j-G5-0GA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dts-Lf-jff"/>
+                    <connections>
+                        <segue destination="U1l-9T-GW1" kind="show" identifier="MakeCallToMain" id="siy-Og-0Sz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Axk-y1-qEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4161" y="263"/>
         </scene>
         <!--Main-->
         <scene sceneID="tLQ-T4-1Mc">
@@ -232,16 +251,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Eb-lq-7Vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2709" y="-492"/>
-        </scene>
-        <!--EmergencyCall-->
-        <scene sceneID="b1O-J5-i4v">
-            <objects>
-                <viewControllerPlaceholder storyboardName="EmergencyCall" id="8MO-op-JLG" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="g1S-Vp-E12"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Sy-X6-rKp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3703" y="-355"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cap-oo-fh2">
@@ -261,6 +270,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cUJ-qk-J13"/>
+        <segue reference="xXg-d2-Z3m"/>
     </inferredMetricsTieBreakers>
 </document>

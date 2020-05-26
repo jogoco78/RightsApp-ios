@@ -8,6 +8,7 @@
 
 ////MARK: Buttons & Tab bar items title
 "accept" = "Aceitar";
+"back" = "Voltar";
 "continue" = "Continuar";
 "finish" = "Terminar";
 "call" = "Chamada";
@@ -46,7 +47,7 @@
 "email" = "\nE-mail";
 "emailNotAvailable" = "\nO e-mail não está disponível";
 
-////MARK: Languages
+//MARK: Languages
 "spanish" = "Espanhol";
 "english" = "Inglês";
 "portuguese" = "Português";
@@ -54,18 +55,22 @@
 "languageText" = "Selecione sua lingua";
 "alertLanguageChange" = "Você deve reiniciar o aplicativo para que as alterações entrem em vigor";
 
-////MARK: RightsApp screen
+//MARK: RightsApp screen
 "emergencyCallText" = "Se você foi vítima de um crime e precisa de assistência, faça uma ligação de emergência para o 112";
 "questionnaireText" = "Obtenha informações personalizadas sobre os seus direitos como vítima de crime através do nosso questionário";
 "searchEntityText" = "Obtenha informações e navegue para diferentes entidades de assistência";
 "mainScreen" = "Selecione uma opção";
 
-////MARK: Questionnaire
+//MARK: Emergency call screen
+"emergency_call" = "Se você foi vítima de um crime e precisa de assistência, faça uma ligação de emergência para o ";
+"emergency_call_go_home" = " tocando no ícone do telefone ou retorne à tela principal tocando no ícone do aplicativo no canto superior direito.";
+
+//MARK: Questionnaire
 "questionnaire" = "Questionário";
 "alertSelectOneOption" = "Você deve selecionar uma opção no questionário";
 "finishParticles" = "Terminar";
 
-////MARK: Terms and conditions strings
+//MARK: Terms and conditions strings
 "appOwnership" = "Propriedade da app\n";
 "appOwnershipBody" = "Esta aplicação é operada e gerida pela Universitat Autonoma de Barcelona - Instituto de Direito e Tecnologia (doravante, UAB-IDT) através do consórcio RightsApp. A UAB-IDT tem sede na:\nUniversitat Autònoma de Barcelona - Institute of Law and Technology (UAB-IDT)\nidt@uab.cat\nCampus de la UAB. Edifici B\nCerdanyola del Valles (Bellaterra), Spain\n";
 "termsConditions" = "Termos e Condições\n";
@@ -117,5 +122,5 @@
 "consulate_embassy" = "Vá ao seu consulado ou embaixada para obter mais informações";
 
 //MARK: Titles
-"emergency_call" = "Ligação de emergência";
+"emergency_call_title" = "Chamar a ";
 

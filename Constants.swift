@@ -46,7 +46,7 @@ struct Constants {
         struct categories{
             static let name = "categories"
             static let id = "id"
-            static let text = "text"
+            static let text = "category"
         }
         struct cities{
             static let name = "cities"
