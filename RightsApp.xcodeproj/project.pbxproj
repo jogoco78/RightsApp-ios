@@ -51,12 +51,16 @@
 		EBA4D55622AFEAB500B1B566 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54E22AFEAB500B1B566 /* FMDatabase.m */; };
 		EBA4D55722AFEAB500B1B566 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D55022AFEAB500B1B566 /* FMDatabasePool.m */; };
 		EBACD44E247839360063085E /* rightsapp_v7_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBACD44D247839360063085E /* rightsapp_v7_utf16.db */; };
+		EBB51BC92490C3FC0098871A /* rightsapp_v8_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBB51BC82490C3FC0098871A /* rightsapp_v8_utf16.db */; };
 		EBB61D2122B1442200F749D7 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */; };
 		EBBB089A22C4FF9C00918F15 /* EntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBB089922C4FF9C00918F15 /* EntityModel.swift */; };
 		EBC35A2322CCEDD0003EFA20 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */; };
 		EBC5FF3D2431FC4900B70773 /* rightsapp_v6_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */; };
+		EBC6BD28248FE6DE00063442 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBC6BD27248FE6DE00063442 /* Roboto-Black.ttf */; };
 		EBC80F5722CCD2D900870B27 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC80F5622CCD2D900870B27 /* InitViewController.swift */; };
 		EBC80F5922CCD4D300870B27 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC80F5822CCD4D300870B27 /* TermsViewController.swift */; };
+		EBD9C87A248FE88E002B02D9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD9C879248FE88E002B02D9 /* Roboto-Medium.ttf */; };
+		EBD9C87C248FE8A4002B02D9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBD9C87B248FE8A4002B02D9 /* Roboto-Regular.ttf */; };
 		EBE8797422A805300040EB58 /* HowToUseTheAppTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */; };
 		EBE8797622A806410040EB58 /* TermsConditionsTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */; };
 		EBF55CFE22BA78BC00CAE991 /* ParticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */; };
@@ -162,12 +166,16 @@
 		EBA4D55122AFEAB500B1B566 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		EBA4D55222AFEAB500B1B566 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		EBACD44D247839360063085E /* rightsapp_v7_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v7_utf16.db; sourceTree = "<group>"; };
+		EBB51BC82490C3FC0098871A /* rightsapp_v8_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v8_utf16.db; sourceTree = "<group>"; };
 		EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		EBBB089922C4FF9C00918F15 /* EntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityModel.swift; sourceTree = "<group>"; };
 		EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
 		EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v6_utf16.db; sourceTree = "<group>"; };
+		EBC6BD27248FE6DE00063442 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		EBC80F5622CCD2D900870B27 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		EBC80F5822CCD4D300870B27 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		EBD9C879248FE88E002B02D9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		EBD9C87B248FE8A4002B02D9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		EBE8797322A805300040EB58 /* HowToUseTheAppTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppTextViewController.swift; sourceTree = "<group>"; };
 		EBE8797522A806410040EB58 /* TermsConditionsTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsTextViewController.swift; sourceTree = "<group>"; };
 		EBF55CFD22BA78BC00CAE991 /* ParticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesTableViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +278,7 @@
 		EB993A3C229D3B7A0082DE76 = {
 			isa = PBXGroup;
 			children = (
+				EBC6BD24248FE43D00063442 /* Font */,
 				EB75877222DCC6E400AE32A4 /* Settings.bundle */,
 				EB5986BE22BCB1C700F22D85 /* LocalizationSystem.swift */,
 				EB35C30A22B238DC004599D9 /* Constants.swift */,
@@ -279,6 +288,7 @@
 				EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */,
 				EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */,
 				EBACD44D247839360063085E /* rightsapp_v7_utf16.db */,
+				EBB51BC82490C3FC0098871A /* rightsapp_v8_utf16.db */,
 				EB205C8B22A7D733006B5BDC /* Controllers */,
 				EB8A66FA229ED4DE003855BD /* Localizable.strings */,
 				EBFA91DE229D816100802BC7 /* Storyboards */,
@@ -357,6 +367,16 @@
 				EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		EBC6BD24248FE43D00063442 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EBD9C87B248FE8A4002B02D9 /* Roboto-Regular.ttf */,
+				EBD9C879248FE88E002B02D9 /* Roboto-Medium.ttf */,
+				EBC6BD27248FE6DE00063442 /* Roboto-Black.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		EBFA91DE229D816100802BC7 /* Storyboards */ = {
@@ -486,16 +506,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB59E27E22CCCC9C00396BCC /* Init.storyboard in Resources */,
+				EBB51BC92490C3FC0098871A /* rightsapp_v8_utf16.db in Resources */,
 				EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */,
+				EBD9C87C248FE8A4002B02D9 /* Roboto-Regular.ttf in Resources */,
 				EB75877322DCC6E400AE32A4 /* Settings.bundle in Resources */,
 				EBC5FF3D2431FC4900B70773 /* rightsapp_v6_utf16.db in Resources */,
 				EB993A53229D3B7A0082DE76 /* LaunchScreen.storyboard in Resources */,
+				EBD9C87A248FE88E002B02D9 /* Roboto-Medium.ttf in Resources */,
 				EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */,
 				EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */,
 				EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */,
 				EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */,
 				EBACD44E247839360063085E /* rightsapp_v7_utf16.db in Resources */,
 				EB7C3F8523478B31002D8610 /* GoogleService-Info.plist in Resources */,
+				EBC6BD28248FE6DE00063442 /* Roboto-Black.ttf in Resources */,
 				EB993A50229D3B7A0082DE76 /* Assets.xcassets in Resources */,
 				EB993A4E229D3B7A0082DE76 /* Main.storyboard in Resources */,
 			);
@@ -893,14 +917,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = F74445Z3HU;
 				INFOPLIST_FILE = RightsApp_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.12;
 				PRODUCT_BUNDLE_IDENTIFIER = es.uab.idt.rightsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -920,14 +944,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = F74445Z3HU;
 				INFOPLIST_FILE = RightsApp_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.12;
 				PRODUCT_BUNDLE_IDENTIFIER = es.uab.idt.rightsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

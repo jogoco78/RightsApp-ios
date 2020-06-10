@@ -45,6 +45,7 @@ class RightsAppViewController: UIViewController {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 8
         paragraphStyle.alignment = .justified
+        let font_roboto = UIFont(name: "Roboto-Black", size: 14)
         
         let attributes: [NSAttributedString.Key: Any] = [
             .font: font,
