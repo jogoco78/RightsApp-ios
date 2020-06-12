@@ -8,6 +8,7 @@
 
 //MARK: Buttons & Tab bar items title
 "accept" = "Accept";
+"done" = "Done";
 "back" = "Back";
 "continue" = "Continue";
 "finish" = "Finish";
@@ -26,12 +27,13 @@
 "what_can_i_do" = "What Can I do?";
 
 //MARK: SearchEntities
+"your_selection" = "Your criteria for the search:";
 "allEntities" = "All available entities";
 "allCountries" = "All available countries";
 "allCities" = "All available cities";
-"selectEntity" = "Select the type of the entity";
-"selectCountry" = "Select the country";
-"selectCity" = "Select the city";
+"selectEntity" = "Selected category:";
+"selectCountry" = "Selected country:";
+"selectCity" = "Selected city:";
 "alertSelected" = "You must select one option for each criteria";
 "searchEntityTitle" = "Search Entity";
 "entityListTitle" = "List of entities";
@@ -40,7 +42,8 @@
 "kms" = "kms";
 "descriptionNotAvailable" = "\nThe description is not available";
 "phone" = "\nPhone";
-"phoneNotAvailable" = "\nPhone is not available";
+"phoneNotAvailable" = "\nMain phone is not available";
+"phone2NotAvailable" = "\nSide phone is not available";
 "link" = "\nLink";
 "linkNotAvailable" = "\nLink not available";
 "address" = "\nAddress";

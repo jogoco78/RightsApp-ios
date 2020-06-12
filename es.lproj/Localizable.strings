@@ -8,6 +8,7 @@
 
 // MARK: Buttons & Tab bar items title
 "accept" = "Aceptar";
+"done" = "Hecho";
 "back" = "Atrás";
 "continue" = "Continuar";
 "finish" = "Finalizar";
@@ -26,12 +27,13 @@
 "what_can_i_do" = "¿Qué puedo hacer?";
 
 // MARK: SearchEntities
+"your_selection" = "Tus criterios para la búsqueda:";
 "allEntities" = "Todas las categorias disponibles";
 "allCountries" = "Todos los paises disponibles";
 "allCities" = "Todas las ciudades disponibles";
-"selectEntity" = "Selecciona el tipo de entidad";
-"selectCountry" = "Selecciona el país";
-"selectCity" = "Selecciona la ciudad";
+"selectEntity" = "Categoria seleccionada:";
+"selectCountry" = "País seleccionado:";
+"selectCity" = "Ciudad seleccionada:";
 "alertSelected" = "Debes seleccionar una opción en cada criterio";
 "searchEntityTitle" = "Buscar entidad";
 "entityListTitle" = "Lista de entidades";
@@ -40,7 +42,8 @@
 "kms" = "kms";
 "descriptionNotAvailable" = "La descripción no está disponible";
 "phone" = "Teléfono";
-"phoneNotAvailable" = "El teléfono no está disponible";
+"phoneNotAvailable" = "El teléfono principal no está disponible";
+"phone2NotAvailable" = "El teléfono secundario no está disponible";
 "link" = "Enlace";
 "linkNotAvailable" = "El enlace no está disponible";
 "address" = "Dirección";

@@ -86,32 +86,38 @@ class SearchEntityViewController: UIViewController, UITableViewDelegate, UITable
         countryTableView.translatesAutoresizingMaskIntoConstraints = false
         cityTableView.translatesAutoresizingMaskIntoConstraints = false
         
-        categoryTableView.rowHeight = 50
+        /*categoryTableView.rowHeight = 50
         countryTableView.rowHeight = 50
-        cityTableView.rowHeight = 50
+        cityTableView.rowHeight = 50*/
+        categoryTableView.estimatedRowHeight = 0
+        countryTableView.estimatedRowHeight = 0
+        cityTableView.estimatedRowHeight = 0
         
-        categoryTableView.separatorStyle = .none
-        countryTableView.separatorStyle = .none
-        cityTableView.separatorStyle = .none
+        //categoryTableView.separatorStyle = .none
+        //countryTableView.separatorStyle = .none
+        //cityTableView.separatorStyle = .none
         
         view.addSubview(categoryTableView)
         view.addSubview(countryTableView)
         view.addSubview(cityTableView)
         
-        categoryTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
+        categoryTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         categoryTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         categoryTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        categoryTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
+        categoryTableView.bottomAnchor.constraint(equalTo: countryTableView.topAnchor, constant: 0).isActive = true
+        //categoryTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
         
         countryTableView.topAnchor.constraint(equalTo: categoryTableView.bottomAnchor, constant: 5).isActive = true
         countryTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         countryTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        countryTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
+        countryTableView.bottomAnchor.constraint(equalTo: cityTableView.topAnchor, constant: 0).isActive = true
+        //countryTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
         
         cityTableView.topAnchor.constraint(equalTo: countryTableView.bottomAnchor, constant: 5).isActive = true
         cityTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         cityTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        cityTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
+        cityTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        //cityTableView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.30).isActive = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

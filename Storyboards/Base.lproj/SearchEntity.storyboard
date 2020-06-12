@@ -8,6 +8,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Search Entity Picker View Controller-->
+        <scene sceneID="KBQ-j8-hQD">
+            <objects>
+                <viewController id="M9c-mX-3iu" customClass="SearchEntityPickerViewController" customModule="RightsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="acL-EW-5BU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="d7y-n8-EiK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wmU-TY-793"/>
+                    <connections>
+                        <outlet property="navBar" destination="wmU-TY-793" id="7os-V1-CWc"/>
+                        <segue destination="aBQ-Sp-eAp" kind="show" identifier="SearchEntityPickerToEntityListSegue" id="5dh-p1-GUn"/>
+                        <segue destination="IiS-7Q-Nbp" kind="show" identifier="searchToMainSegue" id="Yf8-Yo-gxQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y5m-WI-ccM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="-597"/>
+        </scene>
         <!--SearchEntityCriteria-->
         <scene sceneID="iNo-DH-WCu">
             <objects>
@@ -36,7 +57,6 @@
                         <outlet property="btnSearch" destination="iqg-Yn-9Q8" id="9ga-9B-mCu"/>
                         <outlet property="navBarEntity" destination="DAW-zR-9eu" id="7iI-er-hxM"/>
                         <segue destination="aBQ-Sp-eAp" kind="show" identifier="SearchEntityToEntityListSegue" id="OIg-GR-rk0"/>
-                        <segue destination="IiS-7Q-Nbp" kind="show" identifier="searchToMainSegue" id="dIW-Pi-zaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4N-Pz-xhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -53,6 +73,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6CW-ya-fos"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MPg-2J-9kT"/>
                     <connections>
                         <segue destination="idt-gW-yV1" kind="show" identifier="ListToDetailsSegue" id="6gF-XY-HyW"/>
                         <segue destination="IiS-7Q-Nbp" kind="show" identifier="listToMainSegue" id="NWW-tc-Yq9"/>
@@ -65,7 +86,9 @@
         <!--Main-->
         <scene sceneID="fEH-Qv-82w">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="IiS-7Q-Nbp" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="IiS-7Q-Nbp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Zb2-y6-oOf"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHo-Dr-aX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1424" y="636"/>
@@ -80,6 +103,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hFS-eX-prB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bfL-zn-bw3"/>
                     <connections>
                         <segue destination="IiS-7Q-Nbp" kind="show" identifier="detailsToMainSegue" id="T3x-xv-R2d"/>
                     </connections>
@@ -97,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7vz-WS-FNj" kind="relationship" relationship="rootViewController" id="Kup-Bu-TXc"/>
+                        <segue destination="M9c-mX-3iu" kind="relationship" relationship="rootViewController" id="hxB-7v-bKj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JN1-R8-E5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,6 +130,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NWW-tc-Yq9"/>
+        <segue reference="Yf8-Yo-gxQ"/>
+        <segue reference="5dh-p1-GUn"/>
     </inferredMetricsTieBreakers>
 </document>

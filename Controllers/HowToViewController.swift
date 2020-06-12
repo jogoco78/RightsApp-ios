@@ -60,26 +60,29 @@ class HowToViewController: UIViewController {
         tv_how_to.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
         
        //Attributes of the text
+        let font_roboto = UIFont(name: "Roboto-Medium", size: 14)
+        let font_bold_roboto = UIFont(name: "Roboto-Black", size: 14)
+        let font_title_roboto = UIFont(name: "Roboto-Black", size: 24)
         let font = UIFont.systemFont(ofSize: 14)
         let font_bold = UIFont.boldSystemFont(ofSize: 14.0)
         let font_title = UIFont.boldSystemFont(ofSize: 24)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
+        paragraphStyle.lineSpacing = 5
         paragraphStyle.alignment = .justified
         paragraphStyle.paragraphSpacing = 8
         
         let attributes_title: [NSAttributedString.Key: Any] = [
-        .font: font_title,
+        .font: font_title_roboto,
         .foregroundColor: UIColor.black,
         .paragraphStyle: paragraphStyle]
         
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
+            .font: font_roboto,
             .foregroundColor: UIColor.black,
             .paragraphStyle: paragraphStyle]
         
         let attributes_bold: [NSAttributedString.Key: Any] = [
-        .font: font_bold,
+        .font: font_bold_roboto,
         .foregroundColor: UIColor.black,
         .paragraphStyle: paragraphStyle]
         

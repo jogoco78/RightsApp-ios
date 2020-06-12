@@ -43,12 +43,12 @@ class RightsAppViewController: UIViewController {
         //Attributes of the text
         let font = UIFont.systemFont(ofSize: 14)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 8
+        paragraphStyle.lineSpacing = 3
         paragraphStyle.alignment = .justified
-        let font_roboto = UIFont(name: "Roboto-Black", size: 14)
+        let font_roboto = UIFont(name: "Roboto-Medium", size: 15)
         
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
+            .font: font_roboto,
             .foregroundColor: UIColor.black,
             .paragraphStyle: paragraphStyle]
         

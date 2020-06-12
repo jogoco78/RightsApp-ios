@@ -44,6 +44,7 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         configureTableView()
     }
     
+    
     @objc func goHome(){
         performSegue(withIdentifier: "listToMainSegue", sender: nil)
     }
@@ -95,27 +96,32 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         }
         
         entitiesTableView.reloadData()
+        entitiesTableView.layoutIfNeeded()
         
         locationManager.stopUpdatingLocation()
     }
     
+
     func configureTableView(){
-        entitiesTableView = UITableView()
+        entitiesTableView = UITableView(frame: CGRect.zero, style: .plain)
         
         entitiesTableView.delegate = self
         entitiesTableView.dataSource = self
         
         view.addSubview(entitiesTableView)
         entitiesTableView.register(entitiesTableViewCell.self, forCellReuseIdentifier: entitiesCellIdentifier)
-        
         entitiesTableView.translatesAutoresizingMaskIntoConstraints = false
-        entitiesTableView.register(entitiesTableViewCell.self , forCellReuseIdentifier: entitiesCellIdentifier)
-        entitiesTableView.rowHeight = 65
+        entitiesTableView.alwaysBounceVertical = false
         entitiesTableView.separatorStyle = .none
         entitiesTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
         entitiesTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         entitiesTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         entitiesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+        entitiesTableView.canCancelContentTouches = true
+        entitiesTableView.allowsSelection = true
+        entitiesTableView.allowsSelectionDuringEditing = true
+        
+        //self.entitiesTableView.estimatedRowHeight = 85
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -126,40 +132,36 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         return entities.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return entities[section].entityName
-    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var headerCell = UITableViewCell()
         
         headerCell = tableView.dequeueReusableCell(withIdentifier: entitiesCellIdentifier) as! entitiesTableViewCell
-        headerCell.textLabel?.font = UIFont.systemFont(ofSize: 20)
+        headerCell.textLabel?.font = UIFont(name: "Roboto-Black", size: 24)
         headerCell.textLabel?.text = entities[section].entityName
-        headerCell.backgroundColor = UIColor.lightGray
-        headerCell.textLabel?.textColor = UIColor.white
+        headerCell.backgroundColor = UIColor.white
+        headerCell.textLabel?.numberOfLines = 0
         headerCell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        headerCell.textLabel?.textAlignment = .center
         
         return headerCell
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
-    }
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: entitiesCellIdentifier, for: indexPath) as! entitiesTableViewCell
         
-        cell = tableView.dequeueReusableCell(withIdentifier: entitiesCellIdentifier, for: indexPath) as! entitiesTableViewCell
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = .byWordWrapping
+        cell.selectionStyle = .none
+        cell.clipsToBounds = true
+        cell.textLabel?.textAlignment = .justified
+        
+      //  cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
+        cell.textLabel?.font = UIFont(name: "Roboto-Medium", size: 14)
         switch indexPath.row {
         case 0:
             if entities[indexPath.section].entityDescription != nil {
                 cell.textLabel?.text = entities[indexPath.section].entityDescription
-                cell.textLabel?.numberOfLines = 0
-                cell.heightAnchor.constraint(equalToConstant: 70)
-                
+                cell.textLabel?.lineBreakMode = .byTruncatingTail
             }else {
                 cell.textLabel?.text = NSLocalizedString("descriptionNotAvailable",comment: "")
             }
@@ -171,9 +173,7 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
             }
         case 2:
             if entities[indexPath.section].address != nil {
-                cell.textLabel?.text = NSLocalizedString("address",comment: "") + ": " + entities[indexPath.section].address + ", " + entities[indexPath.section].cityName
-                cell.textLabel?.numberOfLines = 0
-                cell.textLabel?.lineBreakMode = .byWordWrapping
+                cell.textLabel?.text = entities[indexPath.section].address + ", " + entities[indexPath.section].cityName
             } else {
                 cell.textLabel?.text = NSLocalizedString("addressNotAvailable",comment: "")
             }
@@ -186,8 +186,7 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         case 4:
             if entities[indexPath.section].link != nil {
                 cell.textLabel?.text = NSLocalizedString("link",comment: "") + ": " + entities[indexPath.section].link
-                cell.textLabel?.numberOfLines = 0
-                cell.textLabel?.isUserInteractionEnabled = true
+                cell.textLabel?.lineBreakMode = .byTruncatingMiddle
             } else {
                 cell.textLabel?.text = NSLocalizedString("linkNotAvailable",comment: "")
             }
@@ -201,15 +200,30 @@ class EntitiesListViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 90
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 && entities[indexPath.section].entityDescription != nil {
-            return 90
-        }else{
+        switch indexPath.row {
+        case 0:
+            //Description
+            return 70
+        case 4:
+            //Link
+            return 60
+        default:
+            //By default
             return 40
         }
     }
     
+    /*func tableView(_ tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }*/
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Helloooooooo")
         UserDefaults.standard.set(entities[indexPath.section].id, forKey: Constants.keys.entitySelected)
         performSegue(withIdentifier: "ListToDetailsSegue", sender: nil)
     }
@@ -227,11 +241,11 @@ class entitiesTableViewCell: UITableViewCell {
         entityField.translatesAutoresizingMaskIntoConstraints = false
         entityField.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         entityField.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        entityField.sizeToFit()
         entityField.numberOfLines = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
     }
 }
