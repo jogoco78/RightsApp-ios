@@ -17,7 +17,7 @@ class ParticleModel {
     var language: String!
     var tagCode: Int!
     
-    let separatorNewLine = "--"
+    let separatorNewLine = "\\|"
     
     init(){
         

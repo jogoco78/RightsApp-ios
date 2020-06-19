@@ -19,7 +19,8 @@
 "use" = "Uso dell\'app";
 "us" = "Noi";
 "rights" = "Diritti";
-"clusters" = "Gruppi di diritti";
+"clusters" = "Scenari";
+"details" = "Dettagli";
 "navigate" = "Navigare";
 "cancel" = "Annulla";
 "main_screen" = "Schermo principale";
@@ -126,10 +127,10 @@
 
 
 //MARK: Clusters
-"citizensRights" = "Diritti che aiutano tutte le persone che sono state vittime di un crimine";
-"sexualAttackProtocol" = "Protocollo d\'azione per un grave attacco sessuale";
-"EUCitizensRights" = "Diritti che aiutano i cittadini di un altro paese membro dell\'UE";
-"NoEUCitizenRights" = "Diritti che aiutano i cittadini di un paese al di fuori dell\'UE";
+"citizensRights" = "Diritti che hai o puoi avere come vittima di un crimine";
+"sexualAttackProtocol" = "Questo è ciò che dovresti fare se sei vittima di un grave attacco sessuale";
+"EUCitizensRights" = "Hai diritti come residente nell\'Unione Europea";
+"NoEUCitizenRights" = "Hai diritti come non residente nell\'Unione Europea";
 
 //MARK: Alert dialogs
 "exit_questionnaire" = "Se premi Accetta, verrai reindirizzato alla schermata principale e le tue risposte attuali andranno perse.";

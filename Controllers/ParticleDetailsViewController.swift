@@ -21,6 +21,9 @@ class ParticleDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        //Screen title
+        self.navigationItem.title = NSLocalizedString("details", comment: "")
+        
         view.addSubview(tv_particle)
         view.addSubview(btn_whats_next)
         
@@ -47,7 +50,7 @@ class ParticleDetailsViewController: UIViewController {
             let image1Attachment = NSTextAttachment()
             image1Attachment.image = UIImage(named: "Bullet")
             let image1String = NSAttributedString(attachment: image1Attachment)
-            let splitParticle = particle[0].text.split(separator: "-")
+            let splitParticle = particle[0].text.split(separator: "|")
             
             //line spacing
             let paragraphStyle = NSMutableParagraphStyle()
