@@ -125,6 +125,7 @@ class RightsAppViewController: UIViewController {
     
     //Emergency call listener for image and text buttons
     @objc func emergencyCallListener(_ sender: UIButton){
+        UserDefaults.standard.set(Constants.call.emergency, forKey: Constants.keys.phone_to_call)
         performSegue(withIdentifier: "rightsAppToEmergencyCallSegue", sender: nil)
     }
     

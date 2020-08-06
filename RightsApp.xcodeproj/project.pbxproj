@@ -27,6 +27,7 @@
 		EB59E27E22CCCC9C00396BCC /* Init.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB59E27D22CCCC9C00396BCC /* Init.storyboard */; };
 		EB5CE66122B1907E00570231 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5CE66022B1907E00570231 /* CityModel.swift */; };
 		EB5CE66322B1961900570231 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5CE66222B1961900570231 /* AnswerModel.swift */; };
+		EB648B9F24DC3AC1002315D7 /* rightsapp_v9_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EB648B9E24DC3AC1002315D7 /* rightsapp_v9_utf16.db */; };
 		EB75877322DCC6E400AE32A4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB75877222DCC6E400AE32A4 /* Settings.bundle */; };
 		EB75877522DCDB1500AE32A4 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB75877422DCDB1500AE32A4 /* SettingsBundleHelper.swift */; };
 		EB7C3F8523478B31002D8610 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB7C3F8423478B31002D8610 /* GoogleService-Info.plist */; };
@@ -44,19 +45,16 @@
 		EB9C6F7B22BBD7A600D09334 /* EmergencyCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */; };
 		EB9D8C6D247BE0D300225E37 /* WhatsNextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D8C6C247BE0D300225E37 /* WhatsNextTableViewController.swift */; };
 		EB9D8C6F247BE9FE00225E37 /* WhatsNextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D8C6E247BE9FE00225E37 /* WhatsNextModel.swift */; };
-		EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */; };
 		EBA4D54522AFDCD000B1B566 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54422AFDCD000B1B566 /* QuestionnaireViewController.swift */; };
 		EBA4D55322AFEAB500B1B566 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54822AFEAB400B1B566 /* FMResultSet.m */; };
 		EBA4D55422AFEAB500B1B566 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54A22AFEAB500B1B566 /* FMDatabaseAdditions.m */; };
 		EBA4D55522AFEAB500B1B566 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54D22AFEAB500B1B566 /* FMDatabaseQueue.m */; };
 		EBA4D55622AFEAB500B1B566 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D54E22AFEAB500B1B566 /* FMDatabase.m */; };
 		EBA4D55722AFEAB500B1B566 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA4D55022AFEAB500B1B566 /* FMDatabasePool.m */; };
-		EBACD44E247839360063085E /* rightsapp_v7_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBACD44D247839360063085E /* rightsapp_v7_utf16.db */; };
 		EBB51BC92490C3FC0098871A /* rightsapp_v8_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBB51BC82490C3FC0098871A /* rightsapp_v8_utf16.db */; };
 		EBB61D2122B1442200F749D7 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */; };
 		EBBB089A22C4FF9C00918F15 /* EntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBB089922C4FF9C00918F15 /* EntityModel.swift */; };
 		EBC35A2322CCEDD0003EFA20 /* HowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */; };
-		EBC5FF3D2431FC4900B70773 /* rightsapp_v6_utf16.db in Resources */ = {isa = PBXBuildFile; fileRef = EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */; };
 		EBC6BD28248FE6DE00063442 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBC6BD27248FE6DE00063442 /* Roboto-Black.ttf */; };
 		EBC80F5722CCD2D900870B27 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC80F5622CCD2D900870B27 /* InitViewController.swift */; };
 		EBC80F5922CCD4D300870B27 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC80F5822CCD4D300870B27 /* TermsViewController.swift */; };
@@ -121,6 +119,7 @@
 		EB59E27D22CCCC9C00396BCC /* Init.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Init.storyboard; sourceTree = "<group>"; };
 		EB5CE66022B1907E00570231 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		EB5CE66222B1961900570231 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		EB648B9E24DC3AC1002315D7 /* rightsapp_v9_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v9_utf16.db; sourceTree = "<group>"; };
 		EB75877222DCC6E400AE32A4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		EB75877422DCDB1500AE32A4 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		EB7C3F8423478B31002D8610 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -153,7 +152,6 @@
 		EB9C6F7A22BBD7A600D09334 /* EmergencyCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyCallViewController.swift; sourceTree = "<group>"; };
 		EB9D8C6C247BE0D300225E37 /* WhatsNextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextTableViewController.swift; sourceTree = "<group>"; };
 		EB9D8C6E247BE9FE00225E37 /* WhatsNextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextModel.swift; sourceTree = "<group>"; };
-		EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v5_utf16.db; sourceTree = "<group>"; };
 		EBA4D54422AFDCD000B1B566 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		EBA4D54722AFEAB400B1B566 /* RightsApp_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RightsApp_ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBA4D54822AFEAB400B1B566 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
@@ -167,12 +165,10 @@
 		EBA4D55022AFEAB500B1B566 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		EBA4D55122AFEAB500B1B566 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		EBA4D55222AFEAB500B1B566 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		EBACD44D247839360063085E /* rightsapp_v7_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v7_utf16.db; sourceTree = "<group>"; };
 		EBB51BC82490C3FC0098871A /* rightsapp_v8_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v8_utf16.db; sourceTree = "<group>"; };
 		EBB61D2022B1442200F749D7 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		EBBB089922C4FF9C00918F15 /* EntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityModel.swift; sourceTree = "<group>"; };
 		EBC35A2222CCEDCF003EFA20 /* HowToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToViewController.swift; sourceTree = "<group>"; };
-		EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = rightsapp_v6_utf16.db; sourceTree = "<group>"; };
 		EBC6BD27248FE6DE00063442 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		EBC80F5622CCD2D900870B27 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		EBC80F5822CCD4D300870B27 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
@@ -288,10 +284,8 @@
 				EB5CE65F22B1904F00570231 /* Models */,
 				EBB61D1F22B1440900F749D7 /* Managers */,
 				EBA4D54622AFE87300B1B566 /* FMDB */,
-				EBA4D54122AFDAFA00B1B566 /* rightsapp_v5_utf16.db */,
-				EBC5FF3C2431FC4900B70773 /* rightsapp_v6_utf16.db */,
-				EBACD44D247839360063085E /* rightsapp_v7_utf16.db */,
 				EBB51BC82490C3FC0098871A /* rightsapp_v8_utf16.db */,
+				EB648B9E24DC3AC1002315D7 /* rightsapp_v9_utf16.db */,
 				EB205C8B22A7D733006B5BDC /* Controllers */,
 				EB8A66FA229ED4DE003855BD /* Localizable.strings */,
 				EBFA91DE229D816100802BC7 /* Storyboards */,
@@ -512,15 +506,13 @@
 				EBB51BC92490C3FC0098871A /* rightsapp_v8_utf16.db in Resources */,
 				EB205C8222A7D651006B5BDC /* EmergencyCall.storyboard in Resources */,
 				EBD9C87C248FE8A4002B02D9 /* Roboto-Regular.ttf in Resources */,
+				EB648B9F24DC3AC1002315D7 /* rightsapp_v9_utf16.db in Resources */,
 				EB75877322DCC6E400AE32A4 /* Settings.bundle in Resources */,
-				EBC5FF3D2431FC4900B70773 /* rightsapp_v6_utf16.db in Resources */,
 				EB993A53229D3B7A0082DE76 /* LaunchScreen.storyboard in Resources */,
 				EBD9C87A248FE88E002B02D9 /* Roboto-Medium.ttf in Resources */,
-				EBA4D54222AFDAFA00B1B566 /* rightsapp_v5_utf16.db in Resources */,
 				EB205C7922A7D642006B5BDC /* Questionnaire.storyboard in Resources */,
 				EB205C7022A7D62D006B5BDC /* SearchEntity.storyboard in Resources */,
 				EB8A66F8229ED4DE003855BD /* Localizable.strings in Resources */,
-				EBACD44E247839360063085E /* rightsapp_v7_utf16.db in Resources */,
 				EB7C3F8523478B31002D8610 /* GoogleService-Info.plist in Resources */,
 				EBC6BD28248FE6DE00063442 /* Roboto-Black.ttf in Resources */,
 				EB993A50229D3B7A0082DE76 /* Assets.xcassets in Resources */,
@@ -921,14 +913,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = F74445Z3HU;
 				INFOPLIST_FILE = RightsApp_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.21;
+				MARKETING_VERSION = 1.23;
 				PRODUCT_BUNDLE_IDENTIFIER = es.uab.idt.rightsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -948,14 +940,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = F74445Z3HU;
 				INFOPLIST_FILE = RightsApp_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.21;
+				MARKETING_VERSION = 1.23;
 				PRODUCT_BUNDLE_IDENTIFIER = es.uab.idt.rightsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

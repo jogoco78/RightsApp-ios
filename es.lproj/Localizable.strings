@@ -136,6 +136,7 @@
 
 //MARK: Whats next strings
 "phone_112" = "Realiza una llamada de emergencia al 112";
+"internet_report" = "Pon una denuncia por Internet";
 "victims_association" = "Acude a una oficina de atención a las víctimas de delito para recibir más información";
 "police_station" = "Acude a una comisaria para poner una denuncia";
 "phone_against_violence" = "Llama al teléfono contra el maltrato";

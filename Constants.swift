@@ -10,7 +10,7 @@ import UIKit
 
 struct Constants {
     struct database {
-        static let name = "rightsapp_v8_utf16.db"
+        static let name = "rightsapp_v9_utf16.db"
         struct questions{
             static let name = "questions"
             static let id = "id"

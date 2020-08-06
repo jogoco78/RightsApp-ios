@@ -30,21 +30,22 @@ class WhatsNextTableViewController: UITableViewController {
         let language = LocalizationSystem.sharedInstance.getLanguage()
         
         dataSet.append(WhatsNextModel(0, NSLocalizedString("phone_112", comment: ""), language))
-        dataSet.append(WhatsNextModel(1, NSLocalizedString("victims_association", comment: ""),language))
-        dataSet.append(WhatsNextModel(2, NSLocalizedString("police_station", comment: ""), language))
+        //dataSet.append(WhatsNextModel(1, NSLocalizedString("internet_report", comment: ""), language))
+        dataSet.append(WhatsNextModel(2, NSLocalizedString("victims_association", comment: ""),language))
+        dataSet.append(WhatsNextModel(3, NSLocalizedString("police_station", comment: ""), language))
         
         if(main_tag == Constants.tags.violence_against_women){
             //Violence against women
-            dataSet.append(WhatsNextModel(3, NSLocalizedString("phone_against_violence", comment: ""), language))
+            dataSet.append(WhatsNextModel(4, NSLocalizedString("phone_against_violence", comment: ""), language))
         }
         
         if(main_tag == Constants.tags.sexual_attack || side_tag == Constants.tags.sexual_attack){
             //Sexual attack
-            dataSet.append(WhatsNextModel(4, NSLocalizedString("hospital", comment: ""), language))
+            dataSet.append(WhatsNextModel(5, NSLocalizedString("hospital", comment: ""), language))
         }
         
         if(residence_tag != Constants.tags.spanish_resident){
-            dataSet.append(WhatsNextModel(5, NSLocalizedString("consulate_embassy", comment: ""), language))
+            dataSet.append(WhatsNextModel(6, NSLocalizedString("consulate_embassy", comment: ""), language))
         }
         
         //Deletes the empty cells and their separators
@@ -83,25 +84,28 @@ class WhatsNextTableViewController: UITableViewController {
                 UserDefaults.standard.set(Constants.call.emergency, forKey: Constants.keys.phone_to_call)
                 performSegue(withIdentifier: "WhatsNextToMakeCallSegue" , sender: nil)
             case 1:
+                let url = URL (string: "https://denuncies.dgp.interior.gencat.cat/denuncies/")!
+                UIApplication.shared.open (url)
+            case 2:
                 UserDefaults.standard.set(Constants.categories.victim_assistance_offices, forKey:  Constants.keys.searchIDEntity)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)
                 performSegue(withIdentifier: "WhatsNextToEntitiesListSegue", sender: nil)
-            case 2:
+            case 3:
                 UserDefaults.standard.set(Constants.categories.police_stations, forKey:  Constants.keys.searchIDEntity)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)
                 performSegue(withIdentifier: "WhatsNextToEntitiesListSegue", sender: nil)
-            case 3:
+            case 4:
                 //Call to 016
                 UserDefaults.standard.set(Constants.call.violence_against_women, forKey: Constants.keys.phone_to_call)
                 performSegue(withIdentifier: "WhatsNextToMakeCallSegue" , sender: nil)
-            case 4:
+            case 5:
                 UserDefaults.standard.set(Constants.categories.medical_centres, forKey:  Constants.keys.searchIDEntity)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)
                 performSegue(withIdentifier: "WhatsNextToEntitiesListSegue", sender: nil)
-            case 5:
+            case 6:
                 UserDefaults.standard.set(Constants.categories.consulates_embassies, forKey:  Constants.keys.searchIDEntity)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCountry)
                 UserDefaults.standard.set(0, forKey: Constants.keys.searchIDCity)

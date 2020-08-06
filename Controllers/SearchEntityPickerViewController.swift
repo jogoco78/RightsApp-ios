@@ -123,37 +123,37 @@ class SearchEntityPickerViewController: UIViewController, UIPickerViewDelegate, 
         //Entity label constraints
         lbl_entity_title.translatesAutoresizingMaskIntoConstraints = false
         lbl_entity_title.topAnchor.constraint(equalTo: lbl_title.bottomAnchor, constant: 25).isActive = true
-        lbl_entity_title.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: -(lbl_entity_title.intrinsicContentSize.width/2)-25).isActive = true
+        lbl_entity_title.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         lbl_entity_title.sizeToFit()
         
         //Entity selected constraints
         lbl_entity_selected.translatesAutoresizingMaskIntoConstraints = false
-        lbl_entity_selected.centerYAnchor.constraint(equalTo: lbl_entity_title.centerYAnchor).isActive = true
-        lbl_entity_selected.leftAnchor.constraint(equalTo: lbl_entity_title.rightAnchor, constant: 10).isActive = true
+        lbl_entity_selected.topAnchor.constraint(equalTo: lbl_entity_title.bottomAnchor, constant: 0).isActive = true
+        lbl_entity_selected.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         lbl_entity_selected.sizeToFit()
         
         //Country label constraints
         lbl_country_title.translatesAutoresizingMaskIntoConstraints = false
-        lbl_country_title.topAnchor.constraint(equalTo: lbl_entity_title.bottomAnchor, constant: 25).isActive = true
-        lbl_country_title.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -(lbl_country_title.intrinsicContentSize.width/2)-25).isActive = true
+        lbl_country_title.topAnchor.constraint(equalTo: lbl_entity_selected.bottomAnchor, constant: 20).isActive = true
+        lbl_country_title.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         lbl_country_title.sizeToFit()
         
         //Country selected constraints
         lbl_country_selected.translatesAutoresizingMaskIntoConstraints = false
-        lbl_country_selected.centerYAnchor.constraint(equalTo: lbl_country_title.centerYAnchor).isActive = true
-        lbl_country_selected.leftAnchor.constraint(equalTo: lbl_country_title.rightAnchor, constant: 10).isActive = true
+        lbl_country_selected.topAnchor.constraint(equalTo: lbl_country_title.bottomAnchor, constant: 0).isActive = true
+        lbl_country_selected.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         lbl_country_selected.sizeToFit()
         
         //City label constraints
         lbl_city_title.translatesAutoresizingMaskIntoConstraints = false
-        lbl_city_title.topAnchor.constraint(equalTo: lbl_country_title.bottomAnchor, constant: 25).isActive = true
-        lbl_city_title.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -(lbl_city_title.intrinsicContentSize.width/2)-25).isActive = true
+        lbl_city_title.topAnchor.constraint(equalTo: lbl_country_selected.bottomAnchor, constant: 20).isActive = true
+        lbl_city_title.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         lbl_city_title.sizeToFit()
         
         //City selected constraints
         lbl_city_selected.translatesAutoresizingMaskIntoConstraints = false
-        lbl_city_selected.centerYAnchor.constraint(equalTo: lbl_city_title.centerYAnchor).isActive = true
-        lbl_city_selected.leftAnchor.constraint(equalTo: lbl_city_title.rightAnchor, constant: 10).isActive = true
+        lbl_city_selected.topAnchor.constraint(equalTo: lbl_city_title.bottomAnchor, constant: 0).isActive = true
+        lbl_city_selected.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         lbl_city_selected.sizeToFit()
         
         picker.translatesAutoresizingMaskIntoConstraints = false

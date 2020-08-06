@@ -135,6 +135,7 @@
 
 //MARK: Whats next strings
 "phone_112" = "Make an emergency call to 112";
+"internet_report" = "File a complaint online";
 "victims_association" = "Go to a victim assistance office to receive more information";
 "police_station" = "Go to a police station to file a complaint";
 "phone_against_violence" = "Call the phone against women abuse";
